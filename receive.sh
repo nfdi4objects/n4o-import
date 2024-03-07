@@ -24,6 +24,7 @@ dir=import/$collection
 rm -rf "$dir"
 mkdir -p $dir
 
+echo
 cp $inputfile $dir/original.ttl
 echo "Originaldatei in $dir/original.ttl"
 rapper -q -i turtle "$inputfile" > $dir/raw.nt
@@ -31,9 +32,16 @@ echo "NTriples in $dir/raw.nt"
 
 # Verschiedene Statistiken
 
+echo
 <$dir/raw.nt awk '{print $2}' | sort | uniq -c | sort -nrk1 > $dir/properties
 echo "Statistik der Properties: $dir/properties"
 echo "Anzahl verschiedener Properties:" `<$dir/properties wc -l`
+head -3 $dir/properties
+
+echo
+<$dir/raw.nt awk '{print $1}' | sed 's|[^/]*>$||;s|^<||' | grep -v '^_:' | sort | uniq -c | sort -nrk1 > $dir/namespaces
+echo "Anzahl verschiedener Namesräume von Subjekten:" `<$dir/namespaces wc -l`
+head -3 $dir/namespaces
 
 # TODO: weitere Validierung
 
