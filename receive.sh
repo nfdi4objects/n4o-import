@@ -9,9 +9,20 @@ fi
 inputfile=$1
 collection=$2
 
-if [[ ! "$collection" =~ ^[1-9][0-9]*$ ]]; then
+if [[ ! "$collection" =~ ^[0-9]*$ ]]; then
   echo "COLLECTION_ID muss numerisch sein!"
   exit 1
+fi
+
+if [[ $collection -eq "0" ]]; then
+  echo "0 = Testcollection"
+else
+  name=$(awk -F, "\$1 == $collection {print \$2}" n4o-collections.csv)
+  if [[ -z "$name" ]]; then
+    echo "COLLECTION_ID $collection unbekannt!"
+    exit 1
+  fi
+  echo "$collection = $name"
 fi
 
 echo "Empfange RDF-Daten aus im Turtle-Format aus $1"
@@ -27,21 +38,33 @@ mkdir -p $dir
 echo
 cp $inputfile $dir/original.ttl
 echo "Originaldatei in $dir/original.ttl"
-rapper -q -i turtle "$inputfile" > $dir/raw.nt
+rapper -q --replace-newlines -i turtle "$inputfile" > $dir/raw.nt
 echo "NTriples in $dir/raw.nt"
+
+# Dubiose URIs entfernen
+
+echo
+<$dir/raw.nt awk '$1 !~ /^<file:/ && $2 !~ /<file:/ && $3 !~ /<file:/ { print }' > $dir/clean.nt
+a=$(<$dir/raw.nt wc -l)
+b=$(<$dir/clean.nt wc -l)
+removed=$(($a-$b))
+
+echo "Saubere URIs in $dir/clean.nt"
+if [[ $removed -ne "0" ]]; then
+  echo "$removed triples entfernt!"
+fi
 
 # Verschiedene Statistiken
 
 echo
-<$dir/raw.nt awk '{print $2}' | sort | uniq -c | sort -nrk1 > $dir/properties
+<$dir/clean.nt awk '{print $2}' | sort | uniq -c | sort -nrk1 > $dir/properties
 echo "Statistik der Properties: $dir/properties"
 echo "Anzahl verschiedener Properties:" `<$dir/properties wc -l`
 head -3 $dir/properties
 
 echo
-<$dir/raw.nt awk '{print $1}' | sed 's|[^/]*>$||;s|^<||' | grep -v '^_:' | sort | uniq -c | sort -nrk1 > $dir/namespaces
+<$dir/clean.nt awk '{print $1}' | sed 's|[^/]*>$||;s|^<||' | grep -v '^_:' | sort | uniq -c | sort -nrk1 > $dir/namespaces
 echo "Anzahl verschiedener Namesräume von Subjekten:" `<$dir/namespaces wc -l`
 head -3 $dir/namespaces
 
-# TODO: weitere Validierung
 
