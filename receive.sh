@@ -2,12 +2,14 @@
 set -euo pipefail
 
 if [[ $# -ne 2 ]]; then
-  echo "Usage: $0 INPUT_FILE COLLECTION_ID"
+  echo "Usage: $0 COLLECTION_ID INPUT_FILE"
+  echo
+  awk -F, 'NR>1{print $1,$2}' n4o-collections.csv
   exit
 fi
 
-inputfile=$1
-collection=$2
+collection=$1
+input=$2
 
 if [[ ! "$collection" =~ ^[0-9]*$ ]]; then
   echo "COLLECTION_ID muss numerisch sein!"
@@ -25,8 +27,8 @@ else
   echo "$collection = $name"
 fi
 
-echo "Empfange RDF-Daten aus im Turtle-Format aus $1"
-triples=`rapper -q -i turtle "$inputfile" | wc -l`
+echo "Empfange RDF-Daten aus im Turtle-Format aus $input"
+triples=`rapper -q -i turtle "$input" | wc -l`
 
 echo "Datei ist syntaktisch korrektes RDF"
 echo "Anzahl der Tripel: $triples"
@@ -34,37 +36,45 @@ echo "Anzahl der Tripel: $triples"
 dir=import/$collection
 rm -rf "$dir"
 mkdir -p $dir
+raw=$dir/raw.nt
 
 echo
-cp $inputfile $dir/original.ttl
+cp $input $dir/original.ttl
 echo "Originaldatei in $dir/original.ttl"
-rapper -q --replace-newlines -i turtle "$inputfile" > $dir/raw.nt
-echo "NTriples in $dir/raw.nt"
+rapper -q --replace-newlines -i turtle "$input" > $raw
+echo "NTriples in $raw"
 
-# Dubiose URIs entfernen
+# Relative URIs entfernen
+
+absolute=$dir/absolute.nt
 
 echo
-<$dir/raw.nt awk '$1 !~ /^<file:/ && $2 !~ /<file:/ && $3 !~ /<file:/ { print }' > $dir/clean.nt
-a=$(<$dir/raw.nt wc -l)
-b=$(<$dir/clean.nt wc -l)
+<$raw awk '$1 !~ /^<file:/ && $2 !~ /<file:/ && $3 !~ /<file:/ { print }' > $absolute
+a=$(<$raw wc -l)
+b=$(<$absolute wc -l)
 removed=$(($a-$b))
 
-echo "Saubere URIs in $dir/clean.nt"
+echo "RDF beschränkt auf absolute URIs in $dir/absolute.nt"
 if [[ $removed -ne "0" ]]; then
-  echo "$removed triples entfernt!"
+  echo "$removed triples mit relativen URIs entfernt!"
 fi
 
 # Verschiedene Statistiken
 
+properties=$dir/properties
 echo
-<$dir/clean.nt awk '{print $2}' | sort | uniq -c | sort -nrk1 > $dir/properties
-echo "Statistik der Properties: $dir/properties"
-echo "Anzahl verschiedener Properties:" `<$dir/properties wc -l`
-head -3 $dir/properties
+<$absolute awk '{print $2}' | sort | uniq -c | sort -nrk1 > $properties
+echo "Statistik der Properties: $properties"
+echo "Anzahl verschiedener Properties:" `<$properties wc -l`
+head -3 $properties
 
+namespaces=$dir/namespaces
 echo
-<$dir/clean.nt awk '{print $1}' | sed 's|[^/]*>$||;s|^<||' | grep -v '^_:' | sort | uniq -c | sort -nrk1 > $dir/namespaces
-echo "Anzahl verschiedener Namesräume von Subjekten:" `<$dir/namespaces wc -l`
-head -3 $dir/namespaces
-
+# Heuristik zur Extraktion von Namensräumen aus absoluten URIs
+<$absolute awk '{print $1} $3~/^</ {print $3}' | sed 's/^<//' | \
+    sed 's/#.*$/#/;t;s|/[^/]*>$|/|;t;s/:.*$/:/' | \
+    sort | uniq -c | sort -nrk1 > $namespaces
+echo "Statistik der Namensräume (nur Subjekte und Objekte): $namespaces"
+echo "Anzahl verschiedener Namesräume:" `<$namespaces wc -l`
+head -3 $namespaces
 
