@@ -30,5 +30,6 @@ Die empfangenen RDF-Daten werden syntaktisch geprüft und rudimentär bereinigt
 im Verzeichnis `import` abgelegt (Datei `absolute.nt`).
 
 Darüber hinaus wird eine Statistik der verwendeten RDF-Properties und der
-RDF-Namensräume von Subjekt- und Objekt-URIs erstellt
+RDF-Namensräume von Subjekt- und Objekt-URIs erstellt. Letztere werden mit
+bekannten Namensräumen in der Datei `namespaces.csv` abgeglichen.
 

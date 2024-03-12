@@ -75,6 +75,7 @@ echo
     sed 's/#.*$/#/;t;s|/[^/]*>$|/|;t;s/:.*$/:/' | \
     sort | uniq -c | sort -nrk1 > $namespaces
 echo "Statistik der Namensräume (nur Subjekte und Objekte): $namespaces"
-echo "Anzahl verschiedener Namesräume:" `<$namespaces wc -l`
-head -3 $namespaces
+echo "Anzahl verschiedener Namensräume:" `<$namespaces wc -l`
+echo "Bekannte Namensräume:"
+<$namespaces ./known-namespaces.py
 
