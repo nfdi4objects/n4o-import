@@ -12,9 +12,9 @@ in den oder die Knowledge-Graphen von NFDI4Objects. Dies beinhaltet:
 
 Benötigt werden Standard-Kommandozeilenwerkzeuge (grep, awk, sed...) sowie
 
-- rapper
-- jq
-- Python (geplant)
+- rapper (`sudo apt install raptor2-utils`)
+- jq (`sudo apt install jq`)
+- Python 3
 
 ## Benutzung
 

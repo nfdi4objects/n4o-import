@@ -31,55 +31,62 @@ else
   echo "$collection = $name"
 fi
 
-echo "Empfange RDF-Daten aus im Turtle-Format aus $input"
-triples=`rapper -q -i turtle "$input" | wc -l`
-
-echo "Datei ist syntaktisch korrektes RDF"
-echo "Anzahl der Tripel: $triples"
-
 dir=import/$collection
-rm -rf "$dir"
-mkdir -p $dir
-raw=$dir/raw.nt
 
-echo
-cp $input $dir/original.ttl
-echo "Originaldatei in $dir/original.ttl"
-rapper -q --replace-newlines -i turtle "$input" > $raw
-echo "NTriples in $raw"
+receive() {
+    echo "Empfange RDF-Daten aus im Turtle-Format aus $input"
+    triples=`rapper -q -i turtle "$input" | wc -l`
 
-# Relative URIs entfernen
+    echo "Datei ist syntaktisch korrektes RDF"
+    echo "Anzahl der Tripel: $triples"
 
-absolute=$dir/absolute.nt
+    rm -rf $dir
+    mkdir -p $dir
+    raw=$dir/raw.nt
 
-echo
-<$raw awk '$1 !~ /^<file:/ && $2 !~ /<file:/ && $3 !~ /<file:/ { print }' > $absolute
-a=$(<$raw wc -l)
-b=$(<$absolute wc -l)
-removed=$(($a-$b))
+    echo
+    cp $input $dir/original.ttl
+    echo "Originaldatei in $dir/original.ttl"
+    rapper -q --replace-newlines -i turtle "$input" > $raw
+    echo "NTriples in $raw"
 
-echo "RDF beschränkt auf absolute URIs in $dir/absolute.nt"
-if [[ $removed -ne "0" ]]; then
-  echo "$removed triples mit relativen URIs entfernt!"
-fi
+    # Relative URIs entfernen
 
-# Verschiedene Statistiken
+    absolute=$dir/absolute.nt
 
-properties=$dir/properties
-echo
-<$absolute awk '{print $2}' | sort | uniq -c | sort -nrk1 > $properties
-echo "Statistik der Properties: $properties"
-echo "Anzahl verschiedener Properties:" `<$properties wc -l`
-head -3 $properties
+    echo
+    <$raw awk '$1 !~ /^<file:/ && $2 !~ /<file:/ && $3 !~ /<file:/ { print }' > $absolute
+    a=$(<$raw wc -l)
+    b=$(<$absolute wc -l)
+    removed=$(($a-$b))
 
-namespaces=$dir/namespaces
-echo
-# Heuristik zur Extraktion von Namensräumen aus absoluten URIs
-<$absolute awk '{print $1} $3~/^</ {print $3}' | sed 's/^<//' | \
-    sed 's/#.*$/#/;t;s|/[^/]*>$|/|;t;s/:.*$/:/' | \
-    sort | uniq -c | sort -nrk1 > $namespaces
-echo "Statistik der Namensräume (nur Subjekte und Objekte): $namespaces"
-echo "Anzahl verschiedener Namensräume:" `<$namespaces wc -l`
-echo "Bekannte Namensräume:"
-<$namespaces ./known-namespaces.py
+    echo "RDF beschränkt auf absolute URIs in $dir/absolute.nt"
+    if [[ $removed -ne "0" ]]; then
+      echo "$removed triples mit relativen URIs entfernt!"
+    fi
 
+    # Verschiedene Statistiken
+
+    properties=$dir/properties
+    echo
+    <$absolute awk '{print $2}' | sort | uniq -c | sort -nrk1 > $properties
+    echo "Statistik der Properties: $properties"
+    echo "Anzahl verschiedener Properties:" `<$properties wc -l`
+    head -3 $properties
+
+    namespaces=$dir/namespaces
+    echo
+    # Heuristik zur Extraktion von Namensräumen aus absoluten URIs
+    <$absolute awk '{print $1} $3~/^</ {print $3}' | sed 's/^<//' | \
+        sed 's/#.*$/#/;t;s|/[^/]*>$|/|;t;s/:.*$/:/' | \
+        sort | uniq -c | sort -nrk1 > $namespaces
+    echo "Statistik der Namensräume (nur Subjekte und Objekte): $namespaces"
+    echo "Anzahl verschiedener Namensräume:" `<$namespaces wc -l`
+    echo "Bekannte Namensräume:"
+    <$namespaces ./known-namespaces.py
+}
+
+receive 2>&1 | tee tmp.log || true
+date  --rfc-3339=seconds > $dir/receive.log
+cat tmp.log >> $dir/receive.log
+rm tmp.log 
