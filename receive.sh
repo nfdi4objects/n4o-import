@@ -4,7 +4,11 @@ set -euo pipefail
 if [[ $# -ne 2 ]]; then
   echo "Usage: $0 COLLECTION_ID INPUT_FILE"
   echo
-  awk -F, 'NR>1{print $1,$2}' n4o-collections.csv
+  if [[ $# -eq 1 ]]; then
+    grep -e "^$1," n4o-collections.csv
+  else
+    awk -F, 'NR>1{print $1,$2}' n4o-collections.csv
+  fi
   exit
 fi
 

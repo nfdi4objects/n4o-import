@@ -1,5 +1,10 @@
 B3Kat,http://lod.b3kat.de/title/
 Erlangen CRM 2017,http://erlangen-crm.org/170309/
+CRMdig,http://www.ics.forth.gr/isl/CRMdig/
+CRMsci,http://www.ics.forth.gr/isl/CRMsci/
+CRMinf,http://www.ics.forth.gr/isl/CRMinf/
+CIDOC-CRM,http://www.cidoc-crm.org/cidoc-crm/
+CIDOC-CRM current,http://cidoc-crm.org/current/
 FAU Sammlungs-Ontologie,http://objekte-im-netz.fau.de/ontology/common/
 FOAF,http://xmlns.com/foaf/0.1/
 GND,http://d-nb.info/gnd/
@@ -7,3 +12,16 @@ Hornmostel-Sachs-Klassifikation,http://www.mimo-db.eu/HornbostelAndSachs/
 Iconclass,http://iconclass.org/
 OWL,http://www.w3.org/2002/07/owl#
 SKOS,http://www.w3.org/2004/02/skos/core#
+Provenance Ontology,http://www.w3.org/ns/prov#
+Wikidata,http://www.wikidata.org/entity/
+ORCID,https://orcid.org/
+Pleiades,https://pleiades.stoa.org/places/
+Pleiades RDF Vocabulary,https://pleiades.stoa.org/places/vocab#
+RDFS,http://www.w3.org/2000/01/rdf-schema#
+Getty AAT,http://vocab.getty.edu/aat/
+Getty TGN,http://vocab.getty.edu/tgn/
+Iconclass,http://iconclass.org/
+RDFS,http://www.w3.org/2000/01/rdf-schema#
+XML Schema,http://www.w3.org/2001/XMLSchema#
+DC,http://purl.org/dc/elements/1.1/
+iDAI.chronontology,http://chronontology.dainst.org/period/
