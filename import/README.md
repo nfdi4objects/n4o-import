@@ -1,5 +1,5 @@
 <p>
-  Dieses Verzeichnis enthält geprüfte RDF-Daten zugeordnet zu <a href="../collections.csv">ihrer jeweiligen Sammlung</a>,
+  Dieses Verzeichnis enthält geprüfte RDF-Daten zugeordnet zu <a href="../n4o-collections.csv">ihrer jeweiligen Sammlung</a>,
   insbesondere die Dateien:
 </p>
 <p>
