@@ -5,8 +5,9 @@ in den oder die Knowledge-Graphen von NFDI4Objects. Dies beinhaltet:
 
 1. Die eindeutige Zuordnung von gelieferten RDF-Daten zu definierten Sammlungen oder Publikationen
 2. Die syntaktische Prüfung der RDF-Daten
-3. Das Aussortieren RDF-Tripel mit relativen URIs
-4. Erste Statistik und Übersicht verwendeter Properties und RDF-Namensräume zur Einschätzung der Nutzbarkeit der Daten
+3. Aussortieren von doppelten Tripeln
+4. Aussortieren RDF-Tripel mit relativen URIs
+5. Erste Statistik und Übersicht verwendeter Properties und RDF-Namensräume zur Einschätzung der Nutzbarkeit der Daten
 
 ## Installation
 

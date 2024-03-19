@@ -5,8 +5,8 @@ import sys
 def main():
     ns = {}
     with open('namespaces.csv', 'r') as file:
-        for line in file.readlines():
-            name, uri = line.strip().split(',')
+        for line in file.readlines()[1:]:
+            name, uri, prefix = line.strip().split(',')
             ns[uri] = name
 
     for line in map(str.strip, sys.stdin):
