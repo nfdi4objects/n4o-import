@@ -35,19 +35,22 @@ dir=import/$collection
 
 receive() {
     echo "Empfange RDF-Daten aus im Turtle-Format aus $input"
-    triples=`rapper -q -i turtle "$input" | wc -l`
+
+    tmp=$(mktemp)
+    rapper -q -i turtle "$input" | sort | uniq > "$tmp"
 
     echo "Datei ist syntaktisch korrektes RDF"
-    echo "Anzahl der Tripel: $triples"
+    echo "Anzahl der Tripel: $(wc -l $tmp)"
 
     rm -rf $dir
     mkdir -p $dir
     raw=$dir/raw.nt
+    mv "$tmp" "$raw"
 
     echo
     cp $input $dir/original.ttl
     echo "Originaldatei in $dir/original.ttl"
-    rapper -q --replace-newlines -i turtle "$input" > $raw
+    rapper -q -i turtle "$input" > $raw
     echo "NTriples in $raw"
 
     # Relative URIs entfernen
