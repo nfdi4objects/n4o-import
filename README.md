@@ -3,13 +3,30 @@
 Dieses Repository enthält Skripte zur Prüfung von zu importierenden RDF-Daten
 in den oder die Knowledge-Graphen von NFDI4Objects. Dies beinhaltet:
 
-1. Die eindeutige Zuordnung von gelieferten RDF-Daten zu definierten Sammlungen oder Publikationen
+1. Die eindeutige Zuordnung von gelieferten RDF-Daten zu definierten Sammlungen
 2. Die syntaktische Prüfung der RDF-Daten
-3. Aussortieren von doppelten Tripeln
-4. Aussortieren RDF-Tripel mit relativen URIs
-5. Erste Statistik und Übersicht verwendeter Properties und RDF-Namensräume zur Einschätzung der Nutzbarkeit der Daten
+3. Aussortieren von doppelten Tripeln und RDF-Tripeln mit relativen URIs
+4. Erste Statistik und Übersicht verwendeter Properties und RDF-Namensräume zur Einschätzung der Nutzbarkeit der Daten
+
+## Voraussetzungen
+
+Alle zu importierenden Daten müssen genau einer "Sammlung" zugeordnet sein.
+Eine Sammlung im Sinne des Import ist eine Menge von Daten, die als ganzes
+importiert und aktualisiert werden kann. Zusätzlich können Sammlungen einer
+Datenbank aus <https://nfdi4objects.github.io/n4o-databases/> zugeordnet sein.
+Unabhängige Sammlungen, die zu keiner Datenbank gehören, können auch als
+einzelne Datenpublikationen angesehen werden.
+
+In [`n4o-collections.csv`](n4-collections.csv) stehen bekannte Sammlungen und
+Datenpublikationen, deren Daten übernommen werden können und falls vorhanden
+die dazu gehörige übergeordnete Datenbank aus
+<https://nfdi4objects.github.io/n4o-databases/>.
 
 ## Installation
+
+~~~sh
+git clone https://github.com/nfdi4objects/n4o-rdf-import.git && cd n40-rdf-import
+~~~
 
 Benötigt werden Standard-Kommandozeilenwerkzeuge (grep, awk, sed...) sowie
 
@@ -21,11 +38,7 @@ Benötigt werden Standard-Kommandozeilenwerkzeuge (grep, awk, sed...) sowie
 
 ### Annahme und Erstkontrolle der Daten
 
-Das Skript `receive.sh` erwartet eine Sammlungs-ID und eine RDF/Turtle-Datei.
-
-In `n4o-collections.csv` stehen bekannte Sammlungen und Datenpublikationen,
-deren Daten übernommen werden können und falls vorhanden die dazu gehörige
-übergeordnete Datenbank aus <https://nfdi4objects.github.io/n4o-databases/>.
+Das Skript [`receive.sh`](receive.sh) erwartet eine Sammlungs-ID und eine RDF/Turtle-Datei.
 
 **Beispiele:**
 
@@ -40,10 +53,11 @@ deren Daten übernommen werden können und falls vorhanden die dazu gehörige
   publiziert (Sammlungs-ID 9) und wird einzeln übernommen.
 
 Die empfangenen RDF-Daten werden syntaktisch geprüft und rudimentär bereinigt
-im Verzeichnis `import` abgelegt (Datei `absolute.nt`).
+im Verzeichnis [`import`](import) abgelegt (Datei `absolute.nt`).
 
 Darüber hinaus wird eine Statistik der verwendeten RDF-Properties und der
 RDF-Namensräume von Subjekt- und Objekt-URIs erstellt. Letztere werden mit
-bekannten Namensräumen in der Datei `namespaces.csv` abgeglichen
+bekannten Namensräumen in der Datei [`namespaces.csv`](namespaces.csv) abgeglichen
 (siehe auch die kuratierte Liste von Terminologien mit Namensräumen unter
 <https://nfdi4objects.github.io/n4o-terminologies/>).
+

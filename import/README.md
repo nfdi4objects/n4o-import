@@ -1,10 +1,6 @@
-<p>
-  Dieses Verzeichnis enthält geprüfte RDF-Daten zugeordnet zu <a href="../n4o-collections.csv">ihrer jeweiligen Sammlung</a>,
-  insbesondere die Dateien:
-</p>
-<p>
-  <ul>
-   <li><tt>absolute.nt</tt> syntaktisch geprüfte und bereinige RDF-Daten</li>
-   <li><tt>receive.log</tt> Logfile der letzten Prüfung mit Statistiken</li>
-  </ul>
-</p>
+Dieses Verzeichnis enthält geprüfte RDF-Daten zugeordnet zu [ihrer jeweiligen
+Sammlung](../n4o-collections.csv), insbesondere die Dateien:
+
+- `absolute.nt` syntaktisch geprüfte und bereinige RDF-Daten
+- `receive.log` Logfile der letzten Prüfung mit Statistiken
+
