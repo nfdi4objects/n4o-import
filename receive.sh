@@ -36,34 +36,36 @@ dir=import/$collection
 receive() {
     echo "Empfange RDF-Daten aus im Turtle-Format aus $input"
 
+    original=$dir/original.ttl
+    unique=$dir/unique.nt
+
     tmp=$(mktemp)
     rapper -q -i turtle "$input" | sort | uniq > "$tmp"
 
-    echo "Datei ist syntaktisch korrektes RDF"
-    echo "Anzahl unterschiedlicher Tripel: $(wc -l $tmp)"
+    if [[ ! -s "$tmp" ]]; then
+        rm "$tmp"
+        echo "RDF-Daten sind syntaktisch nicht korrekt oder leer!"
+        exit 1
+    fi
 
-    rm -rf $dir
+    rm -rf $dir # alten Stand löschen
     mkdir -p $dir
-    raw=$dir/raw.nt
-    mv "$tmp" "$raw"
 
-    echo
-    cp $input $dir/original.ttl
-    echo "Originaldatei in $dir/original.ttl"
-    rapper -q -i turtle "$input" > $raw
-    echo "NTriples in $raw"
+    mv "$tmp" "$unique"
+    echo "Datei ist syntaktisch korrektes RDF"
+    echo "Anzahl unterschiedlicher Tripel: $(wc -l $unique)"
 
     # Relative URIs entfernen
 
     absolute=$dir/absolute.nt
 
     echo
-    <$raw awk '$1 !~ /^<file:/ && $2 !~ /<file:/ && $3 !~ /<file:/ { print }' > $absolute
-    a=$(<$raw wc -l)
+    <$unique awk '$1 !~ /^<file:/ && $2 !~ /<file:/ && $3 !~ /<file:/ { print }' > $absolute
+    a=$(<$unique wc -l)
     b=$(<$absolute wc -l)
     removed=$(($a-$b))
 
-    echo "RDF beschränkt auf absolute URIs in $dir/absolute.nt"
+    echo "RDF beschränkt auf absolute URIs in $absolute"
     if [[ $removed -ne "0" ]]; then
       echo "$removed triples mit relativen URIs entfernt!"
     fi
