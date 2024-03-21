@@ -1,7 +1,8 @@
 # RDF-Import für NFDI4Objects
 
-Dieses Repository enthält Skripte zur Prüfung von zu importierenden RDF-Daten
-in den oder die Knowledge-Graphen von NFDI4Objects. Dies beinhaltet:
+[Dieses Repository](https://github.com/nfdi4objects/n4o-rdf-import) enthält
+Skripte zur Prüfung von zu importierenden RDF-Daten in den oder die
+Knowledge-Graphen von NFDI4Objects. Dies beinhaltet:
 
 1. Die eindeutige Zuordnung von gelieferten RDF-Daten zu definierten Sammlungen
 2. Die syntaktische Prüfung der RDF-Daten
