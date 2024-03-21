@@ -40,7 +40,7 @@ receive() {
     rapper -q -i turtle "$input" | sort | uniq > "$tmp"
 
     echo "Datei ist syntaktisch korrektes RDF"
-    echo "Anzahl der Tripel: $(wc -l $tmp)"
+    echo "Anzahl unterschiedlicher Tripel: $(wc -l $tmp)"
 
     rm -rf $dir
     mkdir -p $dir
@@ -76,6 +76,7 @@ receive() {
     echo "Statistik der Properties: $properties"
     echo "Anzahl verschiedener Properties:" `<$properties wc -l`
     head -3 $properties
+    echo "..."
 
     namespaces=$dir/namespaces
     echo
