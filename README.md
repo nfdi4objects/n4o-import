@@ -11,6 +11,10 @@ Die Datenannahme und Prüfung beinhaltet:
 3. Aussortieren von doppelten Tripeln und RDF-Tripeln mit relativen URIs
 4. Erste Statistik und Übersicht verwendeter Properties und RDF-Namensräume zur Einschätzung der Nutzbarkeit der Daten
 
+Der Anschließende Import beinhaltet:
+
+- Import in einen lokalen Fuseki RDF-Triple-Store
+
 ## Voraussetzungen
 
 Alle zu importierenden Daten müssen genau einer "Sammlung" zugeordnet sein.
@@ -64,3 +68,8 @@ bekannten Namensräumen in der Datei [`namespaces.csv`](namespaces.csv) abgeglic
 (siehe auch die kuratierte Liste von Terminologien mit Namensräumen unter
 <https://nfdi4objects.github.io/n4o-terminologies/>).
 
+### Import in Triple-Store
+
+Mit dem Skript `import-rdf.sh` können anschließend Sammlungen in einen lokalen
+RDF-Triple-Store (Fuseki) geladen werden, wobei die vorhandenen RDF-Daten der
+Sammlung jeweils überschrieben werden.
