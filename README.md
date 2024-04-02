@@ -4,16 +4,14 @@
 Skripte zur Prüfung von zu importierenden RDF-Daten in den oder die
 Knowledge-Graphen von NFDI4Objects.
 
-Die Datenannahme und Prüfung beinhaltet:
+Die **Datenannahme und Prüfung** beinhaltet:
 
 1. Die eindeutige Zuordnung von gelieferten RDF-Daten zu definierten Sammlungen
 2. Die syntaktische Prüfung der RDF-Daten
 3. Aussortieren von doppelten Tripeln und RDF-Tripeln mit relativen URIs
 4. Erste Statistik und Übersicht verwendeter Properties und RDF-Namensräume zur Einschätzung der Nutzbarkeit der Daten
 
-Der Anschließende Import beinhaltet:
-
-- Import in einen lokalen Fuseki RDF-Triple-Store
+Der anschließende **Import** besteht aus dem Einspielen der bereinigten RDF-Daten als Named Graph in einen lokalen Fuseki RDF-Triple-Store.
 
 ## Voraussetzungen
 
