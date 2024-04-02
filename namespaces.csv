@@ -14,7 +14,7 @@ GND,http://d-nb.info/gnd/,gnd
 GeoSPARQL,http://www.opengis.net/ont/geosparql#,geosparql
 Getty AAT,http://vocab.getty.edu/aat/,aat
 Getty TGN,http://vocab.getty.edu/tgn/,tgn
-Hornmostel-Sachs-Klassifikation,http://www.mimo-db.eu/HornbostelAndSachs/,hbsachs
+Hornbostel-Sachs-Klassifikation,http://www.mimo-db.eu/HornbostelAndSachs/,hbsachs
 Iconclass,http://iconclass.org/,iconclass
 ORCID,https://orcid.org/,orcid
 OWL,http://www.w3.org/2002/07/owl#,owl

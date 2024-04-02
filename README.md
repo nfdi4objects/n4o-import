@@ -2,7 +2,9 @@
 
 [Dieses Repository](https://github.com/nfdi4objects/n4o-rdf-import) enthält
 Skripte zur Prüfung von zu importierenden RDF-Daten in den oder die
-Knowledge-Graphen von NFDI4Objects. Dies beinhaltet:
+Knowledge-Graphen von NFDI4Objects.
+
+Die Datenannahme und Prüfung beinhaltet:
 
 1. Die eindeutige Zuordnung von gelieferten RDF-Daten zu definierten Sammlungen
 2. Die syntaktische Prüfung der RDF-Daten
@@ -23,7 +25,9 @@ Datenpublikationen, deren Daten übernommen werden können und falls vorhanden
 die dazu gehörige übergeordnete Datenbank aus
 <https://nfdi4objects.github.io/n4o-databases/>.
 
-## Installation
+## Benutzung
+
+### Installation
 
 ~~~sh
 git clone https://github.com/nfdi4objects/n4o-rdf-import.git && cd n40-rdf-import
@@ -34,8 +38,6 @@ Benötigt werden Standard-Kommandozeilenwerkzeuge (grep, awk, sed...) sowie
 - rapper (`sudo apt install raptor2-utils`)
 - jq (`sudo apt install jq`)
 - Python 3
-
-## Benutzung
 
 ### Annahme und Erstkontrolle der Daten
 
