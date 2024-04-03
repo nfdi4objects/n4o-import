@@ -7,6 +7,7 @@ CRMinf,http://www.ics.forth.gr/isl/CRMinf/,crminf
 CRMsci,http://www.ics.forth.gr/isl/CRMsci/crmsci,crmsci
 DC Type,http://purl.org/dc/dcmitype/,dctype
 DC,http://purl.org/dc/elements/1.1/,dc
+DC Terms,http://purl.org/dc/terms/,dct
 Erlangen CRM 2017,http://erlangen-crm.org/170309/,crm170309
 FAU Sammlungs-Ontologie,http://objekte-im-netz.fau.de/ontology/common/,faucol
 FOAF,http://xmlns.com/foaf/0.1/,foaf
@@ -27,3 +28,6 @@ Simple Features geometry Ontology,http://www.opengis.net/ont/sf#,sf
 Wikidata,http://www.wikidata.org/entity/,wd
 XML Schema,http://www.w3.org/2001/XMLSchema#,xsd
 iDAI.chronontology,http://chronontology.dainst.org/period/,chrono
+Nomisma Ontology,http://nomisma.org/ontology#,nomisma
+WGS84 lat/long,http://www.w3.org/2003/01/geo/wgs84_pos#long,wgs84
+VoiD,http://rdfs.org/ns/void#,void
