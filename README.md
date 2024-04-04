@@ -76,3 +76,12 @@ bekannten Namensräumen in der Datei [`namespaces.csv`](namespaces.csv) abgeglic
 Mit dem Skript `import-rdf.sh` können anschließend Sammlungen in einen lokalen
 RDF-Triple-Store (Fuseki) geladen werden, wobei die vorhandenen RDF-Daten der
 Sammlung jeweils überschrieben werden.
+
+### Konvertierung in Property-Graphen
+
+Neben der RDF-Kodierun sollen die Daten oder Teile davon in einen Property-Graphen überführt und dort mit anderen Daten zusammengeführt werden. Das Datenmodell hierfür ist noch in Arbeit und wird mittelfristig mit der [NFDI4Objects Core Ontologie](https://nfdi4objects.github.io/n4o-core-ontology/)
+synchronisiert werden.
+
+Eine erste grobe Übersicht gibt die Liste von Node Labels und entsprechenden
+RDF-Klassen aus verschiedenen unterstützen Datenformaten und Ontologien (insbesondere LIDO und CIDOC-CRM) in der Datei [`pg-model.csv`](pg-model.csv).
+
