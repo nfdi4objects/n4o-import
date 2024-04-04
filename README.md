@@ -22,10 +22,15 @@ Datenbank aus <https://nfdi4objects.github.io/n4o-databases/> zugeordnet sein.
 Unabhängige Sammlungen, die zu keiner Datenbank gehören, können auch als
 einzelne Datenpublikationen angesehen werden.
 
-In [`n4o-collections.csv`](n4-collections.csv) stehen bekannte Sammlungen und
+In [`n4o-collections.csv`](n4o-collections.csv) stehen bekannte Sammlungen und
 Datenpublikationen, deren Daten übernommen werden können und falls vorhanden
 die dazu gehörige übergeordnete Datenbank aus
 <https://nfdi4objects.github.io/n4o-databases/>.
+
+Das Skript `pg.py` konvertiert die Datei `n4o-collections.csv` ins PG format.
+Mit `make` wird damit die Datei `no4-collections.pg` aktualisiert. Diese Datei
+kann mit <https://github.com/nfdi4objects/n4o-databases/blob/main/n4o-databases.pg>
+zusammengeführt werden.
 
 ## Benutzung
 
