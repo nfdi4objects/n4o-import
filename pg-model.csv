@@ -8,7 +8,7 @@ Concept,lido:conceptComplexType,,
 MixedConcept,lido:conceptMixedComplexType,,
 DateSet,lido:dateSetComplexType,,
 Object,lido:objectComplexType,,
-ObjectSet,lido:objectSeComplexType
+ObjectSet,lido:objectSeComplexType,,
 Appellation,lido:appellationComplexType,,
 DescriptiveNote,lido:descriptiveNoteComplexType,,
 Subject,lido:subjectComplexType,,
@@ -22,14 +22,14 @@ GML,lido:gmlComplexType,,
 RelatedEventSet,lido:relatedEventSetComplexType,,
 MaterialTechSet,lido:materialsTechSetComplexType,,
 PlaceSet,lido:placeSetComplexType,E9 Move,http://terminology-view.lido-schema.org/vocnet/?uriVocItem=http://terminology.lido-schema.org/&startNode=lido00409&lang=en&d=n
-ActorInRoleSet,lido:actorInRoleSetComplexType
+ActorInRoleSet,lido:actorInRoleSetComplexType,,
 ActorSet,lido:actorSetComplexType,,
-ActorInRole,lido:actorInRoleComplexType
+ActorInRole,lido:actorInRoleComplexType,,
 Actor,lido:actorComplexType,,
 Record,lido:lido,E31 Document,
 DescriptiveMetadata,lido:descriptiveMetadata,,
 AdministrativeMetadata,lido:administrativeMetadata,,
-ResourceSet,lido:resourceSet
+ResourceSet,lido:resourceSet,,
 EventSet,lido:eventSet,,
 RecordInfoSet,lido:recordInfoSet,,
 RelatedWorkSet,lido:relatedWorkSet,,
