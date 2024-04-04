@@ -77,7 +77,7 @@ receive() {
 
     # Verschiedene Statistiken
 
-    properties=$dir/properties
+    properties=$dir/properties.txt
     echo
     <$absolute awk '{print $2}' | sed 's/[<>]//g' | sort | uniq -c | sort -nrk1 > $properties
     echo "Statistik der Properties in \`$properties\` mit $(<$properties wc -l) Properties."
@@ -86,7 +86,7 @@ receive() {
     echo "..."
     echo "~~~"
 
-    namespaces=$dir/namespaces
+    namespaces=$dir/namespaces.txt
     echo
     # Heuristik zur Extraktion von Namensräumen aus absoluten URIs
     <$absolute awk '{print $1} $3~/^</ {print $3}' | sed 's/^<//' | \
