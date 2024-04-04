@@ -17,7 +17,7 @@ function import_collection() {
     if [[ -s "$absolute" ]]; then
         echo "Importing $absolute into Fuseki" 
         /opt/fuseki/bin/s-put http://localhost:3030/n4o-rdf-import \
-            n4o:$collection $absolute
+            n4oc:$collection $absolute
     else
         echo "Missing RDF file: $absolute"
         exit 1
