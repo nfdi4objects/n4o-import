@@ -1,13 +1,12 @@
 #!/usr/bin/bash
 set -euo pipefail
 
-collection=$1
-input=$2
-
 if [[ $# -ne 2 ]]; then
   echo "Usage: $0 COLLECTION_ID INPUT_FILE"
   echo
 fi
+
+collection=${1:-}
 
 if [[ ! "$collection" =~ ^[0-9]*$ ]]; then
   echo "COLLECTION_ID muss numerisch sein!"
@@ -20,6 +19,7 @@ fi
 
 [[ $# -eq 2 ]] || exit 1
 
+input=$2
 
 name=Testammlung
 
@@ -92,7 +92,7 @@ receive() {
     <$absolute awk '{print $1} $3~/^</ {print $3}' | sed 's/^<//' | \
         sed 's/#.*$/#/;t;s|/[^/]*>$|/|;t;s/:.*$/:/' | \
         sort | uniq -c | sort -nrk1 > $namespaces
-    echo "Statistik der Namensräume (nur Subjekte und Objekte) in \`$namespaces\` mit $(<$namespaces wc -l) Einträgen. "
+    echo "Statistik der Namensräume von Subjekten und Objekten in \`$namespaces\` mit $(<$namespaces wc -l) Einträgen. "
     echo "Davon bekannte Namensräume:"
     echo "~~~"
     <$namespaces ./known-namespaces.py
