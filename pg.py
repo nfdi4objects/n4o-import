@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 import sys
+import json
+import csv
 
 def read_namespaces():
     ns = {}
@@ -14,13 +16,22 @@ def main():
     # for uri, name in ns.items(): 
     #    print(f'{uri} name:"{name}"')
 
-    with open('n4o-collections.csv', 'r') as file:
-        for line in file.readlines()[1:]:
-            id, name, url, db = line.strip().split(',')
-            names = ",".join([f'"{n}"' for n in name.split('|')])
-            print(f'n4oc:{id} :Collection name:{names} url:"{url}"')
-            if db:
-                print(f'n4oc:{id} -> {db} :partOf')
+    with open('n4o-collections.csv', newline='') as csvfile:
+        reader = csv.DictReader(csvfile)
+        collections = [row for row in reader]
+
+    for col in collections:
+        col["name"] = col['name'].split('|')
+        names = ",".join([f'"{n}"' for n in col['name']])
+        print(f'n4oc:{col["id"]} :Collection name:{names} url:"{col["url"]}"')
+        if col['db']:
+            print(f'n4oc:{col["id"]} -> {col["db"]} :partOf')
+        else:
+            del(col['db'])
+
+    with open('n4o-collections.json', 'w') as jsonfile:
+        json.dump(collections, jsonfile, indent=2)
+
 
 if __name__ == "__main__":
     main()
