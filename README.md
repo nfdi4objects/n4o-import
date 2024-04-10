@@ -48,7 +48,7 @@ Benötigt werden Standard-Kommandozeilenwerkzeuge (grep, awk, sed...) sowie
 
 ### Annahme und Erstkontrolle der Daten
 
-Das Skript [`receive.sh`](receive.sh) erwartet eine Sammlungs-ID und eine RDF/Turtle-Datei.
+Das Skript [`rdf-collect`](rdf-collect) erwartet eine Sammlungs-ID und eine RDF/Turtle-Datei.
 
 **Beispiele:**
 
