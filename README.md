@@ -48,7 +48,7 @@ Benötigt werden Standard-Kommandozeilenwerkzeuge (grep, awk, sed...) sowie
 
 ### Annahme und Erstkontrolle der Daten
 
-Das Skript [`rdf-collect`](rdf-collect) erwartet eine Sammlungs-ID und eine RDF/Turtle-Datei.
+Das Skript [`receive.sh`](receive.sh) erwartet eine Sammlungs-ID und eine RDF/Turtle-Datei.
 
 **Beispiele:**
 
@@ -79,9 +79,4 @@ Sammlung jeweils überschrieben werden.
 
 ### Konvertierung in Property-Graphen
 
-Neben der RDF-Kodierun sollen die Daten oder Teile davon in einen Property-Graphen überführt und dort mit anderen Daten zusammengeführt werden. Das Datenmodell hierfür ist noch in Arbeit und wird mittelfristig mit der [NFDI4Objects Core Ontologie](https://nfdi4objects.github.io/n4o-core-ontology/)
-synchronisiert werden.
-
-Eine erste grobe Übersicht gibt die Liste von Node Labels und entsprechenden
-RDF-Klassen aus verschiedenen unterstützen Datenformaten und Ontologien (insbesondere LIDO und CIDOC-CRM) in der Datei [`pg-model.csv`](pg-model.csv).
-
+Neben der RDF-Kodierun sollen die Daten oder Teile davon in einen Property-Graphen überführt und dort mit anderen Daten zusammengeführt werden. Siehe dazu das Code-Repository <https://github.com/nfdi4objects/n4o-property-graph/>.
