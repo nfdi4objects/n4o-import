@@ -1,17 +1,21 @@
 # RDF-Import für NFDI4Objects
 
-[Dieses Repository](https://github.com/nfdi4objects/n4o-rdf-import) enthält
-Skripte zur Prüfung von zu importierenden RDF-Daten in den oder die
-Knowledge-Graphen von NFDI4Objects.
+[Dieses Repository](https://github.com/nfdi4objects/n4o-import) enthält
+Skripte zur Prüfung von zu importierenden Daten in den oder die
+Knowledge-Graphen von NFDI4Objects. Unterstützt werden
+
+- XML-Daten im LIDO-Format
+- RDF-Daten die sich auf CIDOC-CRM und/oder die NFDI4Objects Core Ontologie mappen lassen
 
 Die **Datenannahme und Prüfung** beinhaltet:
 
-1. Die eindeutige Zuordnung von gelieferten RDF-Daten zu definierten Sammlungen
-2. Die syntaktische Prüfung der RDF-Daten
-3. Aussortieren von doppelten Tripeln und RDF-Tripeln mit relativen URIs
-4. Erste Statistik und Übersicht verwendeter Properties und RDF-Namensräume zur Einschätzung der Nutzbarkeit der Daten
+1. Die eindeutige Zuordnung von gelieferten Daten zu definierten Sammlungen
+2. Die syntaktische Prüfung der Daten (wohlgeformtes XML bzw. RDF)
+3. Im Falle von XML-Daten die Validierung gegen das LIDO-XML-Format
+4. Im Falle von RDF-Daten das Aussortieren von doppelten Tripeln, Tripeln mit relativen URIs und Tripeln, die eigeme Aussagen über die unterstützten Ontologien machen
+5. Erstelle von Statistiken und Übersichten verwendeter RDF-Properties und Namensräume bzw. von verwendeten XML-Elementen zur Einschätzung der Nutzbarkeit der Daten
 
-Der anschließende **Import** besteht aus dem Einspielen der bereinigten RDF-Daten als Named Graph in einen lokalen Fuseki RDF-Triple-Store.
+Das anschließende **Einspielen** der bereinigten RDF-Daten als Named Graph in einen lokalen Fuseki RDF-Triple-Store bzw. das Konvertieren der LIDO-XML-Daten zur Einspielung in den gemeinsamen Knowledge Graphen erfolgt anschließend in einem eigenen Schritt (siehe <https://github.com/nfdi4objects/n4o-property-graph/>).
 
 ## Voraussetzungen
 
@@ -37,7 +41,7 @@ zusammengeführt werden.
 ### Installation
 
 ~~~sh
-git clone https://github.com/nfdi4objects/n4o-rdf-import.git && cd n40-rdf-import
+git clone https://github.com/nfdi4objects/n4o-import.git && cd n4o-import
 ~~~
 
 Benötigt werden Standard-Kommandozeilenwerkzeuge (grep, awk, sed...) sowie
@@ -71,9 +75,9 @@ bekannten Namensräumen in der Datei [`namespaces.csv`](namespaces.csv) abgeglic
 (siehe auch die kuratierte Liste von Terminologien mit Namensräumen unter
 <https://nfdi4objects.github.io/n4o-terminologies/>).
 
-### Import in Triple-Store
+### Einspielen in Triple-Store
 
-Mit dem Skript `import-rdf.sh` können anschließend Sammlungen in einen lokalen
+Mit dem Skript `load-rdf.sh` können anschließend Sammlungen in einen lokalen
 RDF-Triple-Store (Fuseki) geladen werden, wobei die vorhandenen RDF-Daten der
 Sammlung jeweils überschrieben werden.
 
