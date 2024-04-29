@@ -47,12 +47,14 @@ git clone https://github.com/nfdi4objects/n4o-import.git && cd n4o-import
 Benötigt werden Standard-Kommandozeilenwerkzeuge (grep, awk, sed...) sowie
 
 - rapper (`sudo apt install raptor2-utils`)
+- xmlstarlet
 - jq (`sudo apt install jq`)
 - Python 3
 
 ### Annahme und Erstkontrolle der Daten
 
-Das Skript [`receive.sh`](receive.sh) erwartet eine Sammlungs-ID und eine RDF/Turtle-Datei.
+Das Skript [`receive`](receive) erwartet eine Sammlungs-ID und eine RDF/Turtle-
+oder LIDO-XML-Datei.
 
 **Beispiele:**
 

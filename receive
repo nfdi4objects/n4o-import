@@ -29,8 +29,35 @@ else
 fi
 
 dir=import/$collection
+mkdir -p "$dir"
 
 receive() {
+    extension="${input##*.}"
+    if [ "$extension" == "xml" ]; then
+        receive_lido
+    elif [ "$extension" == "ttl" ]; then
+        receive_rdf
+    else
+        echo "Unbekannte Dateiendung!"
+        exit 1
+    fi
+}
+
+receive_lido() {
+    echo "## $collection: $name"
+    echo
+    echo "Empfangene XML-Daten im LIDO-Format aus \`$input\` "
+    echo
+    echo "Anzahl von LIDO-Datensätzen:"
+
+    xmlstarlet sel -t -v 'count(/lido:lidoWrap/lido:lido)' "$input"
+
+    echo
+
+    # TODO: XML-Validierung 
+}
+
+receive_rdf() {
     echo "## $collection: $name"
     echo
     echo "Empfangene RDF-Daten im Turtle-Format aus \`$input\` "
@@ -47,6 +74,7 @@ receive() {
         exit 1
     fi
 
+    # TODO: alten Stand sichern
     rm -rf $dir # alten Stand löschen
     mkdir -p $dir
 
