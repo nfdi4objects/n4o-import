@@ -68,14 +68,15 @@ oder LIDO-XML-Datei.
   allgemeinen Repository Zenodo unter der DOI <https://doi.org/10.5281/zenodo.4765603>
   publiziert (Sammlungs-ID 9) und wird einzeln übernommen.
 
-Die empfangenen RDF-Daten werden syntaktisch geprüft und rudimentär bereinigt
-im Verzeichnis [`import`](import) abgelegt (Datei `absolute.nt`).
+Die empfangenen RDF- bzw. LIDO-Daten werden syntaktisch geprüft und rudimentär
+bereinigt im Verzeichnis [`import`](import) abgelegt (Datei `absolute.nt` bzw.
+`valid.xml`).
 
-Darüber hinaus wird eine Statistik der verwendeten RDF-Properties und der
-RDF-Namensräume von Subjekt- und Objekt-URIs erstellt. Letztere werden mit
-bekannten Namensräumen in der Datei [`namespaces.csv`](namespaces.csv) abgeglichen
-(siehe auch die kuratierte Liste von Terminologien mit Namensräumen unter
-<https://nfdi4objects.github.io/n4o-terminologies/>).
+Darüber hinaus wird für RDF-Daten eine Statistik der verwendeten RDF-Properties
+und der RDF-Namensräume von Subjekt- und Objekt-URIs erstellt. Letztere werden
+mit bekannten Namensräumen in der Datei [`namespaces.csv`](namespaces.csv)
+abgeglichen (siehe auch die kuratierte Liste von Terminologien mit Namensräumen
+unter <https://nfdi4objects.github.io/n4o-terminologies/>).
 
 ### Einspielen in Triple-Store
 
@@ -85,4 +86,4 @@ Sammlung jeweils überschrieben werden.
 
 ### Konvertierung in Property-Graphen
 
-Neben der RDF-Kodierun sollen die Daten oder Teile davon in einen Property-Graphen überführt und dort mit anderen Daten zusammengeführt werden. Siehe dazu das Code-Repository <https://github.com/nfdi4objects/n4o-property-graph/>.
+Neben der RDF-Kodierung sollen die Daten oder Teile davon in einen Property-Graphen überführt und dort mit anderen Daten zusammengeführt werden. Siehe dazu das Code-Repository <https://github.com/nfdi4objects/n4o-property-graph/>.

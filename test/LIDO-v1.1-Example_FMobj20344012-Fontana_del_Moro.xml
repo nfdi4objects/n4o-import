@@ -1,0 +1,1550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lido:lidoWrap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.lido-schema.org http://www.lido-schema.org/schema/v1.1/lido-v1.1.xsd"
+	xmlns="http://www.lido-schema.org" xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:gml="http://www.opengis.net/gml"
+	xmlns:doc="http://www.mda.org.uk/spectrumXML/Documentation"
+	xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:tei="http://www.tei-c.org/ns/1.0"
+	xmlns:lido="http://www.lido-schema.org" xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:smil20lang="http://www.w3.org/2001/SMIL20/Language">
+
+<!-- Metadata related to the editing of this record:
+	 dct:title:		LIDO-v1.1-Example_FMobj20344012-Fontana_del_Moro.xml
+	 dct:creator:	    	Angela Kailus. Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg
+	 dct:created:	    	2021-07-01
+	 dct:modified:	2021-07-22 
+ 	 dct:modified:	2021-12-18 
+	 dct:references:	http://www.lido-schema.org/documents/examples/LIDO-Example_FMobj20344012-Fontana_del_Moro.xml
+	 dct:description:	Documentation objective: Example of building, sculpture, multi-part object  
+-->
+
+	<lido:lido>
+		<lido:lidoRecID lido:type="http://terminology.lido-schema.org/lido00100" lido:source="Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg">DE-Mb112/lido/obj20344012</lido:lidoRecID>
+		<lido:objectPublishedID lido:type="http://terminology.lido-schema.org/lido00099" lido:pref="http://terminology.lido-schema.org/lido00170">https://d-nb.info/gnd/4739509-6</lido:objectPublishedID>
+		<lido:category>
+			<skos:Concept rdf:about="http://terminology.lido-schema.org/lido00096">
+				<skos:prefLabel xml:lang="en">Human-made object</skos:prefLabel>
+				<skos:exactMatch>http://vocab.getty.edu/aat/300386957</skos:exactMatch>
+				<skos:exactMatch>http://erlangen-crm.org/current/E22_Human-Made_Object</skos:exactMatch>
+			</skos:Concept>
+			<lido:term lido:addedSearchTerm="yes">man-made object</lido:term>
+		</lido:category>
+		<lido:descriptiveMetadata xml:lang="de">
+			<lido:objectClassificationWrap>
+				<lido:objectWorkTypeWrap>
+					<lido:objectWorkType lido:type="http://terminology.lido-schema.org/lido00767">
+						<skos:Concept rdf:about="http://vocab.getty.edu/aat/300006179">
+							<skos:prefLabel xml:lang="en">fountains</skos:prefLabel>
+							<skos:prefLabel xml:lang="de">Brunnen</skos:prefLabel>
+							<skos:altLabel xml:lang="en">fountain</skos:altLabel>
+						</skos:Concept>
+						<lido:term lido:addedSearchTerm="yes">Brunnenanlage (künstlerisch gestalteter Brunnen)</lido:term>
+					</lido:objectWorkType>
+				</lido:objectWorkTypeWrap>
+				<lido:classificationWrap>
+					<lido:classification lido:type="http://terminology.lido-schema.org/lido00853">
+						<lido:conceptID lido:type="http://terminology.lido-schema.org/lido00100" lido:source="Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg. DDK-Thesaurus">48847700</lido:conceptID>
+						<lido:term lido:pref="http://terminology.lido-schema.org/lido00169">Architektur</lido:term>
+						<lido:term lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="en">architecture (object genre)</lido:term>
+					</lido:classification>
+				</lido:classificationWrap>
+			</lido:objectClassificationWrap>
+			<lido:objectIdentificationWrap>
+				<lido:titleWrap>
+					<lido:titleSet>
+						<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169">Fontana del Moro</lido:appellationValue>
+						<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="it">Fontana del Moro</lido:appellationValue> 
+						<lido:sourceAppellation>Touring Club Italiano: Roma, Mailand 2016, S. 406</lido:sourceAppellation>
+					</lido:titleSet>
+					<lido:titleSet>
+						<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00170">Mohrenbrunnen</lido:appellationValue>
+						<lido:sourceAppellation>Deutsche Nationalbibliothek: Gemeinsame Normdatei. URL: https://d-nb.info/gnd/4739509-6 [2021-12-17]</lido:sourceAppellation>
+					</lido:titleSet> 
+					<lido:titleSet>
+						<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="en">Fontana del Moro (Rome, Italy)</lido:appellationValue>
+						<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00170" xml:lang="en">Fountain of the Moor (Rome, Italy)</lido:appellationValue> 
+						<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00170" xml:lang="en">Moor, Fountain of the (Rome, Italy)</lido:appellationValue>
+						<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00170" xml:lang="en">Moro, Fontana del (Rome, Italy)</lido:appellationValue> 
+						<lido:sourceAppellation>Library of Congress: LC Subject Headings (LCSH). URL: http://id.loc.gov/authorities/subjects/sh2003005893 [2021-12-17] </lido:sourceAppellation>
+					</lido:titleSet> 
+				</lido:titleWrap>
+				<lido:repositoryWrap>
+					<lido:repositorySet lido:type="http://terminology.lido-schema.org/lido01018">
+						<lido:displayRepository>Rom, Piazza Navona, Südseite</lido:displayRepository>
+						<lido:repositoryLocation>
+							<lido:placeID lido:type="http://terminology.lido-schema.org/lido00099">http://www.wikidata.org/wiki/Q463400</lido:placeID>
+							<lido:namePlaceSet>
+								<lido:appellationValue>Piazza Navona</lido:appellationValue>
+							</lido:namePlaceSet>
+							<lido:gml>
+								<gml:Point>
+									<gml:pos>41.8981 12.4731</gml:pos>
+								</gml:Point>
+							</lido:gml>
+							<lido:partOfPlace>
+								<lido:placeID lido:type="http://terminology.lido-schema.org/lido00099">http://www.wikidata.org/wiki/Q220</lido:placeID>
+								<lido:namePlaceSet>
+									<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="en">Rome</lido:appellationValue>
+									<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="it">Roma</lido:appellationValue>
+									<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="de">Rom</lido:appellationValue>
+								</lido:namePlaceSet>
+								<lido:gml>
+									<gml:Point>
+										<gml:pos>41.910151 12.5086</gml:pos>
+									</gml:Point>
+								</lido:gml>
+								<lido:partOfPlace>
+									<lido:placeID lido:type="http://terminology.lido-schema.org/lido00099">http://www.wikidata.org/wiki/Q18288160</lido:placeID>
+									<lido:namePlaceSet>
+										<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="en">Metropolitan City of Rome</lido:appellationValue>
+										<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="de">Metropolitanstadt Rom</lido:appellationValue>
+										<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="it">Città metropolitana di Roma Capitale</lido:appellationValue>
+									</lido:namePlaceSet>
+									<lido:gml>
+										<gml:Point>
+											<gml:pos>41.96667 12.66667</gml:pos>
+										</gml:Point>
+									</lido:gml>
+									<lido:partOfPlace>
+										<lido:placeID lido:type="http://terminology.lido-schema.org/lido00099">http://www.wikidata.org/wiki/Q1282</lido:placeID>
+										<lido:namePlaceSet>
+											<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="en">Lazio</lido:appellationValue>
+											<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="de">Latium</lido:appellationValue>
+											<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="it">Lazio</lido:appellationValue>
+										</lido:namePlaceSet>
+										<lido:gml>
+											<gml:Point>
+												<gml:pos>42.07762 12.77878</gml:pos>
+											</gml:Point>
+										</lido:gml>
+										<lido:partOfPlace>
+											<lido:placeID lido:type="http://terminology.lido-schema.org/lido00099">http://www.wikidata.org/wiki/Q38</lido:placeID>
+											<lido:namePlaceSet>
+												<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="en">Italy</lido:appellationValue>
+												<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="de">Italien</lido:appellationValue>
+												<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="it">Italia</lido:appellationValue>
+											</lido:namePlaceSet>
+											<lido:gml>
+												<gml:Point>
+												<gml:pos>42.5 12.5</gml:pos>
+												</gml:Point>
+											</lido:gml>
+											<lido:placeClassification>
+												<skos:Concept
+												rdf:about="http://www.wikidata.org/wiki/Q6256">
+												<skos:prefLabel xml:lang="en"
+												>country</skos:prefLabel>
+												<skos:prefLabel xml:lang="de"
+												>Land</skos:prefLabel>
+												<skos:altLabel xml:lang="de">Staat</skos:altLabel>
+												<skos:mappingRelation>http://vocab.getty.edu/aat/300387506</skos:mappingRelation>
+												<skos:mappingRelation>http://d-nb.info/gnd/4056618-3</skos:mappingRelation>
+												</skos:Concept>
+											</lido:placeClassification>
+										</lido:partOfPlace>
+										<lido:placeClassification>
+											<skos:Concept
+												rdf:about="http://www.wikidata.org/wiki/Q16110">
+												<skos:prefLabel xml:lang="en">region of Italy</skos:prefLabel>
+												<skos:prefLabel xml:lang="de">Region in Italien</skos:prefLabel>
+												<skos:mappingRelation>http://vocab.getty.edu/aat/300236112</skos:mappingRelation>
+											</skos:Concept>
+										</lido:placeClassification>
+									</lido:partOfPlace>
+									<lido:placeClassification>
+										<skos:Concept
+											rdf:about="http://www.wikidata.org/wiki/Q15110">
+											<skos:prefLabel xml:lang="en">metropolitan city of
+												Italy</skos:prefLabel>
+											<skos:prefLabel xml:lang="de"
+												>Metropolitanstadt</skos:prefLabel>
+											<skos:mappingRelation>http://vocab.getty.edu/aat/300132618</skos:mappingRelation>
+											<skos:mappingRelation>http://d-nb.info/gnd/1114188395</skos:mappingRelation>
+										</skos:Concept>
+									</lido:placeClassification>
+								</lido:partOfPlace>
+								<lido:placeClassification>
+									<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q515">
+										<skos:prefLabel xml:lang="en">city</skos:prefLabel>
+										<skos:prefLabel xml:lang="de">Stadt</skos:prefLabel>
+										<skos:mappingRelation>http://vocab.getty.edu/aat/300008389</skos:mappingRelation>
+										<skos:mappingRelation>http://d-nb.info/gnd/4056723-0</skos:mappingRelation>
+									</skos:Concept>
+								</lido:placeClassification>
+							</lido:partOfPlace>
+							<lido:placeClassification>
+								<skos:Concept rdf:about="http://vocab.getty.edu/aat/300164841">
+									<skos:prefLabel xml:lang="en">piazzas (squares)</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Piazza</skos:prefLabel>
+									<skos:altLabel xml:lang="de">Piazze</skos:altLabel>
+								</skos:Concept>
+								<lido:term xml:lang="de">Platz (öffentlicher Raum)</lido:term>
+							</lido:placeClassification>
+						</lido:repositoryLocation>
+					</lido:repositorySet>
+				</lido:repositoryWrap>
+				<lido:objectMaterialsTechWrap>
+					<lido:objectMaterialsTechSet>
+						<lido:materialsTech>
+							<lido:termMaterialsTech
+								lido:type="http://terminology.lido-schema.org/lido00132">
+								<skos:Concept rdf:about="http://vocab.getty.edu/aat/300011443">
+									<skos:prefLabel xml:lang="en">marble (rock)</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Marmor</skos:prefLabel>
+								</skos:Concept>
+							</lido:termMaterialsTech>
+						</lido:materialsTech>
+					</lido:objectMaterialsTechSet>
+				</lido:objectMaterialsTechWrap>
+			</lido:objectIdentificationWrap>
+			<lido:objectRelationWrap>
+				<lido:relatedWorksWrap>
+					<lido:relatedWorkSet lido:sortorder="2">
+						<lido:displayRelatedWork>dargestellt in: Benoist, Félix; Benoist, Philippe (1813): Rom, Piazza Navona. Lithographie, 1870</lido:displayRelatedWork>
+						<lido:relatedWork>
+							<lido:object>
+								<lido:objectWebResource>http://foto.biblhertz.it/obj08003574</lido:objectWebResource>
+								<lido:objectID lido:type="http://terminology.lido-schema.org/lido00100" lido:source="Bibliotheca Hertziana - Max-Planck-Institut für Kunstgeschichte">DE-Y2/object/obj08003574,T,024</lido:objectID>
+								<lido:objectNote>In: Rome dans sa grandeur. Vues, monuments anciens et modernes, description, histoire, institutions, édifices religieux et profanes… Tome 3: Rome moderne. Paris, 1870. Kap. 1, 13</lido:objectNote>
+							</lido:object>
+						</lido:relatedWork>
+						<lido:relatedWorkRelType>
+							<skos:Concept rdf:about="http://terminology.lido-schema.org/lido00998">
+								<skos:prefLabel xml:lang="en">is depicted in</skos:prefLabel>
+								<skos:prefLabel xml:lang="de">ist abgebildet in</skos:prefLabel>
+							</skos:Concept>
+						</lido:relatedWorkRelType>
+					</lido:relatedWorkSet>
+					<lido:relatedWorkSet>
+						<lido:displayRelatedWork>Touring Club Italiano: Roma, Mailand 2016, S. 406 f.</lido:displayRelatedWork>
+						<lido:relatedWork>
+							<lido:object>
+								<lido:objectID lido:type="http://terminology.lido-schema.org/lido00099">http://www.worldcat.org/oclc/953798500</lido:objectID>
+							</lido:object>
+						</lido:relatedWork>
+						<lido:relatedWorkRelType>
+							<skos:Concept rdf:about="http://terminology.lido-schema.org/lido00617">
+								<skos:prefLabel xml:lang="en">is documented in</skos:prefLabel>
+								<skos:prefLabel xml:lang="de">ist dokumentiert in</skos:prefLabel>
+							</skos:Concept>
+						</lido:relatedWorkRelType>
+					</lido:relatedWorkSet>
+					<lido:relatedWorkSet lido:sortorder="1">
+						<lido:displayRelatedWork>hat Teil: Brunnenbecken mit vier Tritonen und Masken - Brunnen - Porta, Giacomo della - 1575-1576</lido:displayRelatedWork>
+						<lido:relatedWork>
+							<lido:object>
+								<lido:objectWebResource>http://www.bildindex.de/document/obj20344012?part=1</lido:objectWebResource>
+								<lido:objectID lido:type="http://terminology.lido-schema.org/lido00100" lido:source="Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg">DE-Mb112/object/obj20344012,T,001</lido:objectID>
+							</lido:object>
+						</lido:relatedWork>
+						<lido:relatedWorkRelType>
+							<skos:Concept rdf:about="http://terminology.lido-schema.org/lido00573">
+								<skos:prefLabel xml:lang="en">has part</skos:prefLabel>
+								<skos:prefLabel xml:lang="de">hat Teil</skos:prefLabel>
+							</skos:Concept>
+						</lido:relatedWorkRelType>
+					</lido:relatedWorkSet>
+					<lido:relatedWorkSet>
+						<lido:displayRelatedWork>hat Teil: Äthiopier im Kampf gegen einen Delphin - Mensch-Tier-Gruppe - Bernini, Giovanni Lorenzo u.a. - 1654</lido:displayRelatedWork>
+						<lido:relatedWork>
+							<lido:object>
+								<lido:objectWebResource>http://www.bildindex.de/document/obj20344012?part=2</lido:objectWebResource>
+								<lido:objectID lido:type="http://terminology.lido-schema.org/lido00100" lido:source="Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg">DE-Mb112/object/obj20344012,T,002</lido:objectID>
+							</lido:object>
+						</lido:relatedWork>
+						<lido:relatedWorkRelType>
+							<skos:Concept rdf:about="http://terminology.lido-schema.org/lido00573">
+								<skos:prefLabel xml:lang="en">has part</skos:prefLabel>
+								<skos:prefLabel xml:lang="de">hat Teil</skos:prefLabel>
+							</skos:Concept>
+						</lido:relatedWorkRelType>
+					</lido:relatedWorkSet>
+				</lido:relatedWorksWrap>
+			</lido:objectRelationWrap>
+		</lido:descriptiveMetadata>
+		<lido:administrativeMetadata xml:lang="de">
+			<lido:rightsWorkWrap>
+				<lido:rightsWorkSet>
+					<lido:rightsType lido:type="http://terminology.lido-schema.org/lido00921">
+						<skos:Concept rdf:about="https://creativecommons.org/publicdomain/zero/1.0/">
+							<skos:prefLabel xml:lang="en">CC0 1.0 Universal (CC0
+								1.0)</skos:prefLabel>
+							<skos:altLabel xml:lang="en">No Copyright</skos:altLabel>
+							<skos:altLabel xml:lang="en">Public Domain Dedication</skos:altLabel>
+							<skos:altLabel xml:lang="de">Kein Urheberrechtsschutz</skos:altLabel>
+						</skos:Concept>
+					</lido:rightsType>
+				</lido:rightsWorkSet>
+			</lido:rightsWorkWrap>
+			<lido:recordWrap>
+				<lido:recordID lido:type="http://terminology.lido-schema.org/lido00100">00154983</lido:recordID>
+				<lido:recordType>
+					<skos:Concept rdf:about="http://terminology.lido-schema.org/lido00141">
+						<skos:prefLabel xml:lang="en">Item-level record</skos:prefLabel>
+						<skos:prefLabel xml:lang="de">Einzelobjekt
+							(Katalogisierungsebene)</skos:prefLabel>
+					</skos:Concept>
+				</lido:recordType>
+				<lido:recordSource>
+					<lido:legalBodyID lido:type="http://terminology.lido-schema.org/lido00099" lido:source="ISIL (ISO 15511)">
+                  https://ld.zdb-services.de/resource/organisations/DE-Mb112</lido:legalBodyID>
+					<lido:legalBodyName>
+						<lido:appellationValue>Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg</lido:appellationValue>
+					</lido:legalBodyName>
+					<lido:legalBodyWeblink>https://www.uni-marburg.de/de/fotomarburg</lido:legalBodyWeblink>
+				</lido:recordSource>
+				<lido:recordRights>
+					<lido:rightsType lido:type="http://terminology.lido-schema.org/lido00921">
+						<skos:Concept rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+							<skos:prefLabel xml:lang="en">CC0 1.0 Universal (CC0 1.0)</skos:prefLabel>
+							<skos:altLabel xml:lang="en">No Copyright</skos:altLabel>
+							<skos:altLabel xml:lang="en">Public Domain Dedication</skos:altLabel>
+							<skos:altLabel xml:lang="de">Kein Urheberrechtsschutz</skos:altLabel>
+						</skos:Concept>
+					</lido:rightsType>
+					<lido:rightsHolder>
+						<lido:legalBodyID lido:type="http://terminology.lido-schema.org/lido00099" lido:source="ISIL (ISO 15511)">
+                      https://ld.zdb-services.de/resource/organisations/DE-Mb112</lido:legalBodyID>
+						<lido:legalBodyName>
+							<lido:appellationValue>Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg</lido:appellationValue>
+						</lido:legalBodyName>
+						<lido:legalBodyWeblink>https://www.uni-marburg.de/de/fotomarburg</lido:legalBodyWeblink>
+					</lido:rightsHolder>
+					<lido:creditLine>Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg. CC0 1.0 Universal (CC0 1.0)</lido:creditLine>
+				</lido:recordRights>
+				<lido:recordInfoSet>
+					<lido:recordInfoLink lido:formatResource="text/html">https://www.bildindex.de/document/obj20344012</lido:recordInfoLink>
+					<lido:recordMetadataDate>2021-12-06T15:23:14Z</lido:recordMetadataDate>
+				</lido:recordInfoSet>
+			</lido:recordWrap>
+			<lido:resourceWrap>
+				<lido:resourceSet>
+					<lido:resourceID lido:type="http://terminology.lido-schema.org/lido00100">1.172.842</lido:resourceID>
+					<lido:resourceRepresentation
+						lido:type="http://terminology.lido-schema.org/lido00451">
+						<lido:linkResource lido:formatResource="image/jpeg">http://www.bildindex.de/bilder/m/fm1172842</lido:linkResource>
+						<lido:resourceMeasurementsSet>
+							<lido:measurementType>
+								<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q35059">
+									<skos:prefLabel xml:lang="en">width</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Breite</skos:prefLabel>
+									<skos:mappingRelation>http://vocab.getty.edu/aat/300055647</skos:mappingRelation>
+								</skos:Concept>
+							</lido:measurementType>
+							<lido:measurementUnit>
+								<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q355198">
+									<skos:prefLabel xml:lang="en">pixel</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Pixel</skos:prefLabel>
+									<skos:mappingRelation>http://vocab.getty.edu/aat/300266190</skos:mappingRelation>
+								</skos:Concept>
+							</lido:measurementUnit>
+							<lido:measurementValue>350</lido:measurementValue>
+						</lido:resourceMeasurementsSet>
+					</lido:resourceRepresentation>
+					<lido:resourceRepresentation
+						lido:type="http://terminology.lido-schema.org/lido00464">
+						<lido:linkResource lido:formatResource="image/jpeg">http://www.bildindex.de/bilder/d/fm1172842</lido:linkResource>
+						<lido:resourceMeasurementsSet>
+							<lido:measurementType>
+								<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q35059">
+									<skos:prefLabel xml:lang="en">width</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Breite</skos:prefLabel>
+									<skos:mappingRelation>http://vocab.getty.edu/aat/300055647</skos:mappingRelation>
+								</skos:Concept>
+							</lido:measurementType>
+							<lido:measurementUnit>
+								<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q355198">
+									<skos:prefLabel xml:lang="en">pixel</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Pixel</skos:prefLabel>
+									<skos:mappingRelation>http://vocab.getty.edu/aat/300266190</skos:mappingRelation>
+								</skos:Concept>
+							</lido:measurementUnit>
+							<lido:measurementValue>1200</lido:measurementValue>
+						</lido:resourceMeasurementsSet>
+					</lido:resourceRepresentation>
+					<lido:resourceType>
+						<skos:Concept rdf:about="http://vocab.getty.edu/aat/300215302">
+							<skos:prefLabel xml:lang="en">digital images</skos:prefLabel>
+							<skos:altLabel xml:lang="en">digital image</skos:altLabel>
+						</skos:Concept>
+						<lido:term>Digitales Bild</lido:term>
+						<lido:term lido:addedSearchTerm="yes">Digitalbild</lido:term>
+					</lido:resourceType>
+					<lido:resourceDescription>Gesamtansicht</lido:resourceDescription>
+					<lido:resourceDateTaken>
+						<lido:displayDate>um 1900/1910?</lido:displayDate>
+						<lido:date>
+							<lido:earliestDate lido:type="http://terminology.lido-schema.org/lido00529">1900</lido:earliestDate>
+							<lido:latestDate lido:type="http://terminology.lido-schema.org/lido00529">1910</lido:latestDate>
+						</lido:date>
+					</lido:resourceDateTaken>
+					<lido:rightsResource>
+						<lido:rightsType lido:type="http://terminology.lido-schema.org/lido00921">
+							<skos:Concept
+								rdf:about="https://www.deutsche-digitale-bibliothek.de/content/lizenzen/rv-fz/">
+								<skos:prefLabel xml:lang="en">Free access – no
+									reuse</skos:prefLabel>
+								<skos:prefLabel xml:lang="de">Rechte vorbehalten – Freier
+									Zugang</skos:prefLabel>
+							</skos:Concept>
+						</lido:rightsType>
+						<lido:rightsHolder>
+							<lido:legalBodyID lido:type="http://terminology.lido-schema.org/lido00099" lido:source="ISIL (ISO 15511)">
+                          https://ld.zdb-services.de/resource/organisations/DE-Mb112</lido:legalBodyID>
+							<lido:legalBodyName>
+								<lido:appellationValue>Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg</lido:appellationValue>
+							</lido:legalBodyName>
+						</lido:rightsHolder>
+						<lido:creditLine xml:lang="de">Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg. Fotograf/Fotografin: unbekannt. Aufn.-Datum: um 1900/1910?. Rechte vorbehalten – Freier Zugang</lido:creditLine>
+					</lido:rightsResource>
+				</lido:resourceSet>
+			</lido:resourceWrap>
+		</lido:administrativeMetadata>
+	</lido:lido>
+	<lido:lido>
+		<lido:lidoRecID lido:type="http://terminology.lido-schema.org/lido00100" lido:source="Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg">DE-Mb112/lido/obj20344012,T,001</lido:lidoRecID>
+		<lido:category>
+			<skos:Concept rdf:about="http://terminology.lido-schema.org/lido00096">
+				<skos:prefLabel xml:lang="en">Human-made object</skos:prefLabel>
+				<skos:exactMatch>http://vocab.getty.edu/aat/300386957</skos:exactMatch>
+				<skos:exactMatch>http://erlangen-crm.org/current/E22_Human-Made_Object</skos:exactMatch>
+			</skos:Concept>
+			<lido:term lido:addedSearchTerm="yes">man-made object</lido:term>
+		</lido:category>
+		<lido:descriptiveMetadata xml:lang="de">
+			<lido:objectClassificationWrap>
+				<lido:objectWorkTypeWrap>
+					<lido:objectWorkType lido:type="http://terminology.lido-schema.org/lido00767">
+						<skos:Concept rdf:about="http://vocab.getty.edu/aat/300045614">
+							<skos:prefLabel xml:lang="en">basins (vessels)</skos:prefLabel>
+							<skos:altLabel xml:lang="en">basin (vessel)</skos:altLabel>
+						</skos:Concept>
+						<lido:term lido:addedSearchTerm="yes">Brunnenbecken</lido:term>
+						<lido:term lido:addedSearchTerm="yes">Becken (Gefäß)</lido:term>
+						<lido:term lido:addedSearchTerm="yes" xml:lang="en">fountain basin</lido:term>
+					</lido:objectWorkType>
+					<lido:objectWorkType lido:type="http://terminology.lido-schema.org/lido00766">
+						<skos:Concept rdf:about="http://vocab.getty.edu/aat/300400898">
+							<skos:prefLabel xml:lang="en">sculpture groups</skos:prefLabel>
+						</skos:Concept>
+						<lido:term lido:addedSearchTerm="yes" xml:lang="de">Skulpturengruppe</lido:term>
+					</lido:objectWorkType>
+				</lido:objectWorkTypeWrap>
+				<lido:classificationWrap>
+					<lido:classification lido:type="http://terminology.lido-schema.org/lido00853">
+						<lido:conceptID lido:type="http://terminology.lido-schema.org/lido00100" lido:source="Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg. DDK-Thesaurus">48846900</lido:conceptID>
+						<lido:term lido:pref="http://terminology.lido-schema.org/lido00169">
+				Skulptur (Objektgattung)</lido:term>
+						<lido:term lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="en">sculpture (object genre)</lido:term>
+					</lido:classification>
+				</lido:classificationWrap>
+			</lido:objectClassificationWrap>
+			<lido:objectIdentificationWrap>
+				<lido:titleWrap>
+					<lido:titleSet lido:type="http://vocab.getty.edu/aat/300417199">
+						<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="de">Fontana del Moro — Brunnenbecken mit vier Tritonen und Masken</lido:appellationValue>
+					</lido:titleSet>
+				</lido:titleWrap>
+				<lido:repositoryWrap>
+					<lido:repositorySet lido:type="http://terminology.lido-schema.org/lido01018">
+						<lido:displayRepository>Rom, Piazza Navona, Südseite</lido:displayRepository>
+						<lido:repositoryLocation>
+							<lido:placeID lido:type="http://terminology.lido-schema.org/lido00099">http://www.wikidata.org/wiki/Q463400</lido:placeID>
+							<lido:namePlaceSet>
+								<lido:appellationValue>Piazza Navona</lido:appellationValue>
+							</lido:namePlaceSet>
+							<lido:gml>
+								<gml:Point>
+									<gml:pos>41.8981 12.4731</gml:pos>
+								</gml:Point>
+							</lido:gml>
+							<lido:partOfPlace>
+								<lido:placeID lido:type="http://terminology.lido-schema.org/lido00099">http://www.wikidata.org/wiki/Q220</lido:placeID>
+								<lido:namePlaceSet>
+									<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="en">Rome</lido:appellationValue>
+									<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="it">Roma</lido:appellationValue>
+									<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="de">Rom</lido:appellationValue>
+								</lido:namePlaceSet>
+								<lido:gml>
+									<gml:Point>
+										<gml:pos>41.910151 12.5086</gml:pos>
+									</gml:Point>
+								</lido:gml>
+								<lido:partOfPlace>
+									<lido:placeID lido:type="http://terminology.lido-schema.org/lido00099">http://www.wikidata.org/wiki/Q18288160</lido:placeID>
+									<lido:namePlaceSet>
+										<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="en">Metropolitan City of Rome</lido:appellationValue>
+										<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="de">Metropolitanstadt Rom</lido:appellationValue>
+										<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="it">Città metropolitana di Roma Capitale</lido:appellationValue>
+									</lido:namePlaceSet>
+									<lido:gml>
+										<gml:Point>
+											<gml:pos>41.96667 12.66667</gml:pos>
+										</gml:Point>
+									</lido:gml>
+									<lido:partOfPlace>
+										<lido:placeID lido:type="http://terminology.lido-schema.org/lido00099">http://www.wikidata.org/wiki/Q1282</lido:placeID>
+										<lido:namePlaceSet>
+											<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="en">Lazio</lido:appellationValue>
+											<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="de">Latium</lido:appellationValue>
+											<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="it">Lazio</lido:appellationValue>
+										</lido:namePlaceSet>
+										<lido:gml>
+											<gml:Point>
+												<gml:pos>42.07762 12.77878</gml:pos>
+											</gml:Point>
+										</lido:gml>
+										<lido:partOfPlace>
+											<lido:placeID lido:type="http://terminology.lido-schema.org/lido00099">http://www.wikidata.org/wiki/Q38</lido:placeID>
+											<lido:namePlaceSet>
+												<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="en">Italy</lido:appellationValue>
+												<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="de">Italien</lido:appellationValue>
+												<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="it">Italia</lido:appellationValue>
+											</lido:namePlaceSet>
+											<lido:gml>
+												<gml:Point>
+												<gml:pos>42.5 12.5</gml:pos>
+												</gml:Point>
+											</lido:gml>
+											<lido:placeClassification>
+												<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q6256">
+													<skos:prefLabel xml:lang="en">country</skos:prefLabel>
+													<skos:prefLabel xml:lang="de">Land</skos:prefLabel>
+													<skos:altLabel xml:lang="de">Staat</skos:altLabel>
+													<skos:mappingRelation>http://vocab.getty.edu/aat/300387506</skos:mappingRelation>
+													<skos:mappingRelation>http://d-nb.info/gnd/4056618-3</skos:mappingRelation>
+												</skos:Concept>
+											</lido:placeClassification>
+										</lido:partOfPlace>
+										<lido:placeClassification>
+											<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q16110">
+												<skos:prefLabel xml:lang="en">region of Italy</skos:prefLabel>
+												<skos:prefLabel xml:lang="de">Region in Italien</skos:prefLabel>
+												<skos:mappingRelation>http://vocab.getty.edu/aat/300236112</skos:mappingRelation>
+											</skos:Concept>
+										</lido:placeClassification>
+									</lido:partOfPlace>
+									<lido:placeClassification>
+										<skos:Concept
+											rdf:about="http://www.wikidata.org/wiki/Q15110">
+											<skos:prefLabel xml:lang="en">metropolitan city of
+												Italy</skos:prefLabel>
+											<skos:prefLabel xml:lang="de"
+												>Metropolitanstadt</skos:prefLabel>
+											<skos:mappingRelation>http://vocab.getty.edu/aat/300132618</skos:mappingRelation>
+											<skos:mappingRelation>http://d-nb.info/gnd/1114188395</skos:mappingRelation>
+										</skos:Concept>
+									</lido:placeClassification>
+								</lido:partOfPlace>
+								<lido:placeClassification>
+									<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q515">
+										<skos:prefLabel xml:lang="en">city</skos:prefLabel>
+										<skos:prefLabel xml:lang="de">Stadt</skos:prefLabel>
+										<skos:mappingRelation>http://vocab.getty.edu/aat/300008389</skos:mappingRelation>
+										<skos:mappingRelation>http://d-nb.info/gnd/4056723-0</skos:mappingRelation>
+									</skos:Concept>
+								</lido:placeClassification>
+							</lido:partOfPlace>
+							<lido:placeClassification>
+								<skos:Concept rdf:about="http://vocab.getty.edu/aat/300164841">
+									<skos:prefLabel xml:lang="en">piazzas (squares)</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Piazza</skos:prefLabel>
+									<skos:altLabel xml:lang="de">Piazze</skos:altLabel>
+								</skos:Concept>
+								<lido:term lido:addedSearchTerm="yes">Platz (öffentlicher Raum)</lido:term>
+							</lido:placeClassification>
+						</lido:repositoryLocation>
+					</lido:repositorySet>
+				</lido:repositoryWrap>
+				<lido:objectDescriptionWrap>
+					<lido:objectDescriptionSet>
+						<lido:descriptiveNoteValue>Die Tritonen wurden 1874 durch Kopien von Luigi Amici ersetzt. Die vier Masken, heute ebenfalls Kopien, 
+                          stammen von dem Brunnen, den Della Porta 1573 auf der Piazza del Popolo errichten ließ und der 1823 von Giuseppe Valadier entfernt wurde. 
+                          Alle Originale befinden sich im Giardino del Lago der Villa Borghese.</lido:descriptiveNoteValue>
+						<lido:sourceDescriptiveNote>Touring Club Italiano: Roma, Mailand 2016, S. 406 f., S. 771</lido:sourceDescriptiveNote>
+					</lido:objectDescriptionSet>
+				</lido:objectDescriptionWrap>
+				<lido:objectMaterialsTechWrap>
+					<lido:objectMaterialsTechSet>
+						<lido:materialsTech>
+							<lido:termMaterialsTech
+								lido:type="http://terminology.lido-schema.org/lido00132">
+								<skos:Concept rdf:about="http://vocab.getty.edu/aat/300011443">
+									<skos:prefLabel xml:lang="en">marble (rock)</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Marmor</skos:prefLabel>
+								</skos:Concept>
+							</lido:termMaterialsTech>
+						</lido:materialsTech>
+					</lido:objectMaterialsTechSet>
+				</lido:objectMaterialsTechWrap>
+			</lido:objectIdentificationWrap>
+			<lido:eventWrap>
+				<lido:eventSet>
+					<lido:event>
+						<lido:eventType>
+							<skos:Concept rdf:about="http://terminology.lido-schema.org/lido00007">
+								<skos:prefLabel xml:lang="en">Production</skos:prefLabel>
+								<skos:prefLabel xml:lang="de">Herstellung</skos:prefLabel>
+							</skos:Concept>
+						</lido:eventType>
+						<lido:eventActor>
+							<lido:displayActorInRole>Hersteller: Giacomo della Porta (1532/1533-1602)</lido:displayActorInRole>
+							<lido:actorInRole>
+								<lido:actor lido:type="http://terminology.lido-schema.org/lido00163">
+									<lido:actorID lido:source="Bildindex-KUE-Datei" lido:pref="http://terminology.lido-schema.org/lido00170" lido:type="http://terminology.lido-schema.org/lido00100">kue 07600032</lido:actorID>
+									<lido:actorID lido:pref="http://terminology.lido-schema.org/lido00169" lido:type="http://terminology.lido-schema.org/lido00099">http://vocab.getty.edu/ulan/500025366</lido:actorID>
+									<lido:actorID lido:pref="http://terminology.lido-schema.org/lido00170" lido:type="http://terminology.lido-schema.org/lido00099">http://d-nb.info/gnd/118977326</lido:actorID>
+									<lido:nameActorSet>
+										<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169">Porta, Giacomo della</lido:appellationValue>
+										<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00526">Giacomo della Porta</lido:appellationValue>
+										<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00170">Della Porta, Giacomo</lido:appellationValue>
+									</lido:nameActorSet>
+									<lido:nationalityActor>
+										<skos:Concept rdf:about="http://vocab.getty.edu/aat/300111198">
+											<skos:prefLabel xml:lang="en">Italian (culture or style)</skos:prefLabel>
+										</skos:Concept>
+										<lido:term lido:addedSearchTerm="yes">italienisch (Kultur)</lido:term>
+									</lido:nationalityActor>
+									<lido:vitalDatesActor>
+										<lido:earliestDate lido:type="http://terminology.lido-schema.org/lido00529">1537</lido:earliestDate>
+										<lido:latestDate lido:type="http://terminology.lido-schema.org/lido00528">1602</lido:latestDate>
+									</lido:vitalDatesActor>
+									<lido:genderActor lido:type="http://terminology.lido-schema.org/lido00867">
+										<skos:Concept rdf:about="http://terminology.lido-schema.org/lido00774">
+											<skos:prefLabel xml:lang="en">Male</skos:prefLabel>
+											<skos:prefLabel xml:lang="de">Männlich</skos:prefLabel>
+											<skos:exactMatch>http://vocab.getty.edu/aat/300189559</skos:exactMatch>
+											<skos:exactMatch>https://d-nb.info/standards/vocab/gnd/gender#male</skos:exactMatch>
+											<skos:exactMatch>http://www.wikidata.org/wiki/Q6581097</skos:exactMatch>
+										</skos:Concept>
+									</lido:genderActor>
+								</lido:actor>
+								<lido:roleActor>
+									<skos:Concept rdf:about="http://vocab.getty.edu/aat/300025181">
+										<skos:prefLabel xml:lang="en">sculptors</skos:prefLabel>
+										<skos:altLabel xml:lang="en">sculptor</skos:altLabel>
+										<skos:prefLabel xml:lang="de">Bildhauer</skos:prefLabel>
+									</skos:Concept>
+								</lido:roleActor>
+							</lido:actorInRole>
+						</lido:eventActor>
+						<lido:culture>
+							<skos:Concept rdf:about="http://vocab.getty.edu/aat/300387724">
+								<skos:prefLabel xml:lang="en">Roman (modern culture)</skos:prefLabel>
+							</skos:Concept>
+							<lido:term lido:addedSearchTerm="yes">römisch (Stil der Neuzeit)</lido:term>
+						</lido:culture>
+						<lido:eventDate>
+							<lido:displayDate>1575-1576</lido:displayDate>
+							<lido:date>
+								<lido:earliestDate lido:type="http://terminology.lido-schema.org/lido00528" lido:source="Touring Club Italiano: Roma, Mailand 2016, S. 406">1575</lido:earliestDate>
+								<lido:latestDate lido:type="http://terminology.lido-schema.org/lido00528" lido:source="Touring Club Italiano: Roma, Mailand 2016, S. 406">1576</lido:latestDate>
+							</lido:date>
+						</lido:eventDate>
+					</lido:event>
+				</lido:eventSet>
+			</lido:eventWrap>
+			<lido:objectRelationWrap>
+				<lido:subjectWrap>
+					<lido:subjectSet>
+						<lido:subject lido:type="http://terminology.lido-schema.org/lido00745">
+							<lido:subjectConcept>
+								<skos:Concept rdf:about="http://iconclass.org/92H391">
+									<skos:prefLabel xml:lang="en">triton(s)</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Triton(en)</skos:prefLabel>
+									<skos:prefLabel xml:lang="it">tritone(i)</skos:prefLabel>
+									<skos:notation>92H391</skos:notation>
+								</skos:Concept>
+							</lido:subjectConcept>
+							<lido:subjectConcept>
+								<skos:Concept rdf:about="http://iconclass.org/48A98211">
+									<skos:prefLabel xml:lang="en">mask, mascaron ~ ornament</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Maske (mascaron) als Ornament</skos:prefLabel>
+									<skos:prefLabel xml:lang="it">maschera, mascherone ~ elementi decorativi</skos:prefLabel>
+									<skos:notation>48A98211</skos:notation>
+								</skos:Concept>
+							</lido:subjectConcept>
+						</lido:subject>
+					</lido:subjectSet>
+				</lido:subjectWrap>
+				<lido:relatedWorksWrap>
+					<lido:relatedWorkSet>
+						<lido:displayRelatedWork>Touring Club Italiano: Roma, Mailand 2016, S. 406 f., S. 771</lido:displayRelatedWork>
+						<lido:relatedWork>
+							<lido:object>
+								<lido:objectID lido:type="http://terminology.lido-schema.org/lido00099">http://www.worldcat.org/oclc/953798500</lido:objectID>
+							</lido:object>
+						</lido:relatedWork>
+						<lido:relatedWorkRelType>
+							<skos:Concept rdf:about="http://terminology.lido-schema.org/lido00617">
+								<skos:prefLabel xml:lang="en">is documented in</skos:prefLabel>
+								<skos:prefLabel xml:lang="de">ist dokumentiert in</skos:prefLabel>
+							</skos:Concept>
+						</lido:relatedWorkRelType>
+					</lido:relatedWorkSet>
+					<lido:relatedWorkSet lido:sortorder="1">
+						<lido:displayRelatedWork>ist Teil von: Fontana del Moro - Brunnen</lido:displayRelatedWork>
+						<lido:relatedWork>
+							<lido:object>
+								<lido:objectWebResource>http://www.bildindex.de/document/obj20344012</lido:objectWebResource>
+								<lido:objectID lido:type="http://terminology.lido-schema.org/lido00100" lido:source="Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg">DE-Mb112/object/obj20344012</lido:objectID>
+							</lido:object>
+						</lido:relatedWork>
+						<lido:relatedWorkRelType>
+							<skos:Concept rdf:about="http://terminology.lido-schema.org/lido00574">
+								<skos:prefLabel xml:lang="en">is part of</skos:prefLabel>
+								<skos:prefLabel xml:lang="de">ist Teil von</skos:prefLabel>
+							</skos:Concept>
+						</lido:relatedWorkRelType>
+					</lido:relatedWorkSet>
+				</lido:relatedWorksWrap>
+			</lido:objectRelationWrap>
+		</lido:descriptiveMetadata>
+		<lido:administrativeMetadata xml:lang="de">
+			<lido:rightsWorkWrap>
+				<lido:rightsWorkSet>
+					<lido:rightsType lido:type="http://terminology.lido-schema.org/lido00921">
+						<skos:Concept rdf:about="https://creativecommons.org/publicdomain/zero/1.0/">
+							<skos:prefLabel xml:lang="en">CC0 1.0 Universal (CC0
+								1.0)</skos:prefLabel>
+							<skos:altLabel xml:lang="en">No Copyright</skos:altLabel>
+							<skos:altLabel xml:lang="en">Public Domain Dedication</skos:altLabel>
+							<skos:altLabel xml:lang="de">Kein Urheberrechtsschutz</skos:altLabel>
+						</skos:Concept>
+					</lido:rightsType>
+				</lido:rightsWorkSet>
+			</lido:rightsWorkWrap>
+			<lido:recordWrap>
+				<lido:recordID lido:type="http://terminology.lido-schema.org/lido00100">00154983</lido:recordID>
+				<lido:recordType>
+					<skos:Concept rdf:about="http://terminology.lido-schema.org/lido00447">
+						<skos:prefLabel xml:lang="en">Component-level record</skos:prefLabel>
+						<skos:prefLabel xml:lang="de">Bestandteil
+							(Katalogisierungsebene)</skos:prefLabel>
+					</skos:Concept>
+				</lido:recordType>
+				<lido:recordSource>
+					<lido:legalBodyID lido:type="http://terminology.lido-schema.org/lido00099" lido:source="ISIL (ISO 15511)">
+                  https://ld.zdb-services.de/resource/organisations/DE-Mb112</lido:legalBodyID>
+					<lido:legalBodyName>
+						<lido:appellationValue>Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg</lido:appellationValue>
+					</lido:legalBodyName>
+					<lido:legalBodyWeblink>https://www.uni-marburg.de/de/fotomarburg</lido:legalBodyWeblink>
+				</lido:recordSource>
+				<lido:recordRights>
+					<lido:rightsType lido:type="http://terminology.lido-schema.org/lido00921">
+						<skos:Concept rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+							<skos:prefLabel xml:lang="en">CC0 1.0 Universal (CC0
+								1.0)</skos:prefLabel>
+							<skos:altLabel xml:lang="en">No Copyright</skos:altLabel>
+							<skos:altLabel xml:lang="en">Public Domain Dedication</skos:altLabel>
+							<skos:altLabel xml:lang="de">Kein Urheberrechtsschutz</skos:altLabel>
+						</skos:Concept>
+					</lido:rightsType>
+					<lido:rightsHolder>
+						<lido:legalBodyID lido:type="http://terminology.lido-schema.org/lido00099" lido:source="ISIL (ISO 15511)">
+                      https://ld.zdb-services.de/resource/organisations/DE-Mb112</lido:legalBodyID>
+						<lido:legalBodyName>
+							<lido:appellationValue>Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg</lido:appellationValue>
+						</lido:legalBodyName>
+						<lido:legalBodyWeblink>https://www.uni-marburg.de/de/fotomarburg</lido:legalBodyWeblink>
+					</lido:rightsHolder>
+					<lido:creditLine>Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg. CC0 1.0 Universal (CC0 1.0)</lido:creditLine>
+				</lido:recordRights>
+				<lido:recordInfoSet>
+					<lido:recordInfoLink lido:formatResource="text/html">https://www.bildindex.de/document/obj20344012?part=1</lido:recordInfoLink>
+					<lido:recordMetadataDate>2021-12-18T17:27:15Z</lido:recordMetadataDate>
+				</lido:recordInfoSet>
+			</lido:recordWrap>
+			<lido:resourceWrap>
+				<lido:resourceSet>
+					<lido:resourceID lido:type="http://terminology.lido-schema.org/lido00100">1.188.710</lido:resourceID>
+					<lido:resourceRepresentation
+						lido:type="http://terminology.lido-schema.org/lido00451">
+						<lido:linkResource lido:formatResource="image/jpeg">http://www.bildindex.de/bilder/m/fm1188710</lido:linkResource>
+						<lido:resourceMeasurementsSet>
+							<lido:measurementType>
+								<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q35059">
+									<skos:prefLabel xml:lang="en">width</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Breite</skos:prefLabel>
+									<skos:mappingRelation>http://vocab.getty.edu/aat/300055647</skos:mappingRelation>
+								</skos:Concept>
+							</lido:measurementType>
+							<lido:measurementUnit>
+								<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q355198">
+									<skos:prefLabel xml:lang="en">pixel</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Pixel</skos:prefLabel>
+									<skos:mappingRelation>http://vocab.getty.edu/aat/300266190</skos:mappingRelation>
+								</skos:Concept>
+							</lido:measurementUnit>
+							<lido:measurementValue>350</lido:measurementValue>
+						</lido:resourceMeasurementsSet>
+					</lido:resourceRepresentation>
+					<lido:resourceRepresentation
+						lido:type="http://terminology.lido-schema.org/lido00464">
+						<lido:linkResource lido:formatResource="image/jpeg">http://www.bildindex.de/bilder/d/fm1188710</lido:linkResource>
+						<lido:resourceMeasurementsSet>
+							<lido:measurementType>
+								<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q35059">
+									<skos:prefLabel xml:lang="en">width</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Breite</skos:prefLabel>
+									<skos:mappingRelation>http://vocab.getty.edu/aat/300055647</skos:mappingRelation>
+								</skos:Concept>
+							</lido:measurementType>
+							<lido:measurementUnit>
+								<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q355198">
+									<skos:prefLabel xml:lang="en">pixel</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Pixel</skos:prefLabel>
+									<skos:mappingRelation>http://vocab.getty.edu/aat/300266190</skos:mappingRelation>
+								</skos:Concept>
+							</lido:measurementUnit>
+							<lido:measurementValue>1200</lido:measurementValue>
+						</lido:resourceMeasurementsSet>
+					</lido:resourceRepresentation>
+					<lido:resourceType>
+						<skos:Concept rdf:about="http://vocab.getty.edu/aat/300215302">
+							<skos:prefLabel xml:lang="en">digital images</skos:prefLabel>
+							<skos:altLabel xml:lang="en">digital image</skos:altLabel>
+						</skos:Concept>
+						<lido:term>Digitales Bild</lido:term>
+						<lido:term lido:addedSearchTerm="yes">Digitalbild</lido:term>
+					</lido:resourceType>
+					<lido:resourceDescription>Gesamtansicht (Skulptur des Äthiopiers von Bernini entworfen)</lido:resourceDescription>
+					<lido:resourceDateTaken>
+						<lido:displayDate>um 1920/1939?</lido:displayDate>
+						<lido:date>
+							<lido:earliestDate lido:type="http://terminology.lido-schema.org/lido00529">1920</lido:earliestDate>
+							<lido:latestDate lido:type="http://terminology.lido-schema.org/lido00529">1939</lido:latestDate>
+						</lido:date>
+					</lido:resourceDateTaken>
+					<lido:rightsResource>
+						<lido:rightsType lido:type="http://terminology.lido-schema.org/lido00921">
+							<skos:Concept
+								rdf:about="https://www.deutsche-digitale-bibliothek.de/content/lizenzen/rv-fz/">
+								<skos:prefLabel xml:lang="en">Free access – no
+									reuse</skos:prefLabel>
+								<skos:prefLabel xml:lang="de">Rechte vorbehalten – Freier
+									Zugang</skos:prefLabel>
+							</skos:Concept>
+						</lido:rightsType>
+						<lido:rightsHolder>
+							<lido:legalBodyID lido:type="http://terminology.lido-schema.org/lido00099" lido:source="ISIL (ISO 15511)">
+                          https://ld.zdb-services.de/resource/organisations/DE-Mb112</lido:legalBodyID>
+							<lido:legalBodyName>
+								<lido:appellationValue>Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg</lido:appellationValue>
+							</lido:legalBodyName>
+						</lido:rightsHolder>
+						<lido:creditLine xml:lang="de">Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg. Fotograf/Fotografin: unbekannt. Aufn.-Datum: um 1920/1939?. Rechte vorbehalten – Freier Zugang</lido:creditLine>
+					</lido:rightsResource>
+				</lido:resourceSet>
+				<lido:resourceSet>
+					<lido:resourceID lido:type="http://terminology.lido-schema.org/lido00100">1.296.544</lido:resourceID>
+					<lido:resourceRepresentation
+						lido:type="http://terminology.lido-schema.org/lido00451">
+						<lido:linkResource lido:formatResource="image/jpeg">http://www.bildindex.de/bilder/m/fm1296544</lido:linkResource>
+						<lido:resourceMeasurementsSet>
+							<lido:measurementType>
+								<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q35059">
+									<skos:prefLabel xml:lang="en">width</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Breite</skos:prefLabel>
+									<skos:mappingRelation>http://vocab.getty.edu/aat/300055647</skos:mappingRelation>
+								</skos:Concept>
+							</lido:measurementType>
+							<lido:measurementUnit>
+								<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q355198">
+									<skos:prefLabel xml:lang="en">pixel</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Pixel</skos:prefLabel>
+									<skos:mappingRelation>http://vocab.getty.edu/aat/300266190</skos:mappingRelation>
+								</skos:Concept>
+							</lido:measurementUnit>
+							<lido:measurementValue>350</lido:measurementValue>
+						</lido:resourceMeasurementsSet>
+					</lido:resourceRepresentation>
+					<lido:resourceRepresentation
+						lido:type="http://terminology.lido-schema.org/lido00464">
+						<lido:linkResource lido:formatResource="image/jpeg">http://www.bildindex.de/bilder/d/fm1296544</lido:linkResource>
+						<lido:resourceMeasurementsSet>
+							<lido:measurementType>
+								<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q35059">
+									<skos:prefLabel xml:lang="en">width</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Breite</skos:prefLabel>
+									<skos:mappingRelation>http://vocab.getty.edu/aat/300055647</skos:mappingRelation>
+								</skos:Concept>
+							</lido:measurementType>
+							<lido:measurementUnit>
+								<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q355198">
+									<skos:prefLabel xml:lang="en">pixel</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Pixel</skos:prefLabel>
+									<skos:mappingRelation>http://vocab.getty.edu/aat/300266190</skos:mappingRelation>
+								</skos:Concept>
+							</lido:measurementUnit>
+							<lido:measurementValue>1200</lido:measurementValue>
+						</lido:resourceMeasurementsSet>
+					</lido:resourceRepresentation>
+					<lido:resourceType>
+						<skos:Concept rdf:about="http://vocab.getty.edu/aat/300215302">
+							<skos:prefLabel xml:lang="en">digital images</skos:prefLabel>
+							<skos:altLabel xml:lang="en">digital image</skos:altLabel>
+						</skos:Concept>
+						<lido:term>Digitales Bild</lido:term>
+						<lido:term lido:addedSearchTerm="yes">Digitalbild</lido:term>
+					</lido:resourceType>
+					<lido:resourceDescription>Gesamtansicht</lido:resourceDescription>
+					<lido:resourceDateTaken>
+						<lido:displayDate>um 1970</lido:displayDate>
+						<lido:date>
+							<lido:earliestDate lido:type="http://terminology.lido-schema.org/lido00529">1970</lido:earliestDate>
+							<lido:latestDate lido:type="http://terminology.lido-schema.org/lido00529">1970</lido:latestDate>
+						</lido:date>
+					</lido:resourceDateTaken>
+					<lido:rightsResource>
+						<lido:rightsType lido:type="http://terminology.lido-schema.org/lido00921">
+							<skos:Concept
+								rdf:about="https://www.deutsche-digitale-bibliothek.de/content/lizenzen/rv-fz/">
+								<skos:prefLabel xml:lang="en">Free access – no
+									reuse</skos:prefLabel>
+								<skos:prefLabel xml:lang="de">Rechte vorbehalten – Freier
+									Zugang</skos:prefLabel>
+							</skos:Concept>
+						</lido:rightsType>
+						<lido:rightsHolder>
+							<lido:legalBodyID lido:type="http://terminology.lido-schema.org/lido00099" lido:source="ISIL (ISO 15511)">
+                          https://ld.zdb-services.de/resource/organisations/DE-Mb112</lido:legalBodyID>
+							<lido:legalBodyName>
+								<lido:appellationValue>Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg</lido:appellationValue>
+							</lido:legalBodyName>
+						</lido:rightsHolder>
+						<lido:creditLine xml:lang="de">Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg. Fotograf/Fotografin: Walter Schröder. Aufn.-Datum: um 1970. Rechte vorbehalten – Freier Zugang</lido:creditLine>
+					</lido:rightsResource>
+				</lido:resourceSet>
+			</lido:resourceWrap>
+		</lido:administrativeMetadata>
+	</lido:lido>
+	<lido:lido>
+		<lido:lidoRecID lido:type="http://terminology.lido-schema.org/lido00100" lido:source="Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg">DE-Mb112/lido/obj20344012,T,002</lido:lidoRecID>
+		<lido:category>
+			<skos:Concept rdf:about="http://terminology.lido-schema.org/lido00096">
+				<skos:prefLabel xml:lang="en">Human-made object</skos:prefLabel>
+				<skos:exactMatch>http://vocab.getty.edu/aat/300386957</skos:exactMatch>
+				<skos:exactMatch>http://erlangen-crm.org/current/E22_Human-Made_Object</skos:exactMatch>
+			</skos:Concept>
+			<lido:term lido:addedSearchTerm="yes">man-made object</lido:term>
+		</lido:category>
+		<lido:descriptiveMetadata xml:lang="de">
+			<lido:objectClassificationWrap>
+				<lido:objectWorkTypeWrap>
+					<lido:objectWorkType lido:type="http://terminology.lido-schema.org/lido00766">
+						<skos:Concept rdf:about="http://vocab.getty.edu/aat/300400898">
+							<skos:prefLabel xml:lang="en">sculpture groups</skos:prefLabel>
+						</skos:Concept>
+						<lido:term lido:addedSearchTerm="yes" xml:lang="de">Skulpturengruppe</lido:term>
+					</lido:objectWorkType>
+				</lido:objectWorkTypeWrap>
+				<lido:classificationWrap>
+					<lido:classification lido:type="http://terminology.lido-schema.org/lido00853">
+						<lido:conceptID lido:type="http://terminology.lido-schema.org/lido00100" lido:source="Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg. DDK-Thesaurus">48846900</lido:conceptID>
+						<lido:term lido:pref="http://terminology.lido-schema.org/lido00169">Skulptur (Objektgattung)</lido:term>
+						<lido:term lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="en">sculpture (object genre)</lido:term>
+					</lido:classification>
+				</lido:classificationWrap>
+			</lido:objectClassificationWrap>
+			<lido:objectIdentificationWrap>
+				<lido:titleWrap>
+					<lido:titleSet lido:type="http://vocab.getty.edu/aat/300417199">
+						<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="de">Fontana del Moro — Äthiopier im Kampf gegen einen Delphin</lido:appellationValue>
+						<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="it">Fontana del Moro — Etiope in lotta con un delfino</lido:appellationValue>
+						<lido:sourceAppellation>Touring Club Italiano: Roma, Mailand 2016, S. 406</lido:sourceAppellation>
+					</lido:titleSet>
+				</lido:titleWrap>
+				<lido:repositoryWrap>
+					<lido:repositorySet lido:type="http://terminology.lido-schema.org/lido01018">
+						<lido:displayRepository>Rom, Piazza Navona, Südseite</lido:displayRepository>
+						<lido:repositoryLocation>
+							<lido:placeID lido:type="http://terminology.lido-schema.org/lido00099">http://www.wikidata.org/wiki/Q463400</lido:placeID>
+							<lido:namePlaceSet>
+								<lido:appellationValue>Piazza Navona</lido:appellationValue>
+							</lido:namePlaceSet>
+							<lido:gml>
+								<gml:Point>
+									<gml:pos>41.8981 12.4731</gml:pos>
+								</gml:Point>
+							</lido:gml>
+							<lido:partOfPlace>
+								<lido:placeID lido:type="http://terminology.lido-schema.org/lido00099">http://www.wikidata.org/wiki/Q220</lido:placeID>
+								<lido:namePlaceSet>
+									<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="en">Rome</lido:appellationValue>
+									<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="it">Roma</lido:appellationValue>
+									<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="de">Rom</lido:appellationValue>
+								</lido:namePlaceSet>
+								<lido:gml>
+									<gml:Point>
+										<gml:pos>41.910151 12.5086</gml:pos>
+									</gml:Point>
+								</lido:gml>
+								<lido:partOfPlace>
+									<lido:placeID lido:type="http://terminology.lido-schema.org/lido00099">http://www.wikidata.org/wiki/Q18288160</lido:placeID>
+									<lido:namePlaceSet>
+										<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="en">Metropolitan City of Rome</lido:appellationValue>
+										<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="de">Metropolitanstadt Rom</lido:appellationValue>
+										<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="it">Città metropolitana di Roma Capitale</lido:appellationValue>
+									</lido:namePlaceSet>
+									<lido:gml>
+										<gml:Point>
+											<gml:pos>41.96667 12.66667</gml:pos>
+										</gml:Point>
+									</lido:gml>
+									<lido:partOfPlace>
+										<lido:placeID lido:type="http://terminology.lido-schema.org/lido00099">http://www.wikidata.org/wiki/Q1282</lido:placeID>
+										<lido:namePlaceSet>
+											<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="en">Lazio</lido:appellationValue>
+											<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="de">Latium</lido:appellationValue>
+											<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="it">Lazio</lido:appellationValue>
+										</lido:namePlaceSet>
+										<lido:gml>
+											<gml:Point>
+												<gml:pos>42.07762 12.77878</gml:pos>
+											</gml:Point>
+										</lido:gml>
+										<lido:partOfPlace>
+											<lido:placeID lido:type="http://terminology.lido-schema.org/lido00099">http://www.wikidata.org/wiki/Q38</lido:placeID>
+											<lido:namePlaceSet>
+												<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="en">Italy</lido:appellationValue>
+												<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="de">Italien</lido:appellationValue>
+												<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169" xml:lang="it">Italia</lido:appellationValue>
+											</lido:namePlaceSet>
+											<lido:gml>
+												<gml:Point>
+												<gml:pos>42.5 12.5</gml:pos>
+												</gml:Point>
+											</lido:gml>
+											<lido:placeClassification>
+												<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q6256">
+													<skos:prefLabel xml:lang="en">country</skos:prefLabel>
+													<skos:prefLabel xml:lang="de">Land</skos:prefLabel>
+													<skos:altLabel xml:lang="de">Staat</skos:altLabel>
+													<skos:mappingRelation>http://vocab.getty.edu/aat/300387506</skos:mappingRelation>
+													<skos:mappingRelation>http://d-nb.info/gnd/4056618-3</skos:mappingRelation>
+												</skos:Concept>
+											</lido:placeClassification>
+										</lido:partOfPlace>
+										<lido:placeClassification>
+											<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q16110">
+												<skos:prefLabel xml:lang="en">region of Italy</skos:prefLabel>
+												<skos:prefLabel xml:lang="de">Region in Italien</skos:prefLabel>
+												<skos:mappingRelation>http://vocab.getty.edu/aat/300236112</skos:mappingRelation>
+											</skos:Concept>
+										</lido:placeClassification>
+									</lido:partOfPlace>
+									<lido:placeClassification>
+										<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q15110">
+											<skos:prefLabel xml:lang="en">metropolitan city of Italy</skos:prefLabel>
+											<skos:prefLabel xml:lang="de">Metropolitanstadt</skos:prefLabel>
+											<skos:mappingRelation>http://vocab.getty.edu/aat/300132618</skos:mappingRelation>
+											<skos:mappingRelation>http://d-nb.info/gnd/1114188395</skos:mappingRelation>
+										</skos:Concept>
+									</lido:placeClassification>
+								</lido:partOfPlace>
+								<lido:placeClassification>
+									<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q515">
+										<skos:prefLabel xml:lang="en">city</skos:prefLabel>
+										<skos:prefLabel xml:lang="de">Stadt</skos:prefLabel>
+										<skos:mappingRelation>http://vocab.getty.edu/aat/300008389</skos:mappingRelation>
+										<skos:mappingRelation>http://d-nb.info/gnd/4056723-0</skos:mappingRelation>
+									</skos:Concept>
+								</lido:placeClassification>
+							</lido:partOfPlace>
+							<lido:placeClassification>
+								<skos:Concept rdf:about="http://vocab.getty.edu/aat/300164841">
+									<skos:prefLabel xml:lang="en">piazzas (squares)</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Piazza</skos:prefLabel>
+									<skos:altLabel xml:lang="de">Piazze</skos:altLabel>
+								</skos:Concept>
+								<lido:term lido:addedSearchTerm="yes">Platz (öffentlicher Raum)</lido:term>
+							</lido:placeClassification>
+						</lido:repositoryLocation>
+					</lido:repositorySet>
+				</lido:repositoryWrap>
+				<lido:objectMaterialsTechWrap>
+					<lido:objectMaterialsTechSet>
+						<lido:materialsTech>
+							<lido:termMaterialsTech
+								lido:type="http://terminology.lido-schema.org/lido00132">
+								<skos:Concept rdf:about="http://vocab.getty.edu/aat/300011443">
+									<skos:prefLabel xml:lang="en">marble (rock)</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Marmor</skos:prefLabel>
+								</skos:Concept>
+							</lido:termMaterialsTech>
+						</lido:materialsTech>
+					</lido:objectMaterialsTechSet>
+				</lido:objectMaterialsTechWrap>
+			</lido:objectIdentificationWrap>
+			<lido:eventWrap>
+				<lido:eventSet>
+					<lido:event>
+						<lido:eventType>
+							<skos:Concept rdf:about="http://terminology.lido-schema.org/lido00007">
+								<skos:prefLabel xml:lang="en">Production</skos:prefLabel>
+								<skos:prefLabel xml:lang="de">Herstellung</skos:prefLabel>
+							</skos:Concept>
+						</lido:eventType>
+						<lido:eventActor>
+							<lido:displayActorInRole>Entwerfer: Giovanni Lorenzo Bernini (1598–1680)</lido:displayActorInRole>
+							<lido:actorInRole>
+								<lido:actor lido:type="http://terminology.lido-schema.org/lido00163">
+									<lido:actorID lido:source="Bildindex-KUE-Datei" lido:pref="http://terminology.lido-schema.org/lido00170" lido:type="http://terminology.lido-schema.org/lido00100">kue 10124810</lido:actorID>
+									<lido:actorID lido:pref="http://terminology.lido-schema.org/lido00169" lido:type="http://terminology.lido-schema.org/lido00099">http://vocab.getty.edu/ulan/500032022</lido:actorID>
+									<lido:actorID lido:pref="http://terminology.lido-schema.org/lido00170" lido:type="http://terminology.lido-schema.org/lido00099">http://d-nb.info/gnd/118509926</lido:actorID>
+									<lido:nameActorSet>
+										<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169">Bernini, Gian Lorenzo</lido:appellationValue>
+										<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00526">Giovanni Lorenzo Bernini</lido:appellationValue>
+										<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00170">Bernini, Giovanni Lorenzo</lido:appellationValue>
+									</lido:nameActorSet>
+									<lido:nationalityActor>
+										<skos:Concept
+											rdf:about="http://vocab.getty.edu/aat/300111198">
+											<skos:prefLabel xml:lang="en">Italian (culture or style)</skos:prefLabel>
+										</skos:Concept>
+										<lido:term lido:addedSearchTerm="yes">italienisch (Kultur)</lido:term>
+									</lido:nationalityActor>
+									<lido:vitalDatesActor>
+										<lido:earliestDate lido:type="http://terminology.lido-schema.org/lido00528">1598-12-07</lido:earliestDate>
+										<lido:latestDate lido:type="http://terminology.lido-schema.org/lido00528">1680-11-28</lido:latestDate>
+									</lido:vitalDatesActor>
+									<lido:genderActor 
+										lido:type="http://terminology.lido-schema.org/lido00867">
+										<skos:Concept
+											rdf:about="http://terminology.lido-schema.org/lido00774">
+											<skos:prefLabel xml:lang="en">Male</skos:prefLabel>
+											<skos:prefLabel xml:lang="de">Männlich</skos:prefLabel>
+											<skos:exactMatch>http://vocab.getty.edu/aat/300189559</skos:exactMatch>
+											<skos:exactMatch>https://d-nb.info/standards/vocab/gnd/gender#male</skos:exactMatch>
+											<skos:exactMatch>http://www.wikidata.org/wiki/Q6581097</skos:exactMatch>
+										</skos:Concept>
+									</lido:genderActor>
+								</lido:actor>
+								<lido:roleActor>
+									<skos:Concept rdf:about="http://vocab.getty.edu/aat/300025190">
+										<skos:prefLabel xml:lang="en">designers</skos:prefLabel>
+										<skos:altLabel xml:lang="en">designer</skos:altLabel>
+										<skos:prefLabel xml:lang="de">Entwerfer</skos:prefLabel>
+									</skos:Concept>
+								</lido:roleActor>
+							</lido:actorInRole>
+						</lido:eventActor>
+						<lido:eventActor>
+							<lido:displayActorInRole>Bildhauer: Giovanni Antonio Mari (1631-1673)</lido:displayActorInRole>
+							<lido:actorInRole>
+								<lido:actor lido:type="http://terminology.lido-schema.org/lido00163">
+									<lido:actorID lido:source="Bildindex-KUE-Datei" lido:pref="http://terminology.lido-schema.org/lido00170" lido:type="http://terminology.lido-schema.org/lido00100">kue 08120274</lido:actorID>
+									<lido:actorID lido:pref="http://terminology.lido-schema.org/lido00169" lido:type="http://terminology.lido-schema.org/lido00099">http://vocab.getty.edu/ulan/500076627</lido:actorID>
+									<lido:actorID lido:pref="http://terminology.lido-schema.org/lido00170" lido:type="http://terminology.lido-schema.org/lido00099">http://d-nb.info/gnd/121195600</lido:actorID>
+									<lido:nameActorSet>
+										<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169">Mari, Giovanni Antonio</lido:appellationValue>
+										<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00526">Giovanni Antonio Mari</lido:appellationValue>
+										<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00170">Mari, Giovan Antonio</lido:appellationValue>
+									</lido:nameActorSet>
+									<lido:nationalityActor>
+										<skos:Concept
+											rdf:about="http://vocab.getty.edu/aat/300111198">
+											<skos:prefLabel xml:lang="en">Italian (culture or
+												style)</skos:prefLabel>
+										</skos:Concept>
+										<lido:term lido:addedSearchTerm="yes">italienisch (Kultur)</lido:term>
+									</lido:nationalityActor>
+									<lido:vitalDatesActor>
+										<lido:earliestDate lido:type="http://terminology.lido-schema.org/lido00529">1631</lido:earliestDate>
+										<lido:latestDate lido:type="http://terminology.lido-schema.org/lido00528">1673</lido:latestDate>
+									</lido:vitalDatesActor>
+									<lido:genderActor lido:type="http://terminology.lido-schema.org/lido00867">
+										<skos:Concept rdf:about="http://terminology.lido-schema.org/lido00774">
+											<skos:prefLabel xml:lang="en">Male</skos:prefLabel>
+											<skos:prefLabel xml:lang="de">Männlich</skos:prefLabel>
+											<skos:exactMatch>http://vocab.getty.edu/aat/300189559</skos:exactMatch>
+											<skos:exactMatch>https://d-nb.info/standards/vocab/gnd/gender#male</skos:exactMatch>
+											<skos:exactMatch>http://www.wikidata.org/wiki/Q6581097</skos:exactMatch>
+										</skos:Concept>
+									</lido:genderActor>
+								</lido:actor>
+								<lido:roleActor>
+									<skos:Concept rdf:about="http://vocab.getty.edu/aat/300025181">
+										<skos:prefLabel xml:lang="en">sculptors</skos:prefLabel>
+										<skos:altLabel xml:lang="en">sculptor</skos:altLabel>
+										<skos:prefLabel xml:lang="de">Bildhauer</skos:prefLabel>
+									</skos:Concept>
+								</lido:roleActor>
+							</lido:actorInRole>
+						</lido:eventActor>
+						<lido:culture>
+							<skos:Concept rdf:about="http://vocab.getty.edu/aat/300387724">
+								<skos:prefLabel xml:lang="en">Roman (modern culture)</skos:prefLabel>
+							</skos:Concept>
+							<lido:term lido:addedSearchTerm="yes">römisch (Stil der Neuzeit)</lido:term>
+						</lido:culture>
+						<lido:eventDate>
+							<lido:displayDate>1654</lido:displayDate>
+							<lido:date>
+								<lido:earliestDate lido:type="http://terminology.lido-schema.org/lido00528" lido:source="Touring Club Italiano: Roma, Mailand 2016, S. 406">1654</lido:earliestDate>
+								<lido:latestDate lido:type="http://terminology.lido-schema.org/lido00528" lido:source="Touring Club Italiano: Roma, Mailand 2016, S. 406">1654</lido:latestDate>
+							</lido:date>
+						</lido:eventDate>
+					</lido:event>
+				</lido:eventSet>
+				<lido:eventSet>
+					<lido:event>
+						<lido:eventType>
+							<skos:Concept rdf:about="http://terminology.lido-schema.org/lido00226">
+								<skos:prefLabel xml:lang="en">commissioning</skos:prefLabel>
+								<skos:prefLabel xml:lang="de">Beauftragung</skos:prefLabel>
+							</skos:Concept>
+						</lido:eventType>
+						<lido:eventActor>
+							<lido:displayActorInRole>Auftraggeberin: Olimpia Pamphili Maidalchini</lido:displayActorInRole>
+							<lido:actorInRole>
+								<lido:actor lido:type="http://terminology.lido-schema.org/lido00163">
+									<lido:actorID lido:source="Bildindex-KUE-Datei" lido:pref="http://terminology.lido-schema.org/lido00170" lido:type="http://terminology.lido-schema.org/lido00100">per 11002142</lido:actorID>
+									<lido:actorID lido:pref="http://terminology.lido-schema.org/lido00169" lido:type="http://terminology.lido-schema.org/lido00099">http://vocab.getty.edu/ulan/500070705</lido:actorID>
+									<lido:actorID lido:pref="http://terminology.lido-schema.org/lido00170" lido:type="http://terminology.lido-schema.org/lido00099">http://d-nb.info/gnd/119061961</lido:actorID>
+									<lido:nameActorSet>
+										<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00169">Pamphili, Olimpia</lido:appellationValue>
+										<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00526">Olimpia Pamphili</lido:appellationValue>
+										<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00170">Pamphili, Olimpia Maidalchini</lido:appellationValue>
+										<lido:appellationValue lido:pref="http://terminology.lido-schema.org/lido00170">Maidalchini, Olimpia</lido:appellationValue>
+									</lido:nameActorSet>
+									<lido:nationalityActor>
+										<skos:Concept rdf:about="http://vocab.getty.edu/aat/300111198">
+											<skos:prefLabel xml:lang="en">Italian (culture or style)</skos:prefLabel>
+										</skos:Concept>
+										<lido:term lido:addedSearchTerm="yes">italienisch (Kultur)</lido:term>
+									</lido:nationalityActor>
+									<lido:vitalDatesActor>
+										<lido:earliestDate lido:type="http://terminology.lido-schema.org/lido00528">1591-05-26</lido:earliestDate>
+										<lido:latestDate lido:type="http://terminology.lido-schema.org/lido00528">1657-09-26</lido:latestDate>
+									</lido:vitalDatesActor>
+									<lido:genderActor lido:type="http://terminology.lido-schema.org/lido00867">
+										<skos:Concept rdf:about="http://terminology.lido-schema.org/lido00773">
+											<skos:prefLabel xml:lang="en">Female</skos:prefLabel>
+											<skos:prefLabel xml:lang="de">Weiblich</skos:prefLabel>
+											<skos:exactMatch>http://vocab.getty.edu/aat/300189557</skos:exactMatch>
+											<skos:exactMatch>https://d-nb.info/standards/vocab/gnd/gender#female</skos:exactMatch>
+											<skos:exactMatch>http://www.wikidata.org/wiki/Q6581072</skos:exactMatch>
+										</skos:Concept>
+									</lido:genderActor>
+								</lido:actor>
+								<lido:roleActor>
+									<skos:Concept rdf:about="http://vocab.getty.edu/aat/300400903">
+										<skos:prefLabel xml:lang="en">commissioners (people who order works)</skos:prefLabel>
+										<skos:altLabel xml:lang="en">commissioner (person who order works)</skos:altLabel>
+										<skos:prefLabel xml:lang="de">Auftraggeberin</skos:prefLabel>
+									</skos:Concept>
+								</lido:roleActor>
+							</lido:actorInRole>
+						</lido:eventActor>
+						<lido:culture>
+							<skos:Concept rdf:about="http://vocab.getty.edu/aat/300387724">
+								<skos:prefLabel xml:lang="en">Roman (modern culture)</skos:prefLabel>
+							</skos:Concept>
+							<lido:term lido:addedSearchTerm="yes">römisch (Stil der Neuzeit)</lido:term>
+						</lido:culture>
+						<lido:eventDate>
+							<lido:displayDate>1654</lido:displayDate>
+							<lido:date>
+								<lido:earliestDate lido:type="http://terminology.lido-schema.org/lido00528" lido:source="Touring Club Italiano: Roma, Mailand 2016, S. 406">1654</lido:earliestDate>
+								<lido:latestDate lido:type="http://terminology.lido-schema.org/lido00528" lido:source="Touring Club Italiano: Roma, Mailand 2016, S. 406">1654</lido:latestDate>
+							</lido:date>
+						</lido:eventDate>
+					</lido:event>
+				</lido:eventSet>
+			</lido:eventWrap>
+			<lido:objectRelationWrap>
+				<lido:subjectWrap>
+					<lido:subjectSet>
+						<lido:subject lido:type="http://terminology.lido-schema.org/lido00745">
+							<lido:subjectConcept>
+								<skos:Concept rdf:about="http://iconclass.org/34F11">
+									<skos:prefLabel xml:lang="en">man struggling with animals</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Kampf zwischen Mensch und Tier</skos:prefLabel>
+									<skos:prefLabel xml:lang="it">uomo che lotta con animali</skos:prefLabel>
+									<skos:notation>34F11</skos:notation>
+								</skos:Concept>
+							</lido:subjectConcept>
+							<lido:subjectConcept>
+								<skos:Concept rdf:about="http://iconclass.org/32B321">
+									<skos:prefLabel xml:lang="en">(indigenous) peoples of sub-Saharan Africa</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">indigene Ethnien des subsaharischen Afrika</skos:prefLabel>
+									<skos:prefLabel xml:lang="it">popolazioni (indigene) dell'Africa subsahariana</skos:prefLabel>
+									<skos:notation>32B321</skos:notation>
+								</skos:Concept>
+							</lido:subjectConcept>
+							<lido:subjectConcept>
+								<skos:Concept rdf:about="http://iconclass.org/25F27%28dolphin%29">
+									<skos:prefLabel xml:lang="en">swimming mammals (Dolphin)</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Meeressäuger (Dolphin)</skos:prefLabel>
+									<skos:prefLabel xml:lang="it">mammiferi acquatici (Dolphin)</skos:prefLabel>
+									<skos:notation>25F27(Dolphin)</skos:notation>
+								</skos:Concept>
+							</lido:subjectConcept>
+						</lido:subject>
+					</lido:subjectSet>
+				</lido:subjectWrap>
+				<lido:relatedWorksWrap>
+					<lido:relatedWorkSet>
+						<lido:displayRelatedWork>Touring Club Italiano: Roma, Mailand 2016, S. 406 f.</lido:displayRelatedWork>
+						<lido:relatedWork>
+							<lido:object>
+								<lido:objectID lido:type="http://terminology.lido-schema.org/lido00099">http://www.worldcat.org/oclc/953798500</lido:objectID>
+							</lido:object>
+						</lido:relatedWork>
+						<lido:relatedWorkRelType>
+							<skos:Concept rdf:about="http://terminology.lido-schema.org/lido00617">
+								<skos:prefLabel xml:lang="en">is documented in</skos:prefLabel>
+								<skos:prefLabel xml:lang="de">ist dokumentiert in</skos:prefLabel>
+							</skos:Concept>
+						</lido:relatedWorkRelType>
+					</lido:relatedWorkSet>
+					<lido:relatedWorkSet lido:sortorder="1">
+						<lido:displayRelatedWork>ist Teil von: Fontana del Moro - Brunnen</lido:displayRelatedWork>
+						<lido:relatedWork>
+							<lido:object>
+								<lido:objectWebResource>http://www.bildindex.de/document/obj20344012</lido:objectWebResource>
+								<lido:objectID lido:type="http://terminology.lido-schema.org/lido00100" lido:source="Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg">DE-Mb112/object/obj20344012</lido:objectID>
+							</lido:object>
+						</lido:relatedWork>
+						<lido:relatedWorkRelType>
+							<skos:Concept rdf:about="http://terminology.lido-schema.org/lido00574">
+								<skos:prefLabel xml:lang="en">is part of</skos:prefLabel>
+								<skos:prefLabel xml:lang="de">ist Teil von</skos:prefLabel>
+							</skos:Concept>
+						</lido:relatedWorkRelType>
+					</lido:relatedWorkSet>
+					<lido:relatedWorkSet lido:sortorder="2">
+						<lido:displayRelatedWork>dargestellt in: Dorigny, Nicholas: Tritone della fontana in capo a piazza Navona del cavalier Bernini. Druck, 1704</lido:displayRelatedWork>
+						<lido:relatedWork>
+							<lido:object>
+								<lido:objectWebResource>http://foto.biblhertz.it/obj08071804</lido:objectWebResource>
+								<lido:objectID lido:type="http://terminology.lido-schema.org/lido00100" lido:source="Bibliotheca Hertziana - Max-Planck-Institut für Kunstgeschichte">DE-Y2/object/obj08071804,T,103</lido:objectID>
+								<lido:objectNote>In: Rossi, Domenico de: Raccolta di statue antiche e moderne data in luce sotto i gloriosi auspicii della Sántita di N.S. Papa Clemente XI., Rom, 1704</lido:objectNote>
+							</lido:object>
+						</lido:relatedWork>
+						<lido:relatedWorkRelType>
+							<skos:Concept rdf:about="http://terminology.lido-schema.org/lido00998">
+								<skos:prefLabel xml:lang="en">is depicted in</skos:prefLabel>
+								<skos:prefLabel xml:lang="de">ist abgebildet in</skos:prefLabel>
+							</skos:Concept>
+						</lido:relatedWorkRelType>
+					</lido:relatedWorkSet>
+				</lido:relatedWorksWrap>
+			</lido:objectRelationWrap>
+		</lido:descriptiveMetadata>
+		<lido:administrativeMetadata xml:lang="de">
+			<lido:rightsWorkWrap>
+				<lido:rightsWorkSet>
+					<lido:rightsType lido:type="http://terminology.lido-schema.org/lido00921">
+						<skos:Concept rdf:about="https://creativecommons.org/publicdomain/zero/1.0/">
+							<skos:prefLabel xml:lang="en">CC0 1.0 Universal (CC0
+								1.0)</skos:prefLabel>
+							<skos:altLabel xml:lang="en">No Copyright</skos:altLabel>
+							<skos:altLabel xml:lang="en">Public Domain Dedication</skos:altLabel>
+							<skos:altLabel xml:lang="de">Kein Urheberrechtsschutz</skos:altLabel>
+						</skos:Concept>
+					</lido:rightsType>
+				</lido:rightsWorkSet>
+			</lido:rightsWorkWrap>
+			<lido:recordWrap>
+				<lido:recordID lido:type="http://terminology.lido-schema.org/lido00100">00154983</lido:recordID>
+				<lido:recordType>
+					<skos:Concept rdf:about="http://terminology.lido-schema.org/lido00447">
+						<skos:prefLabel xml:lang="en">Component-level record</skos:prefLabel>
+						<skos:prefLabel xml:lang="de">Bestandteil (Katalogisierungsebene)</skos:prefLabel>
+					</skos:Concept>
+				</lido:recordType>
+				<lido:recordSource>
+					<lido:legalBodyID lido:type="http://terminology.lido-schema.org/lido00099" lido:source="ISIL (ISO 15511)">
+                  https://ld.zdb-services.de/resource/organisations/DE-Mb112</lido:legalBodyID>
+					<lido:legalBodyName>
+						<lido:appellationValue>Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg</lido:appellationValue>
+					</lido:legalBodyName>
+					<lido:legalBodyWeblink>https://www.uni-marburg.de/de/fotomarburg</lido:legalBodyWeblink>
+				</lido:recordSource>
+				<lido:recordRights>
+					<lido:rightsType lido:type="http://terminology.lido-schema.org/lido00921">
+						<skos:Concept rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+							<skos:prefLabel xml:lang="en">CC0 1.0 Universal (CC0 1.0)</skos:prefLabel>
+							<skos:altLabel xml:lang="en">No Copyright</skos:altLabel>
+							<skos:altLabel xml:lang="en">Public Domain Dedication</skos:altLabel>
+							<skos:altLabel xml:lang="de">Kein Urheberrechtsschutz</skos:altLabel>
+						</skos:Concept>
+					</lido:rightsType>
+					<lido:rightsHolder>
+						<lido:legalBodyID lido:type="http://terminology.lido-schema.org/lido00099" lido:source="ISIL (ISO 15511)">
+                      https://ld.zdb-services.de/resource/organisations/DE-Mb112</lido:legalBodyID>
+						<lido:legalBodyName>
+							<lido:appellationValue>Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg</lido:appellationValue>
+						</lido:legalBodyName>
+						<lido:legalBodyWeblink>https://www.uni-marburg.de/de/fotomarburg</lido:legalBodyWeblink>
+					</lido:rightsHolder>
+					<lido:creditLine>Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg. CC0 1.0 Universal (CC0 1.0)</lido:creditLine>
+				</lido:recordRights>
+				<lido:recordInfoSet>
+					<lido:recordInfoLink lido:formatResource="text/html">https://www.bildindex.de/document/obj20344012?part=2</lido:recordInfoLink>
+					<lido:recordMetadataDate>2021-12-18T17:27:15Z</lido:recordMetadataDate>
+				</lido:recordInfoSet>
+			</lido:recordWrap>
+			<lido:resourceWrap>
+				<lido:resourceSet>
+					<lido:resourceID lido:type="http://terminology.lido-schema.org/lido00100">1.188.735</lido:resourceID>
+					<lido:resourceRepresentation
+						lido:type="http://terminology.lido-schema.org/lido00451">
+						<lido:linkResource lido:formatResource="image/jpeg">http://www.bildindex.de/bilder/m/fm1188735</lido:linkResource>
+						<lido:resourceMeasurementsSet>
+							<lido:measurementType>
+								<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q35059">
+									<skos:prefLabel xml:lang="en">width</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Breite</skos:prefLabel>
+									<skos:mappingRelation>http://vocab.getty.edu/aat/300055647</skos:mappingRelation>
+								</skos:Concept>
+							</lido:measurementType>
+							<lido:measurementUnit>
+								<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q355198">
+									<skos:prefLabel xml:lang="en">pixel</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Pixel</skos:prefLabel>
+									<skos:mappingRelation>http://vocab.getty.edu/aat/300266190</skos:mappingRelation>
+								</skos:Concept>
+							</lido:measurementUnit>
+							<lido:measurementValue>350</lido:measurementValue>
+						</lido:resourceMeasurementsSet>
+					</lido:resourceRepresentation>
+					<lido:resourceRepresentation
+						lido:type="http://terminology.lido-schema.org/lido00464">
+						<lido:linkResource lido:formatResource="image/jpeg">http://www.bildindex.de/bilder/d/fm1188735</lido:linkResource>
+						<lido:resourceMeasurementsSet>
+							<lido:measurementType>
+								<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q35059">
+									<skos:prefLabel xml:lang="en">width</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Breite</skos:prefLabel>
+									<skos:mappingRelation>http://vocab.getty.edu/aat/300055647</skos:mappingRelation>
+								</skos:Concept>
+							</lido:measurementType>
+							<lido:measurementUnit>
+								<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q355198">
+									<skos:prefLabel xml:lang="en">pixel</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Pixel</skos:prefLabel>
+									<skos:mappingRelation>http://vocab.getty.edu/aat/300266190</skos:mappingRelation>
+								</skos:Concept>
+							</lido:measurementUnit>
+							<lido:measurementValue>1200</lido:measurementValue>
+						</lido:resourceMeasurementsSet>
+					</lido:resourceRepresentation>
+					<lido:resourceType>
+						<skos:Concept rdf:about="http://vocab.getty.edu/aat/300215302">
+							<skos:prefLabel xml:lang="en">digital images</skos:prefLabel>
+							<skos:altLabel xml:lang="en">digital image</skos:altLabel>
+						</skos:Concept>
+						<lido:term>Digitales Bild</lido:term>
+						<lido:term lido:addedSearchTerm="yes">Digitalbild</lido:term>
+					</lido:resourceType>
+					<lido:resourceDescription>Gesamtansicht, von vorn</lido:resourceDescription>
+					<lido:resourceDateTaken>
+						<lido:displayDate>um 1920/1939?</lido:displayDate>
+						<lido:date>
+							<lido:earliestDate lido:type="http://terminology.lido-schema.org/lido00529">1920</lido:earliestDate>
+							<lido:latestDate lido:type="http://terminology.lido-schema.org/lido00529">1939</lido:latestDate>
+						</lido:date>
+					</lido:resourceDateTaken>
+					<lido:rightsResource>
+						<lido:rightsType lido:type="http://terminology.lido-schema.org/lido00921">
+							<skos:Concept
+								rdf:about="https://www.deutsche-digitale-bibliothek.de/content/lizenzen/rv-fz/">
+								<skos:prefLabel xml:lang="en">Free access – no
+									reuse</skos:prefLabel>
+								<skos:prefLabel xml:lang="de">Rechte vorbehalten – Freier
+									Zugang</skos:prefLabel>
+							</skos:Concept>
+						</lido:rightsType>
+						<lido:rightsHolder>
+							<lido:legalBodyID lido:type="http://terminology.lido-schema.org/lido00099" lido:source="ISIL (ISO 15511)">
+                          https://ld.zdb-services.de/resource/organisations/DE-Mb112</lido:legalBodyID>
+							<lido:legalBodyName>
+								<lido:appellationValue>Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg</lido:appellationValue>
+							</lido:legalBodyName>
+						</lido:rightsHolder>
+						<lido:creditLine xml:lang="de">Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg. Fotograf/Fotografin: unbekannt. Aufn.-Datum: um 1920/1939?. Rechte vorbehalten – Freier Zugang</lido:creditLine>
+					</lido:rightsResource>
+				</lido:resourceSet>
+				<lido:resourceSet>
+					<lido:resourceID lido:type="http://terminology.lido-schema.org/lido00100">Z 20.244</lido:resourceID>
+					<lido:resourceRepresentation
+						lido:type="http://terminology.lido-schema.org/lido00451">
+						<lido:linkResource lido:formatResource="image/jpeg">http://www.bildindex.de/bilder/m/fmz20244</lido:linkResource>
+						<lido:resourceMeasurementsSet>
+							<lido:measurementType>
+								<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q35059">
+									<skos:prefLabel xml:lang="en">width</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Breite</skos:prefLabel>
+									<skos:mappingRelation>http://vocab.getty.edu/aat/300055647</skos:mappingRelation>
+								</skos:Concept>
+							</lido:measurementType>
+							<lido:measurementUnit>
+								<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q355198">
+									<skos:prefLabel xml:lang="en">pixel</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Pixel</skos:prefLabel>
+									<skos:mappingRelation>http://vocab.getty.edu/aat/300266190</skos:mappingRelation>
+								</skos:Concept>
+							</lido:measurementUnit>
+							<lido:measurementValue>350</lido:measurementValue>
+						</lido:resourceMeasurementsSet>
+					</lido:resourceRepresentation>
+					<lido:resourceRepresentation
+						lido:type="http://terminology.lido-schema.org/lido00464">
+						<lido:linkResource lido:formatResource="image/jpeg">http://www.bildindex.de/bilder/d/fmz20244</lido:linkResource>
+						<lido:resourceMeasurementsSet>
+							<lido:measurementType>
+								<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q35059">
+									<skos:prefLabel xml:lang="en">width</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Breite</skos:prefLabel>
+									<skos:mappingRelation>http://vocab.getty.edu/aat/300055647</skos:mappingRelation>
+								</skos:Concept>
+							</lido:measurementType>
+							<lido:measurementUnit>
+								<skos:Concept rdf:about="http://www.wikidata.org/wiki/Q355198">
+									<skos:prefLabel xml:lang="en">pixel</skos:prefLabel>
+									<skos:prefLabel xml:lang="de">Pixel</skos:prefLabel>
+									<skos:mappingRelation>http://vocab.getty.edu/aat/300266190</skos:mappingRelation>
+								</skos:Concept>
+							</lido:measurementUnit>
+							<lido:measurementValue>1200</lido:measurementValue>
+						</lido:resourceMeasurementsSet>
+					</lido:resourceRepresentation>
+					<lido:resourceType>
+						<skos:Concept rdf:about="http://vocab.getty.edu/aat/300215302">
+							<skos:prefLabel xml:lang="en">digital images</skos:prefLabel>
+							<skos:altLabel xml:lang="en">digital image</skos:altLabel>
+						</skos:Concept>
+						<lido:term>Digitales Bild</lido:term>
+						<lido:term lido:addedSearchTerm="yes">Digitalbild</lido:term>
+					</lido:resourceType>
+					<lido:resourceDescription>Gesamtansicht, von vorn</lido:resourceDescription>
+					<lido:rightsResource>
+						<lido:rightsType lido:type="http://terminology.lido-schema.org/lido00921">
+							<skos:Concept
+								rdf:about="https://www.deutsche-digitale-bibliothek.de/content/lizenzen/rv-fz/">
+								<skos:prefLabel xml:lang="en">Free access – no
+									reuse</skos:prefLabel>
+								<skos:prefLabel xml:lang="de">Rechte vorbehalten – Freier
+									Zugang</skos:prefLabel>
+							</skos:Concept>
+						</lido:rightsType>
+						<lido:rightsHolder>
+							<lido:legalBodyID lido:type="http://terminology.lido-schema.org/lido00099" lido:source="ISIL (ISO 15511)">
+                          https://ld.zdb-services.de/resource/organisations/DE-Mb112</lido:legalBodyID>
+							<lido:legalBodyName>
+								<lido:appellationValue xml:lang="de">Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg</lido:appellationValue>
+							</lido:legalBodyName>
+						</lido:rightsHolder>
+						<lido:creditLine xml:lang="de">Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto Marburg. Fotograf/Fotografin: unbekannt. Aufn.-Datum: unbekannt (Repro). Rechte vorbehalten – Freier Zugang</lido:creditLine>
+					</lido:rightsResource>
+				</lido:resourceSet>
+			</lido:resourceWrap>
+		</lido:administrativeMetadata>
+	</lido:lido>
+</lido:lidoWrap>

@@ -40,8 +40,8 @@
 		</xs:documentation>
 	</xs:annotation>
 
-	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
-	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="gml/gml.xsd"/>
 
 	<xs:annotation>
 		<xs:appinfo>

@@ -48,14 +48,22 @@ receive_lido() {
     echo
     echo "Empfangene XML-Daten im LIDO-Format aus \`$input\` "
     echo
-    echo "Anzahl von LIDO-Datensätzen:"
-
+    echo -n "Anzahl von LIDO-Datensätzen: "
     xmlstarlet sel -t -v 'count(/lido:lidoWrap/lido:lido)' "$input"
 
     echo
+    echo 
+    echo "### Validierung"
+    echo
 
     # XML-Validierung 
-    xmllint --schema lido-v1.1.xsd "$input" --quiet --noout --nowarning  2>&1
+    schema=schemas/lido-v1.1.xsd
+    xmllint --schema "$schema" "$input" --quiet --noout --nowarning || return
+    echo "Daten sind valide gegen $schema"
+
+    rm -rf $dir # alten Stand löschen
+    mkdir -p $dir
+    cp "$input" "$dir/valid.xml"
 }
 
 receive_rdf() {
