@@ -54,7 +54,8 @@ receive_lido() {
 
     echo
 
-    # TODO: XML-Validierung 
+    # XML-Validierung 
+    xmllint --schema lido-v1.1.xsd "$input" --quiet --noout --nowarning  2>&1
 }
 
 receive_rdf() {
