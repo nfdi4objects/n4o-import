@@ -29,9 +29,5 @@ def main():
         else:
             del(col['db'])
 
-    with open('n4o-collections.json', 'w') as jsonfile:
-        json.dump(collections, jsonfile, indent=2)
-
-
 if __name__ == "__main__":
     main()
