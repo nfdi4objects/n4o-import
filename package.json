@@ -1,0 +1,14 @@
+{
+  "name": "n4o-import",
+  "type": "module",
+  "scripts": {
+    "rdffilter": "rdffilter",
+    "lint": "eslint --fix '*.js'"
+  },
+  "dependencies": {
+    "rdffilter": "^0.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.8.0"
+  }
+}

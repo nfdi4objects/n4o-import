@@ -9,7 +9,7 @@ fi
 collection=${1:-}
 
 if [[ $# -eq 1 ]]; then
-  grep -e "^$collection," n4o-collections.csv
+  grep -e "^$collection," sources/n4o-collections.csv
 fi
 
 [[ $# -eq 2 ]] || exit 1
@@ -21,7 +21,7 @@ name=Testammlung
 if [[ $collection -eq "0" ]]; then
   echo "0 = $name"
 else
-  name=$(awk -F, "\$1 == $collection {print \$2}" n4o-collections.csv)
+  name=$(awk -F, "\$1 == $collection {print \$2}" sources/n4o-collections.csv)
   if [[ -z "$name" ]]; then
     echo "COLLECTION_ID $collection unbekannt!"
     exit 1
@@ -93,25 +93,19 @@ receive_rdf() {
     echo "Anzahl unterschiedlicher Tripel: **$(<$unique wc -l)**"
     echo
 
-    # Relative URIs entfernen
-
-    absolute=$dir/absolute.nt
-
-    <$unique awk '$1 !~ /^<file:/ && $2 !~ /<file:/ && $3 !~ /<file:/ { print }' > $absolute
-    a=$(<$unique wc -l)
-    b=$(<$absolute wc -l)
-    removed=$(($a-$b))
-
-    echo "RDF beschränkt auf absolute URIs in \`$absolute\`. "
-    if [[ $removed -ne "0" ]]; then
-      echo "$removed triples mit relativen URIs entfernt!"
-    fi
+    # Zusätzliche RDF-Filter anwenden
+    filtered=$dir/filtered.nt
+    echo "Gefiltertes RDF in \`$filtered\`. "
+    echo
+    echo -n "    "
+    npm run --silent -- rdffilter $unique -o $filtered --stats -f ./rdffilter.js || exit
+    npm run --silent -- rdffilter $unique -o $dir/removed.nt -r -f ./rdffilter.js || exit
 
     # Verschiedene Statistiken
 
     properties=$dir/properties.txt
     echo
-    <$absolute awk '{print $2}' | sed 's/[<>]//g' | sort | uniq -c | sort -nrk1 > $properties
+    <$filtered awk '{print $2}' | sed 's/[<>]//g' | sort | uniq -c | sort -nrk1 > $properties
     echo "Statistik der Properties in \`$properties\` mit $(<$properties wc -l) Properties."
     echo "~~~"
     head -3 $properties
@@ -121,7 +115,7 @@ receive_rdf() {
     namespaces=$dir/namespaces.txt
     echo
     # Heuristik zur Extraktion von Namensräumen aus absoluten URIs
-    <$absolute awk '{print $1} $3~/^</ {print $3}' | sed 's/^<//' | \
+    <$filtered awk '{print $1} $3~/^</ {print $3}' | sed 's/^<//' | \
         sed 's/#.*$/#/;t;s|/[^/]*>$|/|;t;s/:.*$/:/' | \
         sort | uniq -c | sort -nrk1 > $namespaces
     echo "Statistik der Namensräume von Subjekten und Objekten in \`$namespaces\` mit $(<$namespaces wc -l) Einträgen. "

@@ -5,7 +5,7 @@ if [[ $# -ne 1 ]]; then
   echo "Usage: $0 COLLECTION_ID|all"
   exit
 fi
-        
+
 function import_collection() {
     collection=$1
     if [[ ! "$collection" =~ ^[0-9]*$ ]]; then
@@ -13,13 +13,13 @@ function import_collection() {
         exit 1
     fi
 
-    absolute=import/$collection/absolute.nt        
-    if [[ -s "$absolute" ]]; then
-        echo "Importing $absolute into Fuseki" 
+    filtered=import/$collection/filtered.nt
+    if [[ -s "$filtered" ]]; then
+        echo "Importing $filtered into Fuseki"
         /opt/fuseki/bin/s-put http://localhost:3030/n4o-rdf-import \
-            n4oc:$collection $absolute
+            n4oc:$collection $filtered
     else
-        echo "Missing RDF file: $absolute"
+        echo "Missing RDF file: $filtered"
         exit 1
     fi
 }

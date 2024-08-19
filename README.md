@@ -26,15 +26,8 @@ Datenbank aus <https://nfdi4objects.github.io/n4o-databases/> zugeordnet sein.
 Unabhängige Sammlungen, die zu keiner Datenbank gehören, können auch als
 einzelne Datenpublikationen angesehen werden.
 
-In [`n4o-collections.csv`](n4o-collections.csv) stehen bekannte Sammlungen und
-Datenpublikationen, deren Daten übernommen werden können und falls vorhanden
-die dazu gehörige übergeordnete Datenbank aus
-<https://nfdi4objects.github.io/n4o-databases/>.
-
-Das Skript `pg.py` konvertiert die Datei `n4o-collections.csv` ins PG format.
-Mit `make` wird damit die Datei `no4-collections.pg` aktualisiert. Diese Datei
-kann mit <https://github.com/nfdi4objects/n4o-databases/blob/main/n4o-databases.pg>
-zusammengeführt werden.
+Zum Update der Sammlungsliste ist `make` aufzurufen, um das Unterverzeichnis
+`sources` zu erstellen.
 
 ## Benutzung
 
@@ -69,7 +62,7 @@ oder LIDO-XML-Datei.
   publiziert (Sammlungs-ID 9) und wird einzeln übernommen.
 
 Die empfangenen RDF- bzw. LIDO-Daten werden syntaktisch geprüft und rudimentär
-bereinigt im Verzeichnis [`import`](import) abgelegt (Datei `absolute.nt` bzw.
+bereinigt im Verzeichnis [`import`](import) abgelegt (Datei `filtered.nt` bzw.
 `valid.xml`).
 
 Darüber hinaus wird für RDF-Daten eine Statistik der verwendeten RDF-Properties
