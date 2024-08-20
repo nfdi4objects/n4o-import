@@ -58,6 +58,7 @@ const nsReplace = new NamespaceReplacer({
   "http://www.ics.forth.gr/isl/CRMdig/": "http://www.cidoc-crm.org/extensions/crmdig/",
   "http://purl.org/dc/terms/": "http://purl.org/dc/elements/1.1/",
   "http://cidoc-crm.org/current/": "http://www.cidoc-crm.org/cidoc-crm/",
+  "http://erlangen-crm.org/170309/": "http://www.cidoc-crm.org/cidoc-crm/",
 })
 
 const nsDisallow = new NamespaceFilter([
@@ -70,6 +71,8 @@ const nsDisallow = new NamespaceFilter([
   "http://www.w3.org/2000/01/rdf-schema",
   "http://www.w3.org/2001/XMLSchema#",
   "http://vocab.getty.edu/aat/",
+  "http://www.w3.org/2002/07/owl#",
+  "http://d-nb.info/gnd/",
 ])
 
 export default filterPipeline([

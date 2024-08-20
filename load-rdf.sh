@@ -27,7 +27,7 @@ function import_collection() {
         echo "Collection ID must be numeric!"
         exit 1
     fi
-    import_file "import/$collection/file.nt" "$n4oc$collection"
+    import_file "import/$collection/filtered.nt" "$n4oc$collection"
 }
 
 if [[ "$1" = "sources" ]]; then
