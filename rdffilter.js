@@ -62,17 +62,18 @@ const nsReplace = new NamespaceReplacer({
 })
 
 const nsDisallow = new NamespaceFilter([
-  "http://www.wikidata.org/entity/",
-  "http://www.w3.org/ns/prov#",
-  "http://www.cidoc-crm.org/",
+  "http://d-nb.info/gnd/",
   "http://purl.org/dc/elements/1.1/",
-  "http://www.w3.org/2004/02/skos/core#",
-  "https://iconclass.org/",
+  "http://vocab.getty.edu/aat/",
+  "http://www.cidoc-crm.org/",
   "http://www.w3.org/2000/01/rdf-schema",
   "http://www.w3.org/2001/XMLSchema#",
-  "http://vocab.getty.edu/aat/",
   "http://www.w3.org/2002/07/owl#",
-  "http://d-nb.info/gnd/",
+  "http://www.w3.org/2004/02/skos/core#",
+  "http://www.w3.org/ns/prov#",
+  "http://www.wikidata.org/entity/",
+//  "https://iconclass.org/", TODO: http or https?
+  "http://iconclass.org/",
 ])
 
 export default filterPipeline([
