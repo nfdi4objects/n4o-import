@@ -91,3 +91,17 @@ Zum Löschen von Graphen kann die Fuseki-Weboberfläche mit dem `update` Endpunk
 ### Konvertierung in Property-Graphen
 
 Neben der RDF-Kodierung sollen die Daten oder Teile davon in einen Property-Graphen überführt und dort mit anderen Daten zusammengeführt werden. Siehe dazu das Code-Repository <https://github.com/nfdi4objects/n4o-property-graph/>.
+
+
+## Einspielung von Vokabularen
+
+### Wikidata
+
+Im Verzeichnis `wikidata` werden RDF-Daten aus Wikidata vorgehalten und können mit `load-wikidata` in den Triple-Store geladen werden.
+
+Das Skript `extract-wikidata` ermittelt Wikidata-Entity-IDs aus der Liste von Datenbanken und läd diese von Wikidata.
+
+~~~sh
+./extract-wikidata
+./load-wikidata
+~~~

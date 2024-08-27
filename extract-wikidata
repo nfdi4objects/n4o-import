@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+set -euo pipefail
+
+rm -f wikidata/*.rdf wikidata/*.nt
+./get-wikidata-entity `grep -o -E 'Q[0-9]+' sources/n4o-databases.csv`
