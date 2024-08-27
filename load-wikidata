@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+set -euo pipefail
+
+cat wikidata/Q*.nt > wikidata/all.nt
+./load-rdf-graph http://bartoc.org/en/node/1940 wikidata/all.nt

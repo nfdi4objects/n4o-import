@@ -4,3 +4,5 @@ import/*
 !import/README.md
 sources/
 node_modules/
+wikidata/*.rdf
+wikidata/*.nt

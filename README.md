@@ -80,14 +80,12 @@ unter <https://nfdi4objects.github.io/n4o-terminologies/>).
 
 ### Einspielen in Triple-Store
 
-Mit dem Skript `load-rdf.sh` können anschließend Sammlungen und Informationen
+Mit dem Skript `load-rdf` können anschließend Sammlungen und Informationen
 über Sammlungen (sources) in einen lokalen RDF-Triple-Store (Fuseki) geladen
 werden, wobei die vorhandenen RDF-Daten der Sammlung jeweils überschrieben
 werden.
 
 Zum Löschen von Graphen kann die Fuseki-Weboberfläche mit dem `update` Endpunkt verwendet und dem Kommando `DROP GRAPH <...>` verwendet werden.
-
-
 
 
 ### Konvertierung in Property-Graphen
