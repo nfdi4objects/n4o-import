@@ -45,10 +45,16 @@ Benötigt werden Standard-Kommandozeilenwerkzeuge (grep, awk, sed...) sowie
 - Python 3
 - Node >= 18
 
-Zur Installation benötigter Pakete:
+Installation benötigter Pakete:
 
 ~~~sh
 npm install
+~~~
+
+Aktualisierung der Liste von Datenquellen aus [n4o-databases](https://github.com/nfdi4objects/n4o-databases/):
+
+~~~sh
+make update
 ~~~
 
 ### Annahme und Erstkontrolle der Daten
@@ -105,3 +111,7 @@ Das Skript `extract-wikidata` ermittelt Wikidata-Entity-IDs aus der Liste von Da
 ./extract-wikidata
 ./load-wikidata
 ~~~
+
+### Weitere Vokabulare
+
+*Noch nicht umgesetzt*
