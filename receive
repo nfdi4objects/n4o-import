@@ -57,9 +57,8 @@ receive_lido() {
     echo
 
     # XML-Validierung 
-    schema=schemas/lido-v1.1.xsd
-    xmllint --schema "$schema" "$input" --quiet --noout --nowarning || return
-    echo "Daten sind valide gegen $schema"
+    ./lido-schema/lido-valid "$input" --quiet --noout --nowarning || return
+    echo "Daten sind valides LIDO 1.1"
 
     rm -rf $dir # alten Stand löschen
     mkdir -p $dir

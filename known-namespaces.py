@@ -3,7 +3,7 @@ import sys
 
 def read_namespaces():
     ns = {}
-    with open('namespaces.csv', 'r') as file:
+    with open('terminologies/namespaces.csv', 'r') as file:
         for line in file.readlines()[1:]:
             name, uri, prefix = line.strip().split(',')
             ns[uri] = name

@@ -19,7 +19,7 @@ function import_collection() {
 }
 
 if [[ "$1" = "sources" ]]; then
-    import_file "sources/n4o-sources.nt" "$n4oc"
+    ./load-rdf-graph "$n4oc" "sources/n4o-sources.nt"
 elif [[ "$1" = "all" ]]; then
     for collection in import/*; do
         import_collection $(basename $collection)

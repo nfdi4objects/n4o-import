@@ -3,6 +3,8 @@ inbox/*
 import/*
 !import/README.md
 sources/
+lido-schema/
+terminologies/
 node_modules/
 wikidata/*.rdf
 wikidata/*.nt
