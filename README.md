@@ -124,7 +124,13 @@ Neben der RDF-Kodierung sollen die Daten oder Teile davon in einen Property-Grap
 
 ## Import von Vokabularen
 
-Das Einspielung von Ontologien und anderen Vokabularen ist noch in Entwicklung.
+*Das Einspielung von Ontologien und anderen Vokabularen ist noch in Entwicklung.*
+
+Zum Aktualisieren des Graph <https://graph.nfdi4objects.net/terminology/> mit Angaben *über* alle für N4O relevanten Vokabulare dient folgender Aufruf:
+
+~~~sh
+./load-terminologies
+~~~
 
 ### Wikidata
 

@@ -5,6 +5,7 @@ import/*
 sources/
 lido-schema/
 terminologies/
+terminologies.*
 node_modules/
 wikidata/*.rdf
 wikidata/*.nt
