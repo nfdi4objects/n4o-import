@@ -3,6 +3,7 @@ import { filterPipeline, namespaceFilter } from "rdffilter"
 const relativeIRI = iri => iri.startsWith("file://") || !/^(?:[a-z+]+:)/i.test(iri)
 const isRelative = node => node.termType === "NamedNode" && relativeIRI(node.id)
 
+// TODO: load from config file
 const nsReplace = namespaceFilter({
   namespaces: {
     "http://www.ics.forth.gr/isl/CRMsci/": "http://www.cidoc-crm.org/extensions/crmsci/",

@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+set -euo pipefail
+
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 SPARQL"
+    echo "Execute arbitrary SPARQL Update query."
+    exit 1
+fi
+
+#echo "$1"
+/opt/fuseki/bin/s-update --service http://localhost:3030/n4o-rdf-import/update "$1"

@@ -8,7 +8,6 @@
 - [Installation](#installation)
 - [Voraussetzungen](#voraussetzungen)
 - [Datenannahme und Prüfung](#datenannahme-und-prüfung)
-- [Import von Verwaltungsdaten](#import-von-verwaltungsdaten)
 - [Import von Forschungsdaten](#import-von-forschungsdaten)
 - [Import von Vokabularen](#import-von-vokabularen)
 
@@ -91,27 +90,24 @@ und der RDF-Namensräume von Subjekt- und Objekt-URIs erstellt. Letztere werden
 mit bekannten Namensräumen abgeglichen (siehe [n4o-terminologies]).
 
 
-## Import von Verwaltungsdaten
-
-Nach Aktualisierung der Liste von Forschungsdaten aus [n4o-databases] müssen die entsprechenden Verwaltungsdaten in den Triple-Store importiert werden:
-
-~~~
-./load-rdf sources
-~~~
-
-
 ## Import von Forschungsdaten
 
-Das anschließende **Einspielen** der bereinigten RDF-Daten als Named Graph in einen lokalen Fuseki RDF-Triple-Store bzw. das Konvertieren der LIDO-XML-Daten zur Einspielung in den gemeinsamen Knowledge Graphen erfolgt mit folgenden Skripten.
+Das Einspielen der bereinigten RDF-Daten als Named Graph in einen lokalen Fuseki RDF-Triple-Store bzw. das Konvertieren der LIDO-XML-Daten zur Einspielung in den gemeinsamen Knowledge Graphen erfolgt mit folgenden Skripten.
 
 ### Einspielen von RDF-Daten in den Triple-Store
 
 Mit dem Skript `load-rdf` können Sammlungen und Informationen über Sammlungen
 (sources) in einen lokalen RDF-Triple-Store (Fuseki) geladen werden, wobei die
-vorhandenen RDF-Daten der Sammlung jeweils überschrieben werden.
+vorhandenen RDF-Daten der Sammlung jeweils überschrieben werden. Beispiel:
 
-Zum Löschen von Graphen kann die Fuseki-Weboberfläche mit dem `update` Endpunkt
-verwendet und dem Kommando `DROP GRAPH <...>` verwendet werden.
+~~~sh
+./load-rdf 4
+~~~
+
+Vor dem Einspielen der RDF-Daten in einen Graphen mit der jeweiligen Sammlungs-URI (hier <https://graph.nfdi4objects.net/collection/4>) wird der Graph 
+<https://graph.nfdi4objects.net/collection/> mit Verwaltungsdaten _über_ die Sammlungen aktualisiert.
+
+Zum Löschen von Graphen kann die Fuseki-Weboberfläche mit dem `update` Endpunkt und dem Kommando `DROP GRAPH <...>` verwendet werden, allerdings wird der Graph mit den Verwaltungsdaten dabei nicht aktualisiert!
 
 ### Einspielen von RDF-Daten in den Property-Graphen
 
