@@ -33,7 +33,6 @@
     "@id": "http://purl.org/dc/terms/isPartOf",
     "@container": "@set"
   },
-
   "url": {
     "@id": "http://xmlns.com/foaf/0.1/page",
     "@type": "@id"

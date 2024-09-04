@@ -35,8 +35,11 @@ Zusätzliche Abhängigkeiten werden anschließend mit `make update` installiert.
 - Das LIDO-Schema aus [lido-schema](https://github.com/nfdi4objects/lido-schema/)
 - Benötigte Node-Pakete (`npm install`)
 
-Schließlich müssen als Backend ein lokaler Triple-Store (bislang unterstützt: Fuseki) und eine Property-Graph-Datenbank (bislang unterstützt: Neo4J) vorhanden sein.
+Schließlich müssen als Backend ein lokaler Triple-Store (bislang unterstützt: Fuseki) und eine Property-Graph-Datenbank (bislang unterstützt: Neo4J) vorhanden sein. In Fuseki muss der Default-Graph mit folgender Einstellung in `/etc/fuseki/configuration/n4o-rdf-import.ttl` als Union-Graph konfiguriert werden:
 
+~~~
+:tdb_dataset_readwrite tdb2:unionDefaultGraph true;
+~~~
 
 ## Voraussetzungen
 
