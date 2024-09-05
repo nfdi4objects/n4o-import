@@ -25,8 +25,13 @@ function update_collection_description {
     echo "Deleting provenance data of $uri"
     sparql=$(cat <<-SPARQL
 PREFIX n4oc: <https://graph.nfdi4objects.net/collection/>
-WITH n4oc: DELETE { ?s ?p ?o }
-WHERE { { n4oc:$id ?p ?o } UNION { ?s ?p n4oc:1 } }
+WITH n4oc:
+DELETE { ?s ?p ?o }
+WHERE {
+  { VALUES ?s { n4oc:$id } ?s ?p ?o }
+  UNION
+  { VALUES ?o { n4oc:$id } ?s ?p ?o } 
+}
 SPARQL
 )
     ./update-rdf "$sparql"
@@ -35,9 +40,11 @@ SPARQL
     sparql=$(cat <<-SPARQL
 PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 INSERT DATA { GRAPH <https://graph.nfdi4objects.net/collection/> {
 $about
 <$uri> dct:issued "$(date -Iminutes)"^^xsd:dateTime .
+<$uri> skos:notation "$id" .
 } }
 SPARQL
 )
