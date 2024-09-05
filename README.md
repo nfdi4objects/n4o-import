@@ -45,10 +45,10 @@ Schließlich müssen als Backend ein lokaler Triple-Store (bislang unterstützt:
 
 Alle zu importierenden Forschungsdaten müssen genau einer "Sammlung" zugeordnet
 sein. Eine Sammlung im Sinne des Import ist eine Menge von Daten in LIDO oder
-RDF, die als ganzes importiert und aktualisiert werden kann. Zusätzlich können
-Sammlungen einer übergreifenden Datenbank (Forschungsdaten-Repository)
-zugeordnet sein. Die Verwaltung von Sammlungen geschieht ausschließlich über
-das Repository [n4o-databases].
+RDF, die als ganzes importiert und aktualisiert werden kann. Zusätzlich müssen
+Sammlungen einem übergreifenden Forschungsdaten-Repository
+zugeordnet sein. Die Verwaltung von Sammlungen geschieht derzeit über
+das git-Repository [n4o-databases].
 
 Weitere Anforderungen an Datenlieferungen sind [im Handbuch des N4O Graph](https://nfdi4objects.github.io/n4o-graph/sources.html) beschrieben.
 
