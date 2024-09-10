@@ -1,8 +1,6 @@
 #!/usr/bin/bash
 set -euo pipefail
 
-n4oc=https://graph.nfdi4objects.net/collection/
-
 if [[ $# -ne 1 ]]; then
     echo "Usage: $0 COLLECTION_ID|all"
     echo "Imports into local Fuseki store"
@@ -14,49 +12,13 @@ function error() {
     exit 1
 }
 
-function update_collection_description {
-    id=$1
-    uri=https://graph.nfdi4objects.net/collection/$id
-    sources=sources/n4o-collections.json
-    about=$(jq --arg id $uri '.[]|select(.id==$id)' $sources \
-        | npm run --silent -- jsonld2rdf -c sources/context.json)
-    [[ -z "$about" ]] && error "Missing $uri in $sources"
-
-    echo "Deleting provenance data of $uri"
-    sparql=$(cat <<-SPARQL
-PREFIX n4oc: <https://graph.nfdi4objects.net/collection/>
-WITH n4oc:
-DELETE { ?s ?p ?o }
-WHERE {
-  { VALUES ?s { n4oc:$id } ?s ?p ?o }
-  UNION
-  { VALUES ?o { n4oc:$id } ?s ?p ?o } 
-}
-SPARQL
-)
-    ./update-rdf "$sparql"
-    
-    echo "Adding new provenance data of $uri"
-    sparql=$(cat <<-SPARQL
-PREFIX dct: <http://purl.org/dc/terms/>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-INSERT DATA { GRAPH <https://graph.nfdi4objects.net/collection/> {
-$about
-<$uri> dct:issued "$(date -Iminutes)"^^xsd:dateTime .
-<$uri> skos:notation "$id" .
-} }
-SPARQL
-)
-    ./update-rdf "$sparql"
-}
-
 function import_collection() {
     collection=$1
     [[ "$collection" =~ ^[0-9]*$ ]] || error "Collection ID must be numeric!"
+    uri=https://graph.nfdi4objects.net/collection/$collection
 
-    update_collection_description $collection
-    ./load-rdf-graph "$n4oc$collection" "import/$collection/filtered.nt"
+    ./load-rdf-metadata $collection --issued
+    ./load-rdf-graph $uri import/$collection/filtered.nt
 }
 
 if [[ "$1" = "all" ]]; then

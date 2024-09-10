@@ -3,7 +3,7 @@ set -euo pipefail
 
 if [ $# -ne 2 ]; then
     echo "Usage: $0 <graph> <file>"
-    echo "Import an RDF file into Fuseki graph. Existing graph is overridden."
+    echo "Import an RDF file into a Fuseki graph. An existing graph is overridden."
     exit 1
 fi
 

@@ -109,6 +109,11 @@ vorhandenen RDF-Daten der Sammlung jeweils überschrieben werden. Beispiel:
 
 Vor dem Einspielen der RDF-Daten in einen Graphen mit der jeweiligen Sammlungs-URI (hier <https://graph.nfdi4objects.net/collection/4>) wird der Graph 
 <https://graph.nfdi4objects.net/collection/> mit Verwaltungsdaten _über_ die Sammlungen aktualisiert.
+Diese Metadaten können auch folgendermaßen unabhängig von den eigentlichen Forschungsdaten aktualisiert werden:
+
+~~~sh
+./load-rdf-metadata 4
+~~~
 
 Zum Löschen von Graphen kann die Fuseki-Weboberfläche mit dem `update` Endpunkt und dem Kommando `DROP GRAPH <...>` verwendet werden, allerdings wird der Graph mit den Verwaltungsdaten dabei nicht aktualisiert!
 
