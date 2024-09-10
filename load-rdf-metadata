@@ -23,7 +23,7 @@ id=$1
 uri=https://graph.nfdi4objects.net/collection/$id
 collections=collections.json
 about=$(jq --arg id $uri '.[]|select(.id==$id)' $collections \
-    | npm run --silent -- jsonld2rdf -c collections/context.json)
+    | npm run --silent -- jsonld2rdf -c sources/context.json)
 [[ -z "$about" ]] && error "Missing $uri in $collections"
 
 filter="FILTER (?p != dct:issued)"
@@ -44,8 +44,8 @@ WHERE {
 SPARQL
 )
 
-echo "$sparql"
-# ./update-rdf "$sparql"
+# echo "$sparql"
+./update-rdf "$sparql"
 
 [[ ! -z "$issued" ]] && issued="<$uri> dct:issued "$(date -Iminutes)"^^xsd:dateTime ."
     
@@ -62,7 +62,6 @@ $issued
 SPARQL
 )
 
-echo "$sparql"
-#./update-rdf "$sparql"
-
+# echo "$sparql"
+./update-rdf "$sparql"
 
