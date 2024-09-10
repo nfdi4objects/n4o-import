@@ -9,3 +9,4 @@ terminologies.*
 node_modules/
 wikidata/*.rdf
 wikidata/*.nt
+collections.json

@@ -1,31 +1,28 @@
 #!/usr/bin/bash
 set -euo pipefail
 
-if [[ $# -ne 2 ]]; then
-  echo "Usage: $0 COLLECTION_ID INPUT_FILE"
+if [[ $# -lt 1 ]]; then
+  echo "Usage: $0 COLLECTION_ID [INPUT_FILE]"
   echo
 fi
 
-collection=${1:-}
+function error() { echo $@ >&2; exit 1; }
+
+collection=$1
+[[ "$collection" =~ ^[0-9]*$ ]] || error "Collection ID must be numeric!"
+uri=https://graph.nfdi4objects.net/collection/$1
 
 if [[ $# -eq 1 ]]; then
-  grep -e "^$collection," sources/n4o-collections.csv
+  jq ".[]|select(.id==\"$uri\")" collections.json
+  exit
 fi
 
-[[ $# -eq 2 ]] || exit 1
-
 input=$2
-
 name=Testammlung
 
-if [[ $collection -eq "0" ]]; then
-  echo "0 = $name"
-else
-  name=$(awk -F, "\$1 == $collection {print \$2}" sources/n4o-collections.csv)
-  if [[ -z "$name" ]]; then
-    echo "COLLECTION_ID $collection unbekannt!"
-    exit 1
-  fi
+if [[ $collection -ne "0" ]]; then
+  name=$(jq ".[]|select(.id==\"$uri\").name" collections.json)
+  [[ -z "$name" ]] && error "Collection ID $collection unbekannt!"
 fi
 
 dir=import/$collection

@@ -3,7 +3,8 @@ update: tools
 	if [ -d lido-schema ]; then git -C lido-schema pull ; else git clone https://github.com/nfdi4objects/lido-schema.git lido-schema; fi
 	if [ -d terminologies ]; then git -C terminologies pull ; else git clone https://github.com/nfdi4objects/n4o-terminologies.git terminologies; fi
 	npm install
-	npm install --prefix sources
+	npm ci --prefix sources
+	npm run --silent --prefix sources csv2json < sources/n4o-collections.csv > collections.json
 
 tools:
 	@echo "Check availability of tools:"

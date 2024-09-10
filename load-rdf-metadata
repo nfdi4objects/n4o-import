@@ -21,10 +21,10 @@ function error() {
 
 id=$1
 uri=https://graph.nfdi4objects.net/collection/$id
-sources=sources/n4o-collections.json
-about=$(jq --arg id $uri '.[]|select(.id==$id)' $sources \
-    | npm run --silent -- jsonld2rdf -c sources/context.json)
-[[ -z "$about" ]] && error "Missing $uri in $sources"
+collections=collections.json
+about=$(jq --arg id $uri '.[]|select(.id==$id)' $collections \
+    | npm run --silent -- jsonld2rdf -c collections/context.json)
+[[ -z "$about" ]] && error "Missing $uri in $collections"
 
 filter="FILTER (?p != dct:issued)"
 [[ -z "$issued" ]] || filter="" 
