@@ -47,7 +47,7 @@ SPARQL
 # echo "$sparql"
 ./update-rdf "$sparql"
 
-[[ ! -z "$issued" ]] && issued="<$uri> dct:issued "$(date -Iminutes)"^^xsd:dateTime ."
+[[ ! -z "$issued" ]] && issued="<$uri> dct:issued \"$(date -Iminutes)\"^^xsd:dateTime ."
     
 echo "Adding new metadata of $uri"
 sparql=$(cat <<-SPARQL
