@@ -12,7 +12,12 @@ tools:
 	@which xmlstarlet
 	@which npm
 	@which jq
+	@which python
 
+deps:
+	python -m venv .venv
+	.venv/bin/pip install -r requirements.txt
+	
 extract-wikidata:
 	rm -f wikidata/*.rdf wikidata/*.nt
 	./get-wikidata-entity.sh `grep -o -E 'Q[0-9]+' sources/n4o-databases.csv`
