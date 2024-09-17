@@ -1,16 +1,12 @@
 #!/usr/bin/bash
 set -euo pipefail
+function error() { echo $@ >&2; exit 1; }
 
 if [[ $# -ne 1 ]]; then
     echo "Usage: $0 COLLECTION_ID|all"
     echo "Imports into local Fuseki store"
     exit
 fi
-
-function error() {
-    echo $@ >&2
-    exit 1
-}
 
 function import_collection() {
     collection=$1
