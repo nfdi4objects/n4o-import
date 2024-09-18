@@ -1,3 +1,3 @@
-Dieses Verzeichnis enthält geprüfte RDF-Daten zugeordnet zu [ihrer jeweiligen
-Sammlung](https://github.com/nfdi4objects/n4o-databases/blob/main/n4o-collections.csv).
+Dieses Verzeichnis enthält geprüfte Daten zugeordnet zu [ihrer jeweiligen Sammlung](https://graph.nfdi4objects.net/collection/) bzw. bei Vokabularen zu ihrer BARTOC-ID.
+
 Die zur Weiterverarbeitung nutzbare RDF-Datei mit geprüften Daten ist `filtered.nt`.

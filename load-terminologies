@@ -1,7 +1,0 @@
-#!/usr/bin/bash
-set -euo pipefail
-
-echo "Extracting N4O Terminologies from BARTOC"
-curl -s 'https://bartoc.org/api/voc?partOf=http%3A%2F%2Fbartoc.org%2Fen%2Fnode%2F18961&limit=500' > terminologies.json
-npm run --silent --prefix sources jsonld2rdf -- -c ../jskos-context.json ../terminologies.json > terminologies.nt
-./load-rdf-graph https://graph.nfdi4objects.net/terminology/ terminologies.nt

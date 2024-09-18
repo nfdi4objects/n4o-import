@@ -128,12 +128,16 @@ Neben der RDF-Kodierung sollen die Daten oder Teile davon in einen Property-Grap
 
 ## Import von Vokabularen
 
-*Das Einspielung von Ontologien und anderen Vokabularen ist noch in Entwicklung.*
-
-Zum Aktualisieren des Graph <https://graph.nfdi4objects.net/terminology/> mit Angaben *über* alle für N4O relevanten Vokabulare dient folgender Aufruf:
+Abrufen von Informationen *über* die für N4O relevanten Vokabulare:
 
 ~~~sh
-./load-terminologies
+make terminologies
+~~~
+
+Aktualisieren des Graph <https://graph.nfdi4objects.net/terminology/> mit den Angaben über die für N4O relevanten Vokabulare im Triple Store:
+
+~~~sh
+./load-terminologies-metadata
 ~~~
 
 ### Wikidata
