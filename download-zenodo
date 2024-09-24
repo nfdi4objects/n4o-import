@@ -12,7 +12,7 @@ id=$1
 if [[ "$id" =~ ^https://zenodo\.org/records/[0-9]+$ ]]; then
   id="${id##*/}"
 elif [[ "$id" =~ ^https://doi\.org/10\.5281/zenodo\.[0-9]+$ ]]; then
-  id="${id##*/}"
+  id="${id##*.}"
 else
   error "Expecting Zenodo DOI or record URL"
 fi
@@ -22,11 +22,9 @@ mkdir -p inbox/zenodo-$id/
 cd inbox/zenodo-$id/
 
 # TODO: Zenodo does not have last-modified header (?!)
-echo "Downloading $doi"
-wget -nv -N "https://zenodo.org/api/records/$id/files-archive"
-
-echo "Extracting $doi"
-unzip files-archive
+url="https://zenodo.org/api/records/$id/files-archive"
+echo "Downloading $doi from $url"
+wget -nv -N $url
 
 # TODO: generate datapackage
 # fido -zip files-archive -nomatchprintf "" -matchprintf "%(info.filesize)s,%(info.mimetype)s,%(info.filename)s\n"

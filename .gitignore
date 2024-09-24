@@ -10,4 +10,6 @@ node_modules/
 wikidata/*.rdf
 wikidata/*.nt
 collections.json
+
 .venv
+__pycache__

@@ -34,6 +34,8 @@ receive() {
         receive_lido
     elif [ "$extension" == "ttl" ]; then
         receive_rdf
+    elif [ "$extension" == "nt" ]; then
+        receive_rdf
     else
         echo "Unbekannte Dateiendung!"
         exit 1

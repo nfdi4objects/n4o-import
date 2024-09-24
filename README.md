@@ -92,6 +92,29 @@ Darüber hinaus wird für RDF-Daten eine Statistik der verwendeten RDF-Propertie
 und der RDF-Namensräume von Subjekt- und Objekt-URIs erstellt. Letztere werden
 mit bekannten Namensräumen abgeglichen (siehe [n4o-terminologies]).
 
+### Datenannahme von Zenodo
+
+#### Herunterladen von Zenodo
+
+~~~sh
+./download-zenodo https://doi.org/10.5281/zenodo.5642751
+~~~
+
+Legt Forschunsgdaten im Verzeichnis `inbox/zenodo-5642751` ab.
+
+#### Extraktion von RDF-Daten aus Zenodo-Download
+
+~~~sh
+./extract-zenodo-rdf inbox/zenodo-5642751
+~~~
+
+Erzeugt die Datei `inbox/zenodo-5642751/triples.nt`
+
+### Annahme der RDF-Datei
+
+~~~sh
+./receive 10 inbox/zenodo-5642751/triples.nt
+~~~
 
 ## Import von Forschungsdaten
 
