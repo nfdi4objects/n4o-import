@@ -36,7 +36,7 @@ def extract(file, out):
         if format == None:
             continue
 
-        # print(name, path)
+        print(name, path)
         file = archive.open(name)
         try:
             # TODO: base_iri seems to be ignored
@@ -44,14 +44,12 @@ def extract(file, out):
             for triple in rdfparser.parse(file, base_iri=base, format=format):
                 triples += 1
                 print(" ".join(triple)+" .", file=out)
-
         except Exception as e:
             path.reverse()
             msg = f"{e} of {name} in " + " in ".join(path)
-            #raise Exception(msg)
-            print(msg)
+            raise Exception(msg)
 
-        return triples
+    return triples
 
 def main(args):
     if len(args) != 1:
