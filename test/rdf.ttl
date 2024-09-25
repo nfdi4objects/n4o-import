@@ -1,0 +1,13 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix ex: <http://example.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# custom ontology based on CRM
+ex:Activity rdfs:subClassOf crm:E7_Activity .
+
+# use of custom ontology
+ex:a a ex:Activity .
+
+ex:a ex:foo 42 .        # local properties not connected to CRM
+ex:a ex:bar <local> .   # relative IRI
+ex:a ex:doz _:42 .      # blank node

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import sys
 
+
 def read_namespaces():
     ns = {}
     with open('terminologies/namespaces.csv', 'r') as file:
@@ -10,6 +11,8 @@ def read_namespaces():
     return ns
 
 # filter list of URI namespaces with count to those listed in namespaces.csv
+
+
 def main():
     ns = read_namespaces()
 
@@ -17,6 +20,7 @@ def main():
         count, uri = line.strip().split(' ')
         if uri in ns:
             print(f"{count:>8} {ns[uri]}")
+
 
 if __name__ == "__main__":
     main()

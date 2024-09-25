@@ -25,3 +25,10 @@ deps:
 extract-wikidata:
 	rm -f wikidata/*.rdf wikidata/*.nt
 	./get-wikidata-entity.sh `grep -o -E 'Q[0-9]+' sources/n4o-databases.csv`
+
+.PHONY: test
+test:
+	@pytest
+
+fix:
+	@autopep8 --in-place *.py test/*.py
