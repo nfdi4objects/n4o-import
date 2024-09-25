@@ -21,10 +21,14 @@ doi=https://doi.org/10.5281/zenodo.$id
 mkdir -p inbox/zenodo-$id/
 cd inbox/zenodo-$id/
 
-# TODO: Zenodo does not have last-modified header (?!)
+# TODO: Zenodo does not have last-modified header
 url="https://zenodo.org/api/records/$id/files-archive"
 echo "Downloading $doi from $url"
-wget -nv -N $url
+wget -nv -O files-archive.zip $url
+
+# TODO: Get DCAT-AP (RDF) or DataCite format
+curl https://zenodo.org/api/records/$id | jq . > metadata.json
+curl https://zenodo.org/records/$id/export/dcat-ap > metadata.rdf
 
 # TODO: generate datapackage
 # fido -zip files-archive -nomatchprintf "" -matchprintf "%(info.filesize)s,%(info.mimetype)s,%(info.filename)s\n"

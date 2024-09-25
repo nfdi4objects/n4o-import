@@ -30,5 +30,9 @@ extract-wikidata:
 test:
 	@pytest
 
+lint:
+	@flake8 lib test *.py --ignore=C901 --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
 fix:
-	@autopep8 --in-place *.py test/*.py
+	@autopep8 --in-place *.py lib/*.py test/*.py
+
