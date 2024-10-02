@@ -2,6 +2,7 @@ import { filterPipeline, namespaceFilter } from "rdffilter"
 
 const relativeIRI = iri => iri.startsWith("file://") || !/^(?:[a-z+]+:)/i.test(iri)
 const isRelative = node => node.termType === "NamedNode" && relativeIRI(node.id)
+const disallowRelativeIRIs = ({subject, object}) => !(isRelative(subject) || isRelative(object))
 
 // TODO: load from config file
 const nsReplace = namespaceFilter({
@@ -28,8 +29,7 @@ parse(
 const disallowedSubjects = namespaceFilter({ range: ["subject"], namespaces })
 
 export default filterPipeline([
-  // disallow relative IRIs
-  ({subject, object}) => !(isRelative(subject) || isRelative(object)),
+  disallowRelativeIRIs,
   // replace known legacy namespaces
   nsReplace,
   // disallow as subject
