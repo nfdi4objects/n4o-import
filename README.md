@@ -163,6 +163,12 @@ Aktualisieren des Graph <https://graph.nfdi4objects.net/terminology/> mit den An
 ./load-terminologies-metadata
 ~~~
 
+Zum Import eines ausgewählten Vokabulars dient das Skript `load-terminology`. Dabei müssen eine BARTOC-URI und eine URL zum Herunterladen des Vokabulars in RDF angegeben werden. Optional kann zusätzlich das RDF-Format (z.B. `ttl`) angegeben werden wenn es sich nicht aus der URL ergibt. Beispiel:
+
+~~~sh
+./load-terminology http://bartoc.org/en/node/1048 'https://vocabs.acdh.oeaw.ac.at/rest/v1/hsinstruments_thesaurus/data?format=text/turtle' ttl
+~~~
+
 ### Wikidata
 
 Im Verzeichnis `wikidata` werden RDF-Daten aus Wikidata vorgehalten und können mit `load-wikidata` in den Triple-Store geladen werden.
