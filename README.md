@@ -166,6 +166,7 @@ Aktualisieren des Graph <https://graph.nfdi4objects.net/terminology/> mit den An
 Zum Import eines ausgewählten Vokabulars dient das Skript `load-terminology`. Dabei müssen eine BARTOC-URI und eine URL zum Herunterladen des Vokabulars in RDF angegeben werden. Optional kann zusätzlich das RDF-Format (z.B. `ttl`) angegeben werden wenn es sich nicht aus der URL ergibt. Beispiel:
 
 ~~~sh
+./load-terminology http://bartoc.org/en/node/1683 https://n2t.net/ark:/99152/p0dataset.ttl
 ./load-terminology http://bartoc.org/en/node/1048 'https://vocabs.acdh.oeaw.ac.at/rest/v1/hsinstruments_thesaurus/data?format=text/turtle' ttl
 ~~~
 
