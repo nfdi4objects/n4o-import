@@ -1,0 +1,77 @@
+#!/usr/bin/bash
+set -euo pipefail
+function error() { echo $@ >&2; exit 1; }
+
+[[ $# -ge 2 ]] || error "Usage: $0 BARTOC-URI RDF-URL [format]"
+uri=$1
+id="${uri##*/}"
+url=$2
+ext="${url##*.}"
+format=${3:-$ext}
+
+[[ "$uri" =~ ^http://bartoc.org/en/node/[0-9]+$ ]] || error "Invalid BARTOC URI!"
+[[ "$url" =~ ^https?:// ]] || error "Invalid URL"
+
+case "$format" in
+    ttl)
+        format=turtle
+        ext=ttl
+        ;;
+    nt)
+        format=ntriples
+        ext=nt
+        ;;
+    xml | rdf)
+        format=rdfxml
+        ext=rdf
+        ;;
+    ndjson | jskos)
+        format=jskos
+        ext=ndjson
+        ;;
+    *)
+        error "RDF serialization format unknown or not supported"
+esac
+
+# update list of terminologies
+make terminologies
+
+# check whether terminology is known
+found=$(jq -c --arg uri "$uri" '.[]|select(.uri==$uri).uri' terminologies.json)
+[[ -z "$found" ]] && error "Terminology $uri not found in N4O Terminologies (http://bartoc.org/en/node/18961)" 
+
+# download terminology
+dir=import-voc/$id
+mkdir -p $dir
+input=$dir/original.$ext
+unique=$dir/unique.nt
+
+curl -sL "$url" > $input
+
+# convert JSKOS to N-Triples
+if [[ "$format" = "jskos"  ]]; then
+    npm run --silent -- jsonld2rdf -c jskos-context.json "$input" > "$dir/original.nt"
+    input="$dir/original.nt"
+    ext=nt
+    format=ntriples
+fi
+
+# TODO: this is duplicated in receive
+tmp=$(mktemp)
+rapper -q -i turtle "$input" | sort | uniq > "$tmp"
+
+if [[ ! -s "$tmp" ]]; then
+    rm "$tmp"
+    echo "$input ist syntaktisch nicht korrekt oder leer!"
+    exit 1
+fi
+
+mv "$tmp" "$unique"
+echo "$input ist syntaktisch korrektes RDF. "
+echo
+echo "Anzahl unterschiedlicher Tripel: **$(<$unique wc -l)**"
+echo
+
+# TODO: filtern/cleanup to only have JSKOS compatible fields (SKOS etc.)
+
+./load-rdf-graph $uri $unique

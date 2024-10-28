@@ -1,4 +1,4 @@
-"""Extract all RDF turtle files from an archive downloaded from zenodo. Supports .nt and .ttl"""
+"""Extract all RDF turtle files from an archive. Supports .nt and .ttl files."""
 import sys
 import os
 from lib import extractRDF
