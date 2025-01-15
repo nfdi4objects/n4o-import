@@ -105,7 +105,7 @@ Legt Forschunsgdaten im Verzeichnis `inbox/zenodo-5642751` ab.
 #### Extraktion von RDF-Daten aus Zenodo-Download
 
 ~~~sh
-./extract-zenodo-rdf inbox/zenodo-5642751
+./extract-zenodo-rdf.py inbox/zenodo-5642751
 ~~~
 
 Erzeugt die Datei `inbox/zenodo-5642751/triples.nt`
