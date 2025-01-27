@@ -11,6 +11,7 @@ node_modules/
 wikidata/*.rdf
 wikidata/*.nt
 collections.json
+crm-rdf-ap
 
 .venv
 __pycache__
