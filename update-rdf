@@ -7,5 +7,7 @@ if [ $# -ne 1 ]; then
     exit 1
 fi
 
-#echo "$1"
-/opt/fuseki/bin/s-update --service http://localhost:3030/n4o-rdf-import/update "$1"
+# SPARQL Update API
+api=http://localhost:3030/n4o-rdf-import/update
+
+curl -X POST "$api" --header "Content-Type: application/sparql-update" --data-binary "$1"

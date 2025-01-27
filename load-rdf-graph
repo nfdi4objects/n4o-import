@@ -7,13 +7,13 @@ if [ $# -ne 2 ]; then
     exit 1
 fi
 
+# SPARQL Graph Store HTTP protocol
+api=http://localhost:3030/n4o-rdf-import
+
 graph=$1
 file=$2
 
-if [[ -f "$file" ]]; then
-    echo "Importing $file into Fuseki graph $graph"
-    /opt/fuseki/bin/s-put http://localhost:3030/n4o-rdf-import $graph $file
-else
-    echo "Missing RDF file: $file"
-    exit 1
-fi
+echo "Importing $file into Fuseki graph $graph"
+curl --silent -X PUT "$api" --header "Content-Type: text/turtle" \
+    --url-query "graph=$graph" \
+    --upload-file "$file"
