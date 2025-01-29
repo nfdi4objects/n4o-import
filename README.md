@@ -8,6 +8,7 @@
 - [Overview](#overview)
 - [Voraussetzungen](#voraussetzungen)
 - [Datenannahme und Prüfung](#datenannahme-und-prüfung)
+  - [receive](#receive)
 - [Import von Forschungsdaten](#import-von-forschungsdaten)
 - [Import von Vokabularen](#import-von-vokabularen)
 
@@ -91,6 +92,8 @@ Die **Datenannahme und Prüfung** beinhaltet:
 - Der Datensatz *Ogham Data* wurde unabhängig von einer Forschungsdatenbank im
   allgemeinen Repository Zenodo unter der DOI <https://doi.org/10.5281/zenodo.4765603>
   publiziert (Sammlungs-ID 9) und wird einzeln übernommen.
+
+### receive
 
 Zur Durchführung der Datenannahme muss eine Lieferung in Form einer Datei irgendwo im lokalen Dateisystem vorliegen. Es empfiehlt sich, die Datei im Verzeichnis `inbox` abzulegen, damit sie bei Bedarf für weitere Prüfungen zur Verfügung gestellt werden kann. Das Skript [`receive`](receive) erwartet eine vorab definierte Sammlungs-ID und die entsprechende RDF/Turtle- oder LIDO-XML-Datei.
 
