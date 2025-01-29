@@ -1,16 +1,24 @@
 inbox/*
 !inbox/README.md
-import/*
-!import/README.md
-import-voc/*
+
+stage/*
+stage-voc/*
+!stage/README.md
+stage-voc/*
+!stage-voc/README.md
+
 sources/
+
 lido-schema/
 terminologies/
 terminologies.*
 node_modules/
+
 wikidata/*.rdf
 wikidata/*.nt
+
 collections.json
+
 crm-rdf-ap
 
 .venv

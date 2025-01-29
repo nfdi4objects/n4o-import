@@ -3,7 +3,7 @@ set -euo pipefail
 
 if [ $# -ne 2 ]; then
     echo "Usage: $0 <graph> <file>"
-    echo "Import an RDF file into a Fuseki graph. An existing graph is overridden."
+    echo "Load an RDF file into a Triple store via SPARQL Graph Store HTTP protocol. An existing graph is overridden."
     exit 1
 fi
 
@@ -13,7 +13,7 @@ api=http://localhost:3030/n4o-rdf-import
 graph=$1
 file=$2
 
-echo "Importing $file into Fuseki graph $graph"
+echo "Loading $file into Fuseki graph $graph"
 curl --silent -X PUT "$api" --header "Content-Type: text/turtle" \
     --url-query "graph=$graph" \
     --upload-file "$file"

@@ -1,9 +1,12 @@
 #!/usr/bin/bash
 
+stage=stage-voc/1950
+mkdir -p $stage
+
 for qid in "$@"; do
-    curl -s https://www.wikidata.org/wiki/Special:EntityData/$qid.rdf?flavor=simple > wikidata/$qid.rdf
-    rapper -q -i rdfxml -I http://www.wikidata.org/entity/$qid wikidata/$qid.rdf | \
-        npm run --silent rdffilter -- -f wikidata/filter.js > wikidata/$qid.nt
-    wc -l wikidata/$qid.nt
+    curl -s https://www.wikidata.org/wiki/Special:EntityData/$qid.rdf?flavor=simple > $stage/$qid.rdf
+    rapper -q -i rdfxml -I http://www.wikidata.org/entity/$qid $stage/$qid.rdf | \
+        npm run --silent rdffilter -- -f wikidata-filter.js > $stage/$qid.nt
+    wc -l $stage/$qid.nt
     sleep 1
 done

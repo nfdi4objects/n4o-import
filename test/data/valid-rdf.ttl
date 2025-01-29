@@ -1,0 +1,11 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+@base <http://example.org/> .
+
+<X> a skos:Concept .
+
+crm:E1_Entity a rdfs:Class .
+
+<C> a crm:E1_Entity .

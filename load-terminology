@@ -2,15 +2,15 @@
 set -euo pipefail
 function error() { echo $@ >&2; exit 1; }
 
-[[ $# -ge 2 ]] || error "Usage: $0 BARTOC-URI RDF-URL [format]"
+[[ $# -ge 2 ]] || error "Usage: $0 BARTOC-URI RDF-URL-OR-FILE [format]"
 uri=$1
 id="${uri##*/}"
-url=$2
-ext="${url##*.}"
+data=$2
+ext="${data##*.}"
 format=${3:-$ext}
 
 [[ "$uri" =~ ^http://bartoc.org/en/node/[0-9]+$ ]] || error "Invalid BARTOC URI!"
-[[ "$url" =~ ^https?:// ]] || error "Invalid URL"
+[[ ! "$data" =~ ^https?:// ]] && [[ -f "$data" ]] || error "Invalid URL or missing source file: $data"
 
 case "$format" in
     ttl)
@@ -41,12 +41,16 @@ found=$(jq -c --arg uri "$uri" '.[]|select(.uri==$uri).uri' terminologies.json)
 [[ -z "$found" ]] && error "Terminology $uri not found in N4O Terminologies (http://bartoc.org/en/node/18961)" 
 
 # download terminology
-dir=import-voc/$id
+dir=stage-voc/$id
 mkdir -p $dir
 input=$dir/original.$ext
 unique=$dir/unique.nt
 
-curl -sL "$url" > $input
+if [[ -f "$data" ]]; then
+    cp "$data" "$input"
+else
+    curl -sL "$url" > $input
+fi
 
 # convert JSKOS to N-Triples
 if [[ "$format" = "jskos"  ]]; then
@@ -56,9 +60,9 @@ if [[ "$format" = "jskos"  ]]; then
     format=ntriples
 fi
 
-# TODO: this is duplicated in receive
+# TODO: this is duplicated in receive. Also there is no report!
 tmp=$(mktemp)
-rapper -q -i turtle "$input" | sort | uniq > "$tmp"
+rapper -q -i "$format" "$input" | sort | uniq > "$tmp"
 
 if [[ ! -s "$tmp" ]]; then
     rm "$tmp"
@@ -75,3 +79,4 @@ echo
 # TODO: filtern/cleanup to only have JSKOS compatible fields (SKOS etc.)
 
 ./load-rdf-graph $uri $unique
+

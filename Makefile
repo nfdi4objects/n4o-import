@@ -29,7 +29,8 @@ extract-wikidata:
 
 .PHONY: test
 test:
-	@pytest
+	@.venv/bin/pytest
+	@./test/test.sh
 
 lint:
 	@flake8 lib test *.py --ignore=C901 --exit-zero --max-complexity=10 --max-line-length=127 --statistics

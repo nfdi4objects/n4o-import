@@ -1,2 +1,3 @@
 pgformat
 lightrdf
+pytest

@@ -4,7 +4,7 @@ function error() { echo $@ >&2; exit 1; }
 
 if [[ $# -ne 1 ]]; then
     echo "Usage: $0 DOI|URL"
-    echo "Load Data from Zenodo publication, given by DOI"
+    echo "Download Data from Zenodo publication, given by DOI"
     exit
 fi
 
@@ -27,8 +27,8 @@ echo "Downloading $doi from $url"
 wget -nv -O files-archive.zip $url
 
 # TODO: Get DCAT-AP (RDF) or DataCite format
-curl https://zenodo.org/api/records/$id | jq . > metadata.json
-curl https://zenodo.org/records/$id/export/dcat-ap > metadata.rdf
+curl -s https://zenodo.org/api/records/$id | jq . > metadata.json
+curl -s https://zenodo.org/records/$id/export/dcat-ap > metadata.rdf
 
 # TODO: generate datapackage
 # fido -zip files-archive -nomatchprintf "" -matchprintf "%(info.filesize)s,%(info.mimetype)s,%(info.filename)s\n"

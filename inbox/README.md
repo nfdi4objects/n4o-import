@@ -1,8 +1,6 @@
-Dieses Verzeichnis enthält gelieferte, ungeprüfte Originaldateien.
-Sie dürfen **ausschließlich zur Fehlersuche** verwenden werden.
+This directory contains directories with original research data, extracted from its data sources:
 
-Jede Lieferung ist **eine einzelne Datei** (allerdings bei Bedarf eine gepackte
-Archivdatei).
+- `zenodo-XXXX` for research data publications from Zenodo
+- ...
 
-Die aus den Originaldatein erzeugten geprüften Daten mit Zuordnung zu ihren
-jeweiligen Sammlungen befinden sich [im Import-Verzeichnis](../import).
+The data is validated, transformed and reported with `receive` into the staging area [`stage`](../stage).

@@ -8,19 +8,19 @@ if [[ $# -ne 1 ]]; then
     exit
 fi
 
-function import_collection() {
+function load_collection() {
     collection=$1
     [[ "$collection" =~ ^[0-9]*$ ]] || error "Collection ID must be numeric!"
     uri=https://graph.nfdi4objects.net/collection/$collection
 
     ./load-rdf-metadata $collection --issued
-    ./load-rdf-graph $uri import/$collection/filtered.nt
+    ./load-rdf-graph $uri stage/$collection/filtered.nt
 }
 
 if [[ "$1" = "all" ]]; then
-    for collection in import/*; do
-        import_collection $(basename $collection)
+    for collection in stage/*; do
+        load_collection $(basename $collection)
     done
 else
-    import_collection $1
+    load_collection $1
 fi

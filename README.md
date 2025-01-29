@@ -2,10 +2,10 @@
 
 [Dieses Repository](https://github.com/nfdi4objects/n4o-import) enthält Skripte zur Annahme, Prüfung, Bereinigung und Einspielung von Daten in den [Knowledge-Graphen von NFDI4Objects](https://graph.nfdi4objects.net/). Bei den Daten handelt es sich zum einen um Lieferungen von Forschungsdaten und zum anderen um Ontologien und andere Vokabulare. Forschungsdaten müssen in LIDO-XML oder in RDF vorliegen.
 
-
 ## Inhalt
 
 - [Installation](#installation)
+- [Overview](#overview)
 - [Voraussetzungen](#voraussetzungen)
 - [Datenannahme und Prüfung](#datenannahme-und-prüfung)
 - [Import von Forschungsdaten](#import-von-forschungsdaten)
@@ -31,15 +31,28 @@ Darüber hinaus muss Node mindestens in Version 18, besser 20 installiert sein (
 
 Zusätzliche Abhängigkeiten werden anschließend mit `make update` installiert. Dies beinhaltet:
 
+- Benötigte Node-Pakete (`npm install`)
 - Die Liste von Datenquellen aus [n4o-databases]
 - Das LIDO-Schema aus [lido-schema](https://github.com/nfdi4objects/lido-schema/)
-- Benötigte Node-Pakete (`npm install`)
 
-Schließlich müssen als Backend ein lokaler Triple-Store (bislang unterstützt: Fuseki) und eine Property-Graph-Datenbank (bislang unterstützt: Neo4J) vorhanden sein. In Fuseki muss der Default-Graph mit folgender Einstellung in `/etc/fuseki/configuration/n4o-rdf-import.ttl` als Union-Graph konfiguriert werden:
+Schließlich müssen als Backend ein lokaler Triple-Store und eine Property-Graph-Datenbank (bislang unterstützt: Neo4J) vorhanden sein. In Fuseki muss der Default-Graph mit folgender Einstellung in `/etc/fuseki/configuration/n4o-rdf-import.ttl` als Union-Graph konfiguriert werden:
 
 ~~~
 :tdb_dataset_readwrite tdb2:unionDefaultGraph true;
 ~~~
+
+## Overview
+
+Eventually the import of research data into the knowledge graph is an ETL process (extract, transform, load).
+
+```mermaid
+flowchart TD
+    sources(sources) -- extract --> inbox
+    inbox -- "<b>receive</b><br>transform & report" --> stage
+    stage -- load --> kg(Knowledge Graph)
+```
+
+See directory [inbox](inbox) and [stage](stage) for details.
 
 ## Voraussetzungen
 
@@ -82,7 +95,7 @@ Die **Datenannahme und Prüfung** beinhaltet:
 Zur Durchführung der Datenannahme muss eine Lieferung in Form einer Datei irgendwo im lokalen Dateisystem vorliegen. Es empfiehlt sich, die Datei im Verzeichnis `inbox` abzulegen, damit sie bei Bedarf für weitere Prüfungen zur Verfügung gestellt werden kann. Das Skript [`receive`](receive) erwartet eine vorab definierte Sammlungs-ID und die entsprechende RDF/Turtle- oder LIDO-XML-Datei.
 
 Die empfangenen RDF- bzw. LIDO-Daten werden syntaktisch geprüft und rudimentär
-bereinigt in einem Unterverzeichnis von [`import`](import) mit der jeweiligen
+bereinigt in einem Unterverzeichnis von [`stage`](stage) mit der jeweiligen
 Sammlungs-ID abgelegt. Das betreffende Import-Verzeichnis enthält verschiedene
 Report-Dateien mit Statistiken und im Erfolgsfall die Datei `filtered.nt` für
 geprüfte und bereinigte RDF-Daten bzw. die Datei `valid.xml` für geprüfte
@@ -94,21 +107,24 @@ mit bekannten Namensräumen abgeglichen (siehe [n4o-terminologies]).
 
 ### Datenannahme von Zenodo
 
-#### Herunterladen von Zenodo
+Download a publication from Zenodo into inbox directory and unpack its RDF data:
 
 ~~~sh
-./download-zenodo https://doi.org/10.5281/zenodo.5642751
+./extract-zenodo https://doi.org/10.5281/zenodo.5642751
 ~~~
 
-Legt Forschunsgdaten im Verzeichnis `inbox/zenodo-5642751` ab.
+Inbox directory is named after the Zenodo identifier (part of the DOI).
 
-#### Extraktion von RDF-Daten aus Zenodo-Download
+Internally this is two steps:
 
-~~~sh
-./extract-zenodo-rdf.py inbox/zenodo-5642751
-~~~
+- `./download-zenodo https://doi.org/10.5281/zenodo.5642751`
+- `./unpack-zenodo-rdf.py inbox/zenodo-5642751`
 
-Erzeugt die Datei `inbox/zenodo-5642751/triples.nt`
+The result is three files:
+
+- `files-archive.zip` - full data from Zenodo
+- `metadata.json` and `metadata.rdf` - metadata about the publication
+- `triples.nt` - extracted RDF data
 
 ### Annahme der RDF-Datei
 
@@ -163,14 +179,22 @@ Aktualisieren des Graph <https://graph.nfdi4objects.net/terminology/> mit den An
 ./load-terminologies-metadata
 ~~~
 
-Zum Import eines ausgewählten Vokabulars dient das Skript `load-terminology`. Dabei müssen eine BARTOC-URI und eine URL zum Herunterladen des Vokabulars in RDF angegeben werden. Optional kann zusätzlich das RDF-Format angegeben werden wenn es sich nicht aus der URL ergibt. Unterstützt werden N-Triples (`nt`), Turtle (`ttl`), RDF/XML (`xml` oder `rdf`) und JSKOS als JSON-LD (`ndjson` oder `jskos`). Beispiel:
+### Vokabulare in JSKOS oder RDF
+
+Zum Import eines ausgewählten Vokabulars dient das Skript `load-terminology`. Dabei müssen eine BARTOC-URI und eine URL zum Herunterladen des Vokabulars in RDF oder eine lokale RDF-Datei angegeben werden. Optional kann zusätzlich das RDF-Format angegeben werden wenn es sich nicht aus der URL ergibt. Unterstützt werden N-Triples (`nt`), Turtle (`ttl`), RDF/XML (`xml` oder `rdf`) und JSKOS als JSON-LD (`ndjson` oder `jskos`). Beispiel:
 
 ~~~sh
+./load-terminology http://bartoc.org/en/node/18274 crm-rdf-ap/skos.rdf
+./load-terminology http://bartoc.org/en/node/1644 crm-rdf-ap/cidoc-crm.rdf
 ./load-terminology http://bartoc.org/en/node/1683 https://n2t.net/ark:/99152/p0dataset.ttl
 ./load-terminology http://bartoc.org/en/node/1048 'https://vocabs.acdh.oeaw.ac.at/rest/v1/hsinstruments_thesaurus/data?format=text/turtle' ttl
 ./load-terminology http://bartoc.org/en/node/20533 https://api.dante.gbv.de/export/download/kenom_material/def
 ault/kenom_material__default.jskos.ndjson
 ~~~
+
+Das Skript führt den gesamte ETL-Prozess mit staging area in [stage-voc](stage-voc) aus. 
+
+*Eine semantische Prüfung von Vokabulardaten findet bislang nicht statt, d.h. Vokabulardaten werden so eingespielt wie sie sind!*
 
 ### Wikidata
 

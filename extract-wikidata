@@ -1,5 +1,5 @@
 #!/usr/bin/bash
 set -euo pipefail
 
-rm -f wikidata/*.rdf wikidata/*.nt
+rm -f stage-voc/1949/*.{rdf,nt}
 ./get-wikidata-entity `grep -o -E 'Q[0-9]+' sources/n4o-databases.csv`
