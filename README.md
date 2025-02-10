@@ -1,20 +1,66 @@
-# RDF-Import für NFDI4Objects
+# n4o-graph-import
 
-[Dieses Repository](https://github.com/nfdi4objects/n4o-import) enthält Skripte zur Annahme, Prüfung, Bereinigung und Einspielung von Daten in den [Knowledge-Graphen von NFDI4Objects](https://graph.nfdi4objects.net/). Bei den Daten handelt es sich zum einen um Lieferungen von Forschungsdaten und zum anderen um Ontologien und andere Vokabulare. Forschungsdaten müssen in LIDO-XML oder in RDF vorliegen.
+[![License](https://img.shields.io/github/license/nfdi4objects/n4o-graph-apis.svg)](https://github.com/nfdi4objects/n4o-graph-apis/blob/master/LICENSE)
 
-## Inhalt
+> Import into the NFDI4Objects Knowledge Graph (N4O KG)
 
+This repository contains scripts to receive, validate, clean, transform, and import data into the [NFDI4Objects Knowledge Graph](https://graph.nfdi4objects.net/).
+
+```mermaid
+flowchart LR
+    sources(sources) -- extract --> inbox
+    inbox -- "<b>receive</b><br>transform & report" --> stage
+    stage -- load --> kg(Knowledge Graph)
+```
+
+Eventually this is an ETL process (extract, transform, load). See directory [inbox](inbox) and [stage](stage) for details.
+
+## Table of Contents
+
+- [Requirements](#requirements)
+  - [System requirements](#system-requirements)
+  - [Data requirements](#data-requirements)
 - [Installation](#installation)
-- [Overview](#overview)
-- [Voraussetzungen](#voraussetzungen)
-- [Datenannahme und Prüfung](#datenannahme-und-prüfung)
-  - [receive](#receive)
-- [Import von Forschungsdaten](#import-von-forschungsdaten)
-- [Import von Vokabularen](#import-von-vokabularen)
+- [Usage](#usage)
+  - [Datenannahme und Prüfung](#datenannahme-und-prüfung)
+  - [Import von Forschungsdaten](#import-von-forschungsdaten)
+  - [Import von Vokabularen](#import-von-vokabularen)
+<!-- [Development](#development) -->
+- [License](#license)
+
+## Requirements
+
+### System requirements
+
+Requires an RDF Triple store, accessible via SPARQL Update and SPARQL Graph Store HTTP protocol.
+
+Requires access to the lists of collections and vocabularies.
+
+Technical setup for the scripts in this repository is a bit unsteady. See and
+use [`Makefile`](Makefile) and [installation](#installation) for details.
+
+### Data requirements
+
+Bei den Daten handelt es sich zum einen um Lieferungen von Forschungsdaten und
+zum anderen um Ontologien und andere Vokabulare. Forschungsdaten müssen in
+LIDO-XML oder in RDF vorliegen.
+
+Alle zu importierenden Forschungsdaten müssen genau einer "Sammlung" zugeordnet
+sein. Eine Sammlung im Sinne des Import ist eine Menge von Daten in LIDO oder
+RDF, die als ganzes importiert und aktualisiert werden kann. Zusätzlich müssen
+Sammlungen einem übergreifenden Forschungsdaten-Repository
+zugeordnet sein. Die Verwaltung von Sammlungen geschieht derzeit über
+das git-Repository [n4o-databases].
+
+Weitere Anforderungen an Datenlieferungen sind [im Handbuch des N4O
+Graph](https://nfdi4objects.github.io/n4o-graph/sources.html) beschrieben.
+
+Alle offiziell unterstützen Terminologien (Normdateien und Ontologien) sind
+ebenfalls im Repository [n4o-terminologies] aufgeführt. Sie werden gesondert in den
+Knowledge Graphen eingespielt.
 
 [n4o-databases]: https://github.com/nfdi4objects/n4o-databases/
 [n4o-terminologies]: https://github.com/nfdi4objects/n4o-terminologies/
-
 
 ## Installation
 
@@ -42,36 +88,7 @@ Schließlich müssen als Backend ein lokaler Triple-Store und eine Property-Grap
 :tdb_dataset_readwrite tdb2:unionDefaultGraph true;
 ~~~
 
-## Overview
-
-Eventually the import of research data into the knowledge graph is an ETL process (extract, transform, load).
-
-```mermaid
-flowchart TD
-    sources(sources) -- extract --> inbox
-    inbox -- "<b>receive</b><br>transform & report" --> stage
-    stage -- load --> kg(Knowledge Graph)
-```
-
-See directory [inbox](inbox) and [stage](stage) for details.
-
-## Voraussetzungen
-
-Alle zu importierenden Forschungsdaten müssen genau einer "Sammlung" zugeordnet
-sein. Eine Sammlung im Sinne des Import ist eine Menge von Daten in LIDO oder
-RDF, die als ganzes importiert und aktualisiert werden kann. Zusätzlich müssen
-Sammlungen einem übergreifenden Forschungsdaten-Repository
-zugeordnet sein. Die Verwaltung von Sammlungen geschieht derzeit über
-das git-Repository [n4o-databases].
-
-Weitere Anforderungen an Datenlieferungen sind [im Handbuch des N4O Graph](https://nfdi4objects.github.io/n4o-graph/sources.html) beschrieben.
-
-Alle offiziell unterstützen Terminologien (Normdateien und Ontologien) sind
-ebenfalls im Repository [n4o-terminologies] aufgeführt. Sie werden gesondert in den
-Knowledge Graphen eingespielt.
-
-
-## Datenannahme und Prüfung
+### Datenannahme und Prüfung
 
 Die **Datenannahme und Prüfung** beinhaltet:
 
@@ -93,7 +110,7 @@ Die **Datenannahme und Prüfung** beinhaltet:
   allgemeinen Repository Zenodo unter der DOI <https://doi.org/10.5281/zenodo.4765603>
   publiziert (Sammlungs-ID 9) und wird einzeln übernommen.
 
-### receive
+#### receive
 
 Zur Durchführung der Datenannahme muss eine Lieferung in Form einer Datei irgendwo im lokalen Dateisystem vorliegen. Es empfiehlt sich, die Datei im Verzeichnis `inbox` abzulegen, damit sie bei Bedarf für weitere Prüfungen zur Verfügung gestellt werden kann. Das Skript [`receive`](receive) erwartet eine vorab definierte Sammlungs-ID und die entsprechende RDF/Turtle- oder LIDO-XML-Datei.
 
@@ -108,7 +125,7 @@ Darüber hinaus wird für RDF-Daten eine Statistik der verwendeten RDF-Propertie
 und der RDF-Namensräume von Subjekt- und Objekt-URIs erstellt. Letztere werden
 mit bekannten Namensräumen abgeglichen (siehe [n4o-terminologies]).
 
-### Datenannahme von Zenodo
+#### Datenannahme von Zenodo
 
 Download a publication from Zenodo into inbox directory and unpack its RDF data:
 
@@ -129,17 +146,17 @@ The result is three files:
 - `metadata.json` and `metadata.rdf` - metadata about the publication
 - `triples.nt` - extracted RDF data
 
-### Annahme der RDF-Datei
+#### Annahme der RDF-Datei
 
 ~~~sh
 ./receive 10 inbox/zenodo-5642751/triples.nt
 ~~~
 
-## Import von Forschungsdaten
+### Import von Forschungsdaten
 
 Das Einspielen der bereinigten RDF-Daten als Named Graph in einen lokalen Fuseki RDF-Triple-Store bzw. das Konvertieren der LIDO-XML-Daten zur Einspielung in den gemeinsamen Knowledge Graphen erfolgt mit folgenden Skripten.
 
-### Einspielen von RDF-Daten in den Triple-Store
+#### Einspielen von RDF-Daten in den Triple-Store
 
 Mit dem Skript `load-rdf` können Sammlungen und Informationen über Sammlungen
 (sources) in einen lokalen RDF-Triple-Store (Fuseki) geladen werden, wobei die
@@ -159,16 +176,15 @@ Diese Metadaten können auch folgendermaßen unabhängig von den eigentlichen Fo
 
 Zum Löschen von Graphen kann die Fuseki-Weboberfläche mit dem `update` Endpunkt und dem Kommando `DROP GRAPH <...>` verwendet werden, allerdings wird der Graph mit den Verwaltungsdaten dabei nicht aktualisiert!
 
-### Einspielen von RDF-Daten in den Property-Graphen
+#### Einspielen von RDF-Daten in den Property-Graphen
 
 Neben der RDF-Kodierung sollen die Daten oder Teile davon in einen Property-Graphen überführt und dort mit anderen Daten zusammengeführt werden. Siehe dazu das Code-Repository <https://github.com/nfdi4objects/n4o-property-graph/>.
 
-### Einspielen von LIDO-Daten
+#### Einspielen von LIDO-Daten
 
 *Noch in Arbeit*
 
-
-## Import von Vokabularen
+### Import von Vokabularen
 
 Abrufen von Informationen *über* die für N4O relevanten Vokabulare:
 
@@ -182,7 +198,7 @@ Aktualisieren des Graph <https://graph.nfdi4objects.net/terminology/> mit den An
 ./load-terminologies-metadata
 ~~~
 
-### Vokabulare in JSKOS oder RDF
+#### Vokabulare in JSKOS oder RDF
 
 Zum Import eines ausgewählten Vokabulars dient das Skript `load-terminology`. Dabei müssen eine BARTOC-URI und eine URL zum Herunterladen des Vokabulars in RDF oder eine lokale RDF-Datei angegeben werden. Optional kann zusätzlich das RDF-Format angegeben werden wenn es sich nicht aus der URL ergibt. Unterstützt werden N-Triples (`nt`), Turtle (`ttl`), RDF/XML (`xml` oder `rdf`) und JSKOS als JSON-LD (`ndjson` oder `jskos`). Beispiel:
 
@@ -199,7 +215,7 @@ Das Skript führt den gesamte ETL-Prozess mit staging area in [stage-voc](stage-
 
 *Eine semantische Prüfung von Vokabulardaten findet bislang nicht statt, d.h. Vokabulardaten werden so eingespielt wie sie sind!*
 
-### Wikidata
+#### Wikidata
 
 Im Verzeichnis `wikidata` werden RDF-Daten aus Wikidata vorgehalten und können mit `load-wikidata` in den Triple-Store geladen werden.
 
@@ -210,3 +226,6 @@ Das Skript `extract-wikidata` ermittelt Wikidata-Entity-IDs aus der Liste von Da
 ./load-wikidata
 ~~~
 
+## License
+
+MIT License
