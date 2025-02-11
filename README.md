@@ -1,6 +1,6 @@
 # n4o-graph-import
 
-[![License](https://img.shields.io/github/license/nfdi4objects/n4o-graph-apis.svg)](https://github.com/nfdi4objects/n4o-graph-apis/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/nfdi4objects/n4o-graph-import.svg)](https://github.com/nfdi4objects/n4o-graph-import/blob/master/LICENSE)
 
 > Import into the NFDI4Objects Knowledge Graph (N4O KG)
 
@@ -32,7 +32,7 @@ Eventually this is an ETL process (extract, transform, load). See directory [inb
 
 ### System requirements
 
-Requires an RDF Triple store, accessible via SPARQL Update and SPARQL Graph Store HTTP protocol.
+Requires an **RDF Triple store**, accessible via SPARQL Update and SPARQL Graph Store HTTP protocol.
 
 Requires access to the lists of collections and vocabularies.
 
